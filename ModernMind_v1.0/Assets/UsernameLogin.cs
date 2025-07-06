@@ -57,22 +57,23 @@ public class FirebaseLogin : MonoBehaviour
             return;
         }
 
-        string username = usernameInput.text.Trim();
+        string inputUsername = usernameInput.text.Trim();
 
-        if (string.IsNullOrEmpty(username))
+        if (string.IsNullOrEmpty(inputUsername))
         {
             Debug.LogWarning("[FirebaseLogin] Username input is empty.");
             return;
         }
 
-        CheckIfUserExists(username);
+        string normalizedUsername = inputUsername.ToLower(); // Normalize for case-insensitive
+        CheckIfUserExists(normalizedUsername, inputUsername); // Pass both normalized and original
     }
 
-    void CheckIfUserExists(string username)
+    void CheckIfUserExists(string normalizedUsername, string originalUsername)
     {
-        Debug.Log($"[FirebaseLogin] Checking if username '{username}' exists...");
+        Debug.Log($"[FirebaseLogin] Checking if username '{normalizedUsername}' exists...");
 
-        dbReference.Child("users").Child(username).GetValueAsync().ContinueWithOnMainThread(task =>
+        dbReference.Child("users").Child(normalizedUsername).GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
             {
@@ -86,17 +87,17 @@ public class FirebaseLogin : MonoBehaviour
             else
             {
                 Debug.Log("[FirebaseLogin] New user detected. Creating user...");
-                SaveNewUser(username);
+                SaveNewUser(normalizedUsername, originalUsername);
             }
         });
     }
 
-    void SaveNewUser(string username)
+    void SaveNewUser(string normalizedUsername, string originalUsername)
     {
-        UserData newUser = new UserData(username);
+        UserData newUser = new UserData(originalUsername);  // Save original casing for display
         string json = JsonUtility.ToJson(newUser);
 
-        dbReference.Child("users").Child(username).SetRawJsonValueAsync(json).ContinueWithOnMainThread(task =>
+        dbReference.Child("users").Child(normalizedUsername).SetRawJsonValueAsync(json).ContinueWithOnMainThread(task =>
         {
             if (task.IsCompletedSuccessfully)
             {
