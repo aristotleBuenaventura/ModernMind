@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuCanvasManager : MonoBehaviour
 {
-    public GameObject MainMenu, BagongLaro, Ipagpatuloy, TalaangPinuno, Gabay, Settings;
+    public GameObject MainMenu, BagongLaro, Ipagpatuloy, TalaangPinuno, Gabay, Settings, Trivia;
 
 
     void Start()
@@ -16,6 +16,7 @@ public class MainMenuCanvasManager : MonoBehaviour
         TalaangPinuno.SetActive(false);
         Gabay.SetActive(false);
         Settings.SetActive(false);
+        Trivia.SetActive(false);
     }
 
     public void MainMenuShow()
@@ -48,7 +49,12 @@ public class MainMenuCanvasManager : MonoBehaviour
         ShowCanvas(Settings);
     }
 
-    private void ShowCanvas(GameObject dialogue)
+    public void TriviaShow()
+    {
+        ShowCanvas(Trivia);
+    }
+
+    private void ShowCanvas(GameObject canvas)
     {
         MainMenu.SetActive(false);
         BagongLaro.SetActive(false);
@@ -56,7 +62,8 @@ public class MainMenuCanvasManager : MonoBehaviour
         TalaangPinuno.SetActive(false);
         Gabay.SetActive(false);
         Settings.SetActive(false);
-        dialogue.SetActive(true);
+        Trivia.SetActive(false);
+        canvas.SetActive(true);
     }
 
     //public void LoadScene1()
