@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     public float runThreshold = 0.8f;
     public float walkSpeed = 2f;
     public float runSpeed = 5f;
+    public float rotationSpeed = 100f;
     public float jumpForce = 5f;
 
     private bool isJumping = false;
@@ -26,10 +27,10 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement(); // Always move, even while jumping
+        HandleMovement(); // Always move/rotate
         if (!isJumping)
         {
-            HandleAnimation(); // Only animate walking/running if not jumping
+            HandleAnimation(); // Only play walk/run/back animations if not jumping
         }
     }
 
@@ -37,25 +38,28 @@ public class PlayerAnimator : MonoBehaviour
     {
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
-        Vector3 inputDir = new Vector3(horizontal, 0, vertical).normalized;
         float magnitude = new Vector2(horizontal, vertical).magnitude;
 
         isWalkingBack = false;
-        float speed = (magnitude >= runThreshold) ? runSpeed : walkSpeed;
 
-        if (inputDir.magnitude >= 0.01f)
+        // Rotate left/right
+        if (Mathf.Abs(horizontal) > 0.1f)
         {
-            Quaternion toRotation = Quaternion.LookRotation(inputDir, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 10f);
+            float rotationAmount = horizontal * rotationSpeed * Time.deltaTime;
+            transform.Rotate(Vector3.up, rotationAmount);
+        }
 
-            if (vertical < -walkThreshold && Mathf.Abs(vertical) >= Mathf.Abs(horizontal))
+        // Move forward/backward
+        if (Mathf.Abs(vertical) > walkThreshold)
+        {
+            float speed = (magnitude >= runThreshold) ? runSpeed : walkSpeed;
+            Vector3 moveDir = transform.forward * vertical * speed * Time.deltaTime;
+            rb.MovePosition(rb.position + moveDir);
+
+            if (vertical < -walkThreshold)
             {
                 isWalkingBack = true;
             }
-
-            Vector3 moveDir = isWalkingBack ? -transform.forward : transform.forward;
-            Vector3 newPos = rb.position + moveDir * speed * Time.deltaTime;
-            rb.MovePosition(newPos);
         }
     }
 
@@ -71,7 +75,7 @@ public class PlayerAnimator : MonoBehaviour
         }
         else
         {
-            if (vertical < -walkThreshold && Mathf.Abs(vertical) >= Mathf.Abs(horizontal))
+            if (vertical < -walkThreshold)
             {
                 animator.Play("walkback");
             }
@@ -100,13 +104,11 @@ public class PlayerAnimator : MonoBehaviour
 
     private System.Collections.IEnumerator ResetJumpAfterAnimation()
     {
-        // Wait until jump animation starts
         while (!animator.GetCurrentAnimatorStateInfo(0).IsName("jump"))
         {
             yield return null;
         }
 
-        // Wait while still in jump animation
         while (animator.GetCurrentAnimatorStateInfo(0).IsName("jump") &&
                animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
         {
