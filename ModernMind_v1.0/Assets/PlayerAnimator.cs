@@ -26,21 +26,45 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
+        HandleMovement(); // Always move, even while jumping
         if (!isJumping)
         {
-            HandleMovementAndAnimation();
+            HandleAnimation(); // Only animate walking/running if not jumping
         }
     }
 
-    private void HandleMovementAndAnimation()
+    private void HandleMovement()
     {
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
-        Vector2 direction = new Vector2(horizontal, vertical);
-        float magnitude = direction.magnitude;
-        isWalkingBack = false;
+        Vector3 inputDir = new Vector3(horizontal, 0, vertical).normalized;
+        float magnitude = new Vector2(horizontal, vertical).magnitude;
 
-        // Animation
+        isWalkingBack = false;
+        float speed = (magnitude >= runThreshold) ? runSpeed : walkSpeed;
+
+        if (inputDir.magnitude >= 0.01f)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(inputDir, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 10f);
+
+            if (vertical < -walkThreshold && Mathf.Abs(vertical) >= Mathf.Abs(horizontal))
+            {
+                isWalkingBack = true;
+            }
+
+            Vector3 moveDir = isWalkingBack ? -transform.forward : transform.forward;
+            Vector3 newPos = rb.position + moveDir * speed * Time.deltaTime;
+            rb.MovePosition(newPos);
+        }
+    }
+
+    private void HandleAnimation()
+    {
+        float horizontal = joystick.Horizontal;
+        float vertical = joystick.Vertical;
+        float magnitude = new Vector2(horizontal, vertical).magnitude;
+
         if (magnitude < walkThreshold)
         {
             animator.Play("idle");
@@ -50,7 +74,6 @@ public class PlayerAnimator : MonoBehaviour
             if (vertical < -walkThreshold && Mathf.Abs(vertical) >= Mathf.Abs(horizontal))
             {
                 animator.Play("walkback");
-                isWalkingBack = true;
             }
             else if (magnitude >= runThreshold)
             {
@@ -60,20 +83,6 @@ public class PlayerAnimator : MonoBehaviour
             {
                 animator.Play("walk");
             }
-        }
-
-        // Movement
-        Vector3 inputDir = new Vector3(horizontal, 0, vertical).normalized;
-        float speed = (magnitude >= runThreshold) ? runSpeed : walkSpeed;
-
-        if (inputDir.magnitude >= 0.01f)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(inputDir, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 10f);
-
-            Vector3 moveDir = isWalkingBack ? -transform.forward : transform.forward;
-            Vector3 newPos = rb.position + moveDir * speed * Time.deltaTime;
-            rb.MovePosition(newPos);
         }
     }
 
@@ -107,7 +116,6 @@ public class PlayerAnimator : MonoBehaviour
         isJumping = false;
     }
 
-    // This detects when player lands on the ground
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
