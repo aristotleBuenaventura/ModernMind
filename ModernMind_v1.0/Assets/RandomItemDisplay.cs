@@ -1,51 +1,49 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 using System;
+using System.Collections.Generic;
+using UnityEngine.Networking;
+using System.Collections;
 
-public class FirebaseItemTest : MonoBehaviour
+public class FirebaseRandomItemDisplay : MonoBehaviour
 {
+    [Header("UI References")]
+    public TextMeshProUGUI titleText;
+    public TextMeshProUGUI descriptionText;
+    public Image itemImage;
+
     private DatabaseReference dbReference;
 
     void Start()
     {
-        Debug.Log("[FirebaseItemTest] Checking Firebase dependencies...");
-
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted && task.Result == DependencyStatus.Available)
             {
-                Debug.Log("[FirebaseItemTest] Firebase is ready.");
+                string databaseUrl = "https://modernmind-142ff-default-rtdb.firebaseio.com/";
+                FirebaseDatabase database = FirebaseDatabase.GetInstance(FirebaseApp.DefaultInstance, databaseUrl);
+                dbReference = database.RootReference;
 
-                try
-                {
-                    string databaseUrl = "https://modernmind-142ff-default-rtdb.firebaseio.com/";
-                    FirebaseDatabase database = FirebaseDatabase.GetInstance(FirebaseApp.DefaultInstance, databaseUrl);
-                    dbReference = database.RootReference;
-
-                    Debug.Log("[FirebaseItemTest] Got DB reference. Now reading items...");
-                    ReadItems();
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError("[FirebaseItemTest] Exception setting up database: " + e);
-                }
+                LoadRandomItem();
             }
             else
             {
-                Debug.LogError("[FirebaseItemTest] Firebase not available: " + task.Exception);
+                Debug.LogError("[FirebaseRandomItemDisplay] Firebase error: " + task.Exception);
             }
         });
     }
 
-    void ReadItems()
+    void LoadRandomItem()
     {
         dbReference.Child("items").GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
             {
-                Debug.LogError("[FirebaseItemTest] Error reading items: " + task.Exception);
+                Debug.LogError("[FirebaseRandomItemDisplay] Failed to read items: " + task.Exception);
                 return;
             }
 
@@ -53,27 +51,58 @@ public class FirebaseItemTest : MonoBehaviour
             {
                 DataSnapshot snapshot = task.Result;
 
-                if (!snapshot.Exists || !snapshot.HasChildren)
+                List<DataSnapshot> items = new List<DataSnapshot>();
+                foreach (DataSnapshot item in snapshot.Children)
                 {
-                    Debug.LogWarning("[FirebaseItemTest] No items found.");
+                    items.Add(item);
+                }
+
+                if (items.Count == 0)
+                {
+                    Debug.LogWarning("[FirebaseRandomItemDisplay] No items found.");
                     return;
                 }
 
-                Debug.Log("[FirebaseItemTest] Items found: " + snapshot.ChildrenCount);
+                // Pick a random item
+                int randomIndex = UnityEngine.Random.Range(0, items.Count);
+                DataSnapshot selectedItem = items[randomIndex];
 
-                foreach (DataSnapshot item in snapshot.Children)
-                {
-                    string key = item.Key;
-                    string title = item.Child("title").Value?.ToString();
-                    string description = item.Child("description").Value?.ToString();
-                    string image = item.Child("image").Value?.ToString();
+                string title = selectedItem.Child("title").Value?.ToString();
+                string description = selectedItem.Child("description").Value?.ToString();
+                string imageUrl = selectedItem.Child("image").Value?.ToString();
 
-                    Debug.Log($"[FirebaseItemTest] Item Key: {key}");
-                    Debug.Log($"  Title: {title}");
-                    Debug.Log($"  Description: {description}");
-                    Debug.Log($"  Image: {image}");
-                }
+                // Update UI
+                titleText.text = title ?? "No Title";
+                descriptionText.text = description ?? "No Description";
+
+                StartCoroutine(LoadImageFromURL(imageUrl));
             }
         });
     }
+
+    IEnumerator LoadImageFromURL(string url)
+    {
+        if (string.IsNullOrEmpty(url))
+        {
+            Debug.LogWarning("[FirebaseRandomItemDisplay] Image URL is empty.");
+            yield break;
+        }
+
+        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
+        {
+            yield return request.SendWebRequest();
+
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("[FirebaseRandomItemDisplay] Failed to load image: " + request.error);
+            }
+            else
+            {
+                Texture2D texture = DownloadHandlerTexture.GetContent(request);
+                Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
+                itemImage.sprite = sprite;
+            }
+        }
+    }
+
 }
