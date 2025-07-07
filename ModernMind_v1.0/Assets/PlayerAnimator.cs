@@ -13,8 +13,10 @@ public class PlayerAnimator : MonoBehaviour
 
     private bool isJumping = false;
     private bool isGrounded = true;
-    private Rigidbody rb;
     private bool isWalkingBack = false;
+    private bool isPicking = false;
+
+    private Rigidbody rb;
 
     private void Start()
     {
@@ -27,10 +29,14 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement(); // Always move/rotate
-        if (!isJumping)
+        if (!isPicking)
         {
-            HandleAnimation(); // Only play walk/run/back animations if not jumping
+            HandleMovement();
+        }
+
+        if (!isJumping && !isPicking)
+        {
+            HandleAnimation();
         }
     }
 
@@ -42,14 +48,12 @@ public class PlayerAnimator : MonoBehaviour
 
         isWalkingBack = false;
 
-        // Rotate left/right
         if (Mathf.Abs(horizontal) > 0.1f)
         {
             float rotationAmount = horizontal * rotationSpeed * Time.deltaTime;
             transform.Rotate(Vector3.up, rotationAmount);
         }
 
-        // Move forward/backward
         if (Mathf.Abs(vertical) > walkThreshold)
         {
             float speed = (magnitude >= runThreshold) ? runSpeed : walkSpeed;
@@ -92,7 +96,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void Jump()
     {
-        if (!isJumping && isGrounded)
+        if (!isJumping && isGrounded && !isPicking)
         {
             isJumping = true;
             isGrounded = false;
@@ -100,6 +104,32 @@ public class PlayerAnimator : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             StartCoroutine(ResetJumpAfterAnimation());
         }
+    }
+
+    public void Pick()
+    {
+        if (!isPicking && !isJumping)
+        {
+            isPicking = true;
+            animator.Play("pick");
+            StartCoroutine(ResetPickAfterAnimation());
+        }
+    }
+
+    private System.Collections.IEnumerator ResetPickAfterAnimation()
+    {
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("pick"))
+        {
+            yield return null;
+        }
+
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName("pick") &&
+               animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        {
+            yield return null;
+        }
+
+        isPicking = false;
     }
 
     private System.Collections.IEnumerator ResetJumpAfterAnimation()
@@ -123,6 +153,33 @@ public class PlayerAnimator : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("pick"))
+        {
+            // Apply IK to keep feet in place
+            animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1);
+            animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 1);
+            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1);
+            animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 1);
+
+            Vector3 footPos = transform.position + Vector3.up * 0.05f;
+
+            animator.SetIKPosition(AvatarIKGoal.LeftFoot, footPos);
+            animator.SetIKRotation(AvatarIKGoal.LeftFoot, transform.rotation);
+            animator.SetIKPosition(AvatarIKGoal.RightFoot, footPos);
+            animator.SetIKRotation(AvatarIKGoal.RightFoot, transform.rotation);
+        }
+        else
+        {
+            // Clear IK when not picking
+            animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 0);
+            animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 0);
+            animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 0);
+            animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 0);
         }
     }
 }
