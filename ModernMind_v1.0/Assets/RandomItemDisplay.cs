@@ -37,6 +37,18 @@ public class FirebaseRandomItemDisplay : MonoBehaviour
         });
     }
 
+    public void ClearDisplay()
+    {
+        titleText.text = "Loading...";
+        descriptionText.text = "Loading...";
+        itemImage.sprite = null;
+    }
+    public void RandomizeItem()
+    {
+        ClearDisplay();       // Clear instantly
+        LoadRandomItem();     // Load new data
+    }
+
     public void LoadRandomItem()
     {
         dbReference.Child("items").GetValueAsync().ContinueWithOnMainThread(task =>
