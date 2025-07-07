@@ -3538,7 +3538,7 @@ GameObject:
   - component: {fileID: 1164907750}
   - component: {fileID: 1164907749}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4038,6 +4038,7 @@ GameObject:
   - component: {fileID: 1327854342}
   - component: {fileID: 1327854346}
   - component: {fileID: 1327854347}
+  - component: {fileID: 1327854348}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4167,6 +4168,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usernameInput: {fileID: 1666845305}
   loginButton: {fileID: 2003040010}
+--- !u!114 &1327854348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327854341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc322a56c940aa340b819978a68ac6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 1164907749}
+  descriptionText: {fileID: 2106029968}
+  itemImage: {fileID: 1870327281}
 --- !u!1 &1354383854
 GameObject:
   m_ObjectHideFlags: 0
@@ -6843,7 +6859,7 @@ GameObject:
   - component: {fileID: 2106029969}
   - component: {fileID: 2106029968}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

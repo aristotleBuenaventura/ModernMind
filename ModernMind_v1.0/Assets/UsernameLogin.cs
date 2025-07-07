@@ -17,7 +17,7 @@ public class FirebaseLogin : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("[FirebaseLogin] Start() called. Initializing Firebase...");
+        //Debug.Log("[FirebaseLogin] Start() called. Initializing Firebase...");
 
         loginButton.interactable = false;  // Disable button until Firebase is ready
 
@@ -25,25 +25,25 @@ public class FirebaseLogin : MonoBehaviour
         {
             if (task.Result == DependencyStatus.Available)
             {
-                Debug.Log("[FirebaseLogin] Firebase dependencies are available.");
+                //Debug.Log("[FirebaseLogin] Firebase dependencies are available.");
 
                 try
                 {
                     string databaseUrl = "https://modernmind-142ff-default-rtdb.firebaseio.com/";
                     FirebaseDatabase database = FirebaseDatabase.GetInstance(FirebaseApp.DefaultInstance, databaseUrl);
                     dbReference = database.RootReference;
-                    Debug.Log("[FirebaseLogin] Got database reference: " + (dbReference != null));
+                    //Debug.Log("[FirebaseLogin] Got database reference: " + (dbReference != null));
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError("[FirebaseLogin] Exception getting DB reference: " + e);
+                    //Debug.LogError("[FirebaseLogin] Exception getting DB reference: " + e);
                 }
 
                 loginButton.interactable = true;  // Enable button now that Firebase is ready
             }
             else
             {
-                Debug.LogError("[FirebaseLogin] Could not resolve Firebase dependencies: " + task.Result);
+                //Debug.LogError("[FirebaseLogin] Could not resolve Firebase dependencies: " + task.Result);
             }
         });
     }
@@ -53,7 +53,7 @@ public class FirebaseLogin : MonoBehaviour
     {
         if (dbReference == null)
         {
-            Debug.LogError("[FirebaseLogin] Database reference is not ready.");
+            //Debug.LogError("[FirebaseLogin] Database reference is not ready.");
             return;
         }
 
@@ -61,7 +61,7 @@ public class FirebaseLogin : MonoBehaviour
 
         if (string.IsNullOrEmpty(inputUsername))
         {
-            Debug.LogWarning("[FirebaseLogin] Username input is empty.");
+            //Debug.LogWarning("[FirebaseLogin] Username input is empty.");
             return;
         }
 
@@ -77,16 +77,16 @@ public class FirebaseLogin : MonoBehaviour
         {
             if (task.IsFaulted)
             {
-                Debug.LogError("[FirebaseLogin] Error checking user: " + task.Exception);
+                //Debug.LogError("[FirebaseLogin] Error checking user: " + task.Exception);
             }
             else if (task.Result.Exists)
             {
-                Debug.Log("[FirebaseLogin] User exists. Proceeding to Scene1...");
+                //Debug.Log("[FirebaseLogin] User exists. Proceeding to Scene1...");
                 ProceedToScene1();
             }
             else
             {
-                Debug.Log("[FirebaseLogin] New user detected. Creating user...");
+                //Debug.Log("[FirebaseLogin] New user detected. Creating user...");
                 SaveNewUser(normalizedUsername, originalUsername);
             }
         });
@@ -101,19 +101,19 @@ public class FirebaseLogin : MonoBehaviour
         {
             if (task.IsCompletedSuccessfully)
             {
-                Debug.Log("[FirebaseLogin] New user saved. Proceeding to Scene1...");
+                //Debug.Log("[FirebaseLogin] New user saved. Proceeding to Scene1...");
                 ProceedToScene1();
             }
             else
             {
-                Debug.LogError("[FirebaseLogin] Failed to save new user: " + task.Exception);
+                //Debug.LogError("[FirebaseLogin] Failed to save new user: " + task.Exception);
             }
         });
     }
 
     void ProceedToScene1()
     {
-        Debug.Log("[FirebaseLogin] Loading Scene1...");
+        //Debug.Log("[FirebaseLogin] Loading Scene1...");
         SceneManager.LoadScene("Scene1");
     }
 }
