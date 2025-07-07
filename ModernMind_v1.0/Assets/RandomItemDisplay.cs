@@ -37,7 +37,7 @@ public class FirebaseRandomItemDisplay : MonoBehaviour
         });
     }
 
-    void LoadRandomItem()
+    public void LoadRandomItem()
     {
         dbReference.Child("items").GetValueAsync().ContinueWithOnMainThread(task =>
         {
