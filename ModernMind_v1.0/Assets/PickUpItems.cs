@@ -15,7 +15,7 @@ public class PickUpItems : MonoBehaviour
     public GameObject trash3Image;
 
     public GameObject check;
-
+    public ShowUI taskCanvas;
     private Dictionary<string, GameObject> trashMap;
     private Dictionary<string, GameObject> imageMap;
 
@@ -62,6 +62,7 @@ public class PickUpItems : MonoBehaviour
             if (collectedTrash.Count == trashMap.Count)
             {
                 Debug.Log("ALLDONE");
+                taskCanvas.UICanvasShow();
                 check.SetActive(true);
             }
         }
