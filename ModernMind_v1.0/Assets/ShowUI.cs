@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ShowUI : MonoBehaviour
 {
-    public GameObject UICanvas, UIButton;
+    public GameObject UICanvas, UIButton, TaskArrow;
 
     void Start()
     {
@@ -15,6 +15,7 @@ public class ShowUI : MonoBehaviour
     {
         UIButton.SetActive(false);
         UICanvas.SetActive(true);
+        TaskArrow.SetActive(false);
     }
 
     public void UICanvasClose()

@@ -8,8 +8,9 @@ public class PickUpItems : MonoBehaviour
     public GameObject trash1;
     public GameObject trash2;
     public GameObject trash3;
-
+    public GameObject check;
     private Dictionary<string, GameObject> trashMap;
+    private HashSet<string> collectedTrash = new HashSet<string>();
 
     private void Start()
     {
@@ -23,15 +24,23 @@ public class PickUpItems : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (trashMap.ContainsKey(other.tag))
+        if (trashMap.ContainsKey(other.tag) && !collectedTrash.Contains(other.tag))
         {
             Debug.Log("Done");
             other.gameObject.SetActive(false);
+
+            collectedTrash.Add(other.tag); // Track collected trash
 
             GameObject displayObject = trashMap[other.tag];
             if (displayObject != null)
             {
                 StartCoroutine(ShowAndHide(displayObject, 3f));
+            }
+
+            if (collectedTrash.Count == trashMap.Count)
+            {
+                Debug.Log("ALLDONE");
+                check.SetActive(true);
             }
         }
     }

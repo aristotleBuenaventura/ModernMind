@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 public class Scene1CanvasManager : MonoBehaviour
 {
     public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas;
-    public GameObject FirstCamera, JoseCamera, Controller;
+    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow;
 
     void Start()
     {
         FirstCanvasShow();
+        TaskButton.SetActive(false);
+        TaskArrow.SetActive(false);
         Controller.SetActive(false);
         FirstCamera.SetActive(true);
         JoseCamera.SetActive(false);
@@ -50,6 +52,8 @@ public class Scene1CanvasManager : MonoBehaviour
     public void FifthCanvasClose()
     {
         FifthCanvas.SetActive(false);
+        TaskButton.SetActive(true);
+        TaskArrow.SetActive(true);
     }
 
     private void ShowDialogue(GameObject dialogue)
