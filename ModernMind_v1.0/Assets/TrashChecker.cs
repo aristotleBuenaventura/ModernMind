@@ -12,6 +12,8 @@ public class TrashChecker : MonoBehaviour
         {
             PlayerPrefs.SetString("CheckerValue", checkerValue);
             PlayerPrefs.Save(); // Optional, ensures data is written immediately
+            Debug.Log("Saved CheckerValue: " + PlayerPrefs.GetString("CheckerValue"));
+
             Bag.UICanvasShow();
             CloseLid.SetActive(false);
             OpenLid.SetActive(true);
@@ -27,7 +29,6 @@ public class TrashChecker : MonoBehaviour
             CloseLid.SetActive(true);
             OpenLid.SetActive(false);
             Buttons.SetActive(false);
-            
         }
     }
 }

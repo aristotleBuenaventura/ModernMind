@@ -2,13 +2,27 @@ using UnityEngine;
 
 public class TrashResultClose : MonoBehaviour
 {
-    public GameObject Result1, Result2;
+    public GameObject Tumpak, Mali;
     public ShowUI bag;
 
     public void ResultClose()
     {
-        Result1.SetActive(false);
-        Result2.SetActive(false);
+        Tumpak.SetActive(false);
+        Mali.SetActive(false);
         bag.UICanvasShow();
+    }
+
+    public void TumpakShow()
+    {
+        Tumpak.SetActive(true);
+        Mali.SetActive(false);
+        bag.UICanvasClose();
+    }
+
+    public void MaliShow()
+    {
+        Tumpak.SetActive(false);
+        Mali.SetActive(true);
+        bag.UICanvasClose();
     }
 }
