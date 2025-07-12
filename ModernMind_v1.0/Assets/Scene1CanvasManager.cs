@@ -4,12 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class Scene1CanvasManager : MonoBehaviour
 {
-    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas;
-    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow;
+    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas;
+    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles;
 
     void Start()
     {
         FirstCanvasShow();
+        TrashCircles.SetActive(false);
         TaskButton.SetActive(false);
         TaskArrow.SetActive(false);
         Controller.SetActive(false);
@@ -19,6 +20,10 @@ public class Scene1CanvasManager : MonoBehaviour
         ThirdCanvas.SetActive(false);
         ForthCanvas.SetActive(false);
         FifthCanvas.SetActive(false);
+        SixthCanvas.SetActive(false);
+        SeventhCanvas.SetActive(false);
+        EighthCanvas.SetActive(false);
+        NinthCanvas.SetActive(false);   
     }
 
     public void FirstCanvasShow()
@@ -56,6 +61,32 @@ public class Scene1CanvasManager : MonoBehaviour
         TaskArrow.SetActive(true);
     }
 
+    public void SixthCanvasShow()
+    {
+        ShowDialogue(SixthCanvas);
+    }
+
+    public void SeventhCanvasShow()
+    {
+        ShowDialogue(SeventhCanvas);
+    }
+
+    public void EighthCanvasShow()
+    {
+        ShowDialogue(EighthCanvas);
+    }
+
+    public void NinthCanvasShow()
+    {
+        ShowDialogue(NinthCanvas);
+    }
+
+    public void NinthCanvasClose()
+    {
+        NinthCanvas.SetActive(false);
+        TrashCircles.SetActive(true);
+    }
+
     private void ShowDialogue(GameObject dialogue)
     {
         FirstCanvas.SetActive(false);
@@ -63,6 +94,10 @@ public class Scene1CanvasManager : MonoBehaviour
         ThirdCanvas.SetActive(false);
         ForthCanvas.SetActive(false);
         FifthCanvas.SetActive(false);
+        SixthCanvas.SetActive(false);
+        SeventhCanvas.SetActive(false);
+        EighthCanvas.SetActive(false);
+        NinthCanvas.SetActive(false);
         dialogue.SetActive(true);
     }
 }

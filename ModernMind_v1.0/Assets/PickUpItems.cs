@@ -14,6 +14,8 @@ public class PickUpItems : MonoBehaviour
     public GameObject trash2Image;
     public GameObject trash3Image;
 
+    public GameObject trashCircle;
+
     public GameObject check;
     public ShowUI taskCanvas;
     private Dictionary<string, GameObject> trashMap;
@@ -23,6 +25,7 @@ public class PickUpItems : MonoBehaviour
 
     private void Start()
     {
+        trashCircle.SetActive(false);
         trashMap = new Dictionary<string, GameObject>
         {
             { "trash1", trash1 },
@@ -63,6 +66,7 @@ public class PickUpItems : MonoBehaviour
             {
                 Debug.Log("ALLDONE");
                 taskCanvas.UICanvasShow();
+                trashCircle.SetActive(true);
                 check.SetActive(true);
             }
         }
