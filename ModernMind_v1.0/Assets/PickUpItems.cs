@@ -8,8 +8,17 @@ public class PickUpItems : MonoBehaviour
     public GameObject trash1;
     public GameObject trash2;
     public GameObject trash3;
+
+    [Header("Trash UI Images")]
+    public GameObject trash1Image;
+    public GameObject trash2Image;
+    public GameObject trash3Image;
+
     public GameObject check;
+
     private Dictionary<string, GameObject> trashMap;
+    private Dictionary<string, GameObject> imageMap;
+
     private HashSet<string> collectedTrash = new HashSet<string>();
 
     private void Start()
@@ -20,17 +29,30 @@ public class PickUpItems : MonoBehaviour
             { "trash2", trash2 },
             { "trash3", trash3 }
         };
+
+        imageMap = new Dictionary<string, GameObject>
+        {
+            { "trash1", trash1Image },
+            { "trash2", trash2Image },
+            { "trash3", trash3Image }
+        };
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (trashMap.ContainsKey(other.tag) && !collectedTrash.Contains(other.tag))
         {
-            Debug.Log("Done");
+            Debug.Log(other.tag + " pick up");
             other.gameObject.SetActive(false);
+            collectedTrash.Add(other.tag);
 
-            collectedTrash.Add(other.tag); // Track collected trash
+            // Show corresponding image
+            if (imageMap.ContainsKey(other.tag))
+            {
+                imageMap[other.tag].SetActive(true);
+            }
 
+            // Optional: show and hide 3D placeholder object
             GameObject displayObject = trashMap[other.tag];
             if (displayObject != null)
             {
