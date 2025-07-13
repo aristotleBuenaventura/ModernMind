@@ -15,6 +15,7 @@ public class PlayerAnimator : MonoBehaviour
     private bool isGrounded = true;
     private bool isWalkingBack = false;
     private bool isPicking = false;
+    private bool canMove = true;
 
     private Rigidbody rb;
 
@@ -29,12 +30,12 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (!isPicking)
+        if (canMove && !isPicking)
         {
             HandleMovement();
         }
 
-        if (!isJumping && !isPicking)
+        if (canMove && !isJumping && !isPicking)
         {
             HandleAnimation();
         }
@@ -116,6 +117,20 @@ public class PlayerAnimator : MonoBehaviour
         }
     }
 
+    public void ForceIdle()
+    {
+        canMove = false;
+        rb.linearVelocity = Vector3.zero;
+        isJumping = false;
+        isPicking = false;
+        animator.Play("idle");
+    }
+
+    public void ResumeMovement()
+    {
+        canMove = true;
+    }
+
     private System.Collections.IEnumerator ResetPickAfterAnimation()
     {
         while (!animator.GetCurrentAnimatorStateInfo(0).IsName("pick"))
@@ -160,7 +175,6 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("pick"))
         {
-            // Apply IK to keep feet in place
             animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1);
             animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 1);
             animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1);
@@ -175,7 +189,6 @@ public class PlayerAnimator : MonoBehaviour
         }
         else
         {
-            // Clear IK when not picking
             animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 0);
             animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 0);
             animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 0);

@@ -6,7 +6,7 @@ public class Scene1CanvasManager : MonoBehaviour
 {
     public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas;
     public GameObject TenthCanvas, EleventhCanvas, TwelfthCanvas, ThirteenthCanvas, FourteenthCanvas, FifteenthCanvas, SixteenthCanvas, SeventeenthCanvas;
-    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles;
+    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera;
 
     void Start()
     {
@@ -100,6 +100,9 @@ public class Scene1CanvasManager : MonoBehaviour
     public void TenthCanvasShow()
     {
         ShowDialogue(TenthCanvas);
+        JoseCamera.SetActive(false);
+        MilesCamera.SetActive(true);
+        Controller.SetActive(false);
     }
 
     public void EleventhCanvasShow()
@@ -110,16 +113,22 @@ public class Scene1CanvasManager : MonoBehaviour
     public void TwelfthCanvasShow()
     {
         ShowDialogue(TwelfthCanvas);
+        MilesCamera.SetActive(false);
+        FirstCamera.SetActive(true);
     }
 
     public void ThirteenthCanvasShow()
     {
         ShowDialogue(ThirteenthCanvas);
+        MilesCamera.SetActive(true);
+        FirstCamera.SetActive(false);
     }
 
     public void FourteenthCanvasShow()
     {
         ShowDialogue(FourteenthCanvas);
+        MilesCamera.SetActive(false);
+        JoseCamera.SetActive(true);
     }
 
     public void FifteenthCanvasShow()
