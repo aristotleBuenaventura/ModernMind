@@ -19,4 +19,9 @@ public class PlatformCounter : MonoBehaviour
             Debug.Log("All platforms visited!");
         }
     }
+
+    public void counterPlus()
+    {
+        counter++;
+    }
 }

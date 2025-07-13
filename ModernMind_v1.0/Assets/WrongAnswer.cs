@@ -3,13 +3,18 @@ using UnityEngine;
 public class WrongAnswer : MonoBehaviour
 {
     public GameObject platform;
+    public PlatformCounter counter;
+
+    private bool hasTriggered = false; // Ensures it only runs once
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!hasTriggered && other.CompareTag("Player"))
         {
-            platform.SetActive(false);
+            hasTriggered = true;
 
+            platform.SetActive(false);
+            counter.counterIncrement();
         }
     }
 }
