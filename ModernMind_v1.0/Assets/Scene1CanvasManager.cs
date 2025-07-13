@@ -7,7 +7,7 @@ public class Scene1CanvasManager : MonoBehaviour
     public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas;
     public GameObject TenthCanvas, EleventhCanvas, TwelfthCanvas, ThirteenthCanvas, FourteenthCanvas, FifteenthCanvas, SixteenthCanvas, SeventeenthCanvas;
     public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera, TV , Usok;
-    public TeleportPosition teleport;
+    public TeleportPosition teleport, squidgameTeleport;
 
     void Start()
     {
@@ -156,6 +156,12 @@ public class Scene1CanvasManager : MonoBehaviour
     public void SeventeenthCanvasShow()
     {
         ShowDialogue(SeventeenthCanvas);
+    }
+
+    public void SeventeenthCanvasClose()
+    {
+        SeventeenthCanvas.SetActive(false);
+        squidgameTeleport.TeleportToCube();
     }
 
     private void ShowDialogue(GameObject dialogue)
