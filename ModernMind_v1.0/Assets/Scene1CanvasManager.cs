@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Scene1CanvasManager : MonoBehaviour
 {
     public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas;
+    public GameObject TenthCanvas, EleventhCanvas, TwelfthCanvas, ThirteenthCanvas, FourteenthCanvas, FifteenthCanvas, SixteenthCanvas, SeventeenthCanvas;
     public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles;
 
     void Start()
@@ -23,7 +24,16 @@ public class Scene1CanvasManager : MonoBehaviour
         SixthCanvas.SetActive(false);
         SeventhCanvas.SetActive(false);
         EighthCanvas.SetActive(false);
-        NinthCanvas.SetActive(false);   
+        NinthCanvas.SetActive(false);
+
+        TenthCanvas.SetActive(false);
+        EleventhCanvas.SetActive(false);
+        TwelfthCanvas.SetActive(false);
+        ThirteenthCanvas.SetActive(false);
+        FourteenthCanvas.SetActive(false);
+        FifteenthCanvas.SetActive(false);
+        SixteenthCanvas.SetActive(false);
+        SeventeenthCanvas.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -87,6 +97,46 @@ public class Scene1CanvasManager : MonoBehaviour
         TrashCircles.SetActive(true);
     }
 
+    public void TenthCanvasShow()
+    {
+        ShowDialogue(TenthCanvas);
+    }
+
+    public void EleventhCanvasShow()
+    {
+        ShowDialogue(EleventhCanvas);
+    }
+
+    public void TwelfthCanvasShow()
+    {
+        ShowDialogue(TwelfthCanvas);
+    }
+
+    public void ThirteenthCanvasShow()
+    {
+        ShowDialogue(ThirteenthCanvas);
+    }
+
+    public void FourteenthCanvasShow()
+    {
+        ShowDialogue(FourteenthCanvas);
+    }
+
+    public void FifteenthCanvasShow()
+    {
+        ShowDialogue(FifteenthCanvas);
+    }
+
+    public void SixteenthCanvasShow()
+    {
+        ShowDialogue(SixteenthCanvas);
+    }
+
+    public void SeventeenthCanvasShow()
+    {
+        ShowDialogue(SeventeenthCanvas);
+    }
+
     private void ShowDialogue(GameObject dialogue)
     {
         FirstCanvas.SetActive(false);
@@ -98,6 +148,14 @@ public class Scene1CanvasManager : MonoBehaviour
         SeventhCanvas.SetActive(false);
         EighthCanvas.SetActive(false);
         NinthCanvas.SetActive(false);
+        TenthCanvas.SetActive(false);
+        EleventhCanvas.SetActive(false);
+        TwelfthCanvas.SetActive(false);
+        ThirteenthCanvas.SetActive(false);
+        FourteenthCanvas.SetActive(false);
+        FifteenthCanvas.SetActive(false);
+        SixteenthCanvas.SetActive(false);
+        SeventeenthCanvas.SetActive(false);
         dialogue.SetActive(true);
     }
 }
