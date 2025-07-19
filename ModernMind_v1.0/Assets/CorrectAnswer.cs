@@ -3,8 +3,9 @@ using UnityEngine;
 public class CorrectAnswer : MonoBehaviour
 {
     public GameObject PlayerCube, cube;
-    public GameObject canvas, wrong, questionCanvas;
+    public GameObject wrong, questionCanvas, correctCanvas;
     public PlatformCounter counter;
+    public KeyManager key;
 
     private bool hasTriggered = false; // Ensures it only runs once
 
@@ -15,8 +16,9 @@ public class CorrectAnswer : MonoBehaviour
             hasTriggered = true;
 
             PlayerCube.transform.position = cube.transform.position;
+            correctCanvas.SetActive(true);
+            key.IncrementKey(1);
             counter.counterPlus();
-            canvas.SetActive(true);
             wrong.SetActive(false);
             questionCanvas.SetActive(false);
         }

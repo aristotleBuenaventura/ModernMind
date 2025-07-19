@@ -5,7 +5,7 @@ public class WrongAnswer : MonoBehaviour
 {
     public GameObject platform, correct, correctAnswer;
     public PlatformCounter counter;
-    public GameObject Crack1, Crack2, Crack3;
+    public GameObject Crack1, Crack2, Crack3, wrongCanvas;
 
     private bool hasTriggered = false;
 
@@ -25,6 +25,7 @@ public class WrongAnswer : MonoBehaviour
             StartCoroutine(ShakeAndDisable());
             counter.counterIncrement();
             correctAnswer.SetActive(false);
+            wrongCanvas.SetActive(true);
         }
     }
 
