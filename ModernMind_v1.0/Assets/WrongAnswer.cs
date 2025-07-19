@@ -5,8 +5,16 @@ public class WrongAnswer : MonoBehaviour
 {
     public GameObject platform, correct, correctAnswer;
     public PlatformCounter counter;
+    public GameObject Crack1, Crack2, Crack3;
 
     private bool hasTriggered = false;
+
+    void Start()
+    {
+        Crack1.SetActive(false);
+        Crack2.SetActive(false);
+        Crack3.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +34,9 @@ public class WrongAnswer : MonoBehaviour
         float elapsed = 0f;
         float magnitude = 0.05f;
 
+        // Start crack timers
+        StartCoroutine(ShowCrackEffects());
+
         while (elapsed < shakeDuration)
         {
             float x = Random.Range(-magnitude, magnitude);
@@ -38,9 +49,20 @@ public class WrongAnswer : MonoBehaviour
             yield return null;
         }
 
-        // Reset position and disable platform
         platform.transform.position = originalPos;
         platform.SetActive(false);
         correct.SetActive(false);
+    }
+
+    private IEnumerator ShowCrackEffects()
+    {
+        yield return new WaitForSeconds(0f);
+        Crack1.SetActive(true);
+
+        yield return new WaitForSeconds(1f); // now total 2s
+        Crack2.SetActive(true);
+
+        yield return new WaitForSeconds(1f); // now total 4s
+        Crack3.SetActive(true);
     }
 }
