@@ -14,7 +14,7 @@ public class CloseCanvas : MonoBehaviour
 
     IEnumerator CountdownAndReveal()
     {
-        int seconds = 10;
+        int seconds = 1;
 
         while (seconds > 0)
         {
