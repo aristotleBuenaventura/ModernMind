@@ -73634,6 +73634,7 @@ GameObject:
   - component: {fileID: 956788311}
   - component: {fileID: 956788313}
   - component: {fileID: 956788312}
+  - component: {fileID: 956788314}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -73702,6 +73703,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956788310}
   m_CullTransparentMesh: 1
+--- !u!114 &956788314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956788310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d07c4248e74214b84651be59cb8ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneStarMessages:
+  - Subok lang ulit, mas gagaling ka pa!
+  - "Ayos lang \u2018yan, umpisa pa lang!"
+  - "Tuloy lang, kaya pa \u2018yan!"
+  - Kayang-kaya pa sa susunod!
+  - "Unang hakbang palang \u2018yan!"
+  twoStarMessages:
+  - Malapit na! Patuloy lang sa paghasa!
+  - Galing! Kaunti na lang!
+  - Maganda na! Kayang-kaya pang iangat!
+  - Tuloy lang, halos nandoon ka na!
+  - Ayos! Isang hakbang pa!
+  threeStarMessages:
+  - Perpekto! Likas na bayani.
+  - Perpekto! Ang galing mo!
+  - "Galing na galing kami sa\u2019yo!"
+  - Walang kapantay ang galing mo!
+  - Ikaw ang bida ng kalikasan!
+  keyValue: {fileID: 1891925038}
+  oneStar: {fileID: 1361193674}
+  twoStar: {fileID: 450032411}
+  threeStar: {fileID: 2092016298}
+  messageDisplay: {fileID: 451085594}
 --- !u!33 &957235055
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -126775,7 +126811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1361193675
 RectTransform:
   m_ObjectHideFlags: 0
