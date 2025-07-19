@@ -3,7 +3,7 @@ using UnityEngine;
 public class CorrectAnswer : MonoBehaviour
 {
     public GameObject PlayerCube, cube;
-    public GameObject canvas;
+    public GameObject canvas, wrong;
     public PlatformCounter counter;
 
     private bool hasTriggered = false; // Ensures it only runs once
@@ -17,6 +17,7 @@ public class CorrectAnswer : MonoBehaviour
             PlayerCube.transform.position = cube.transform.position;
             counter.counterPlus();
             canvas.SetActive(true);
+            wrong.SetActive(false);
         }
     }
 }

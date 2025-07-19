@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WrongAnswer : MonoBehaviour
 {
-    public GameObject platform;
+    public GameObject platform, correct;
     public PlatformCounter counter;
 
     private bool hasTriggered = false; // Ensures it only runs once
@@ -15,6 +15,7 @@ public class WrongAnswer : MonoBehaviour
 
             platform.SetActive(false);
             counter.counterIncrement();
+            correct.SetActive(false);
         }
     }
 }
