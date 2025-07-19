@@ -12,7 +12,8 @@ public class LifeManager : MonoBehaviour
     public GameObject Pick;
     public GameObject Jump;
     public GameObject GameOver;
-
+    public GameObject ULITIN, TUMULOY, Star, GameOverImage;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -41,6 +42,10 @@ public class LifeManager : MonoBehaviour
             Jump.SetActive(false);
             Pick.SetActive(false);
             GameOver.SetActive(true);
+            ULITIN.SetActive(true);
+            TUMULOY.SetActive(false);
+            Star.SetActive(false);
+            GameOverImage.SetActive(true);
             // Implement Game Over logic here
 
         }
