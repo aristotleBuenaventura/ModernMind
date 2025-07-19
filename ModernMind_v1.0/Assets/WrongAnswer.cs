@@ -16,6 +16,7 @@ public class WrongAnswer : MonoBehaviour
         Crack3.SetActive(false);
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (!hasTriggered && other.CompareTag("Player"))
@@ -32,13 +33,16 @@ public class WrongAnswer : MonoBehaviour
         Vector3 originalPos = platform.transform.position;
         float shakeDuration = 5f;
         float elapsed = 0f;
-        float magnitude = 0.05f;
 
-        // Start crack timers
+        // Crack timers
         StartCoroutine(ShowCrackEffects());
 
         while (elapsed < shakeDuration)
         {
+            // Intensity increases every second
+            float intensityMultiplier = 1f + Mathf.Floor(elapsed); // goes from 1 to 5
+            float magnitude = 0.05f * intensityMultiplier;
+
             float x = Random.Range(-magnitude, magnitude);
             float y = Random.Range(-magnitude, magnitude);
             float z = Random.Range(-magnitude, magnitude);
@@ -56,13 +60,13 @@ public class WrongAnswer : MonoBehaviour
 
     private IEnumerator ShowCrackEffects()
     {
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(1f);
         Crack1.SetActive(true);
 
-        yield return new WaitForSeconds(1f); // now total 2s
+        yield return new WaitForSeconds(1f); // 2s total
         Crack2.SetActive(true);
 
-        yield return new WaitForSeconds(1f); // now total 4s
+        yield return new WaitForSeconds(2f); // 4s total
         Crack3.SetActive(true);
     }
 }
