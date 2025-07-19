@@ -5,7 +5,8 @@ public class LifeManager : MonoBehaviour
 {
     public static LifeManager Instance { get; private set; }
 
-    [SerializeField] private Image[] hearts; // Array to hold heart images
+    [SerializeField] private Image[] hearts;
+    [SerializeField] private Image[] Secondhearts;
     private int lives = 3; // Initial lives
     public GameObject Joystick;
     public GameObject Pick;
@@ -30,6 +31,7 @@ public class LifeManager : MonoBehaviour
         {
             lives--;
             UpdateHearts();
+            UpdateSecondHearts();
         }
 
         if (lives <= 0)
@@ -49,6 +51,14 @@ public class LifeManager : MonoBehaviour
         for (int i = 0; i < hearts.Length; i++)
         {
             hearts[i].enabled = (i < lives); // Hide hearts when lives decrease
+        }
+    }
+
+    private void UpdateSecondHearts()
+    {
+        for (int i = 0; i < Secondhearts.Length; i++)
+        {
+            Secondhearts[i].enabled = (i < lives); // Hide hearts when lives decrease
         }
     }
 }
