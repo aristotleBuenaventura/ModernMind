@@ -45,7 +45,9 @@ public class LifeManager : MonoBehaviour
             ULITIN.SetActive(true);
             TUMULOY.SetActive(false);
             Star.SetActive(false);
-            GameOverImage.SetActive(true);
+            GameOverImage
+                
+                .SetActive(true);
             // Implement Game Over logic here
 
         }
