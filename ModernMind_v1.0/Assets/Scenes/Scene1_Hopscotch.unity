@@ -16659,6 +16659,7 @@ GameObject:
   - component: {fileID: 181550564}
   - component: {fileID: 181550563}
   - component: {fileID: 181550565}
+  - component: {fileID: 181550566}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -16799,6 +16800,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 181550563}
   typingSpeed: 0.06
+--- !u!82 &181550566
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181550561}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b8bb59ecbe991d743bdb8f623cec7f14, type: 3}
+  m_Resource: {fileID: 8300000, guid: b8bb59ecbe991d743bdb8f623cec7f14, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!23 &183167244
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17345,7 +17443,6 @@ GameObject:
   - component: {fileID: 190546363}
   - component: {fileID: 190546362}
   - component: {fileID: 190546361}
-  - component: {fileID: 190546368}
   m_Layer: 0
   m_Name: Q9 Platform
   m_TagString: Ground
@@ -17523,20 +17620,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190546359}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &190546368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190546359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 384340031}
-  typingSpeed: 0.06
 --- !u!1 &191380069
 GameObject:
   m_ObjectHideFlags: 0
@@ -21800,7 +21883,6 @@ GameObject:
   - component: {fileID: 237703709}
   - component: {fileID: 237703708}
   - component: {fileID: 237703707}
-  - component: {fileID: 237703715}
   m_Layer: 0
   m_Name: Q4 Platform
   m_TagString: Ground
@@ -21978,20 +22060,6 @@ Transform:
   - {fileID: 328091136}
   m_Father: {fileID: 1601638054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &237703715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237703706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1393768938}
-  typingSpeed: 0.06
 --- !u!1001 &241890048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28076,6 +28144,7 @@ GameObject:
   - component: {fileID: 309832980}
   - component: {fileID: 309832979}
   - component: {fileID: 309832983}
+  - component: {fileID: 309832984}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -28279,6 +28348,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &309832984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309832977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 30153090}
+  typingSpeed: 0.06
 --- !u!1 &310375945
 GameObject:
   m_ObjectHideFlags: 0
@@ -29790,7 +29873,6 @@ GameObject:
   - component: {fileID: 329058784}
   - component: {fileID: 329058783}
   - component: {fileID: 329058782}
-  - component: {fileID: 329058789}
   m_Layer: 0
   m_Name: Q12 Platform
   m_TagString: Ground
@@ -29968,20 +30050,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329058780}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &329058789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329058780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 2013536311}
-  typingSpeed: 0.06
 --- !u!33 &329811662
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30861,6 +30929,7 @@ GameObject:
   - component: {fileID: 339630547}
   - component: {fileID: 339630546}
   - component: {fileID: 339630550}
+  - component: {fileID: 339630551}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -31064,6 +31133,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &339630551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339630544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1032438700}
+  typingSpeed: 0.06
 --- !u!64 &339735630
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38848,6 +38931,7 @@ GameObject:
   - component: {fileID: 411227820}
   - component: {fileID: 411227819}
   - component: {fileID: 411227823}
+  - component: {fileID: 411227824}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -39051,6 +39135,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &411227824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411227817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1199161538}
+  typingSpeed: 0.06
 --- !u!4 &411244080
 Transform:
   m_ObjectHideFlags: 0
@@ -39479,7 +39577,6 @@ GameObject:
   - component: {fileID: 413345684}
   - component: {fileID: 413345683}
   - component: {fileID: 413345682}
-  - component: {fileID: 413345689}
   m_Layer: 0
   m_Name: Q6 Platform
   m_TagString: Ground
@@ -39657,20 +39754,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413345680}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &413345689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413345680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1760071523}
-  typingSpeed: 0.06
 --- !u!23 &413638784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55214,6 +55297,7 @@ GameObject:
   - component: {fileID: 506209464}
   - component: {fileID: 506209463}
   - component: {fileID: 506209467}
+  - component: {fileID: 506209468}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -55417,6 +55501,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &506209468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506209461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1890429326}
+  typingSpeed: 0.06
 --- !u!1 &506270472
 GameObject:
   m_ObjectHideFlags: 0
@@ -62620,7 +62718,6 @@ GameObject:
   - component: {fileID: 571724810}
   - component: {fileID: 571724809}
   - component: {fileID: 571724808}
-  - component: {fileID: 571724816}
   m_Layer: 0
   m_Name: Q7 Platform
   m_TagString: Ground
@@ -62798,20 +62895,6 @@ Transform:
   - {fileID: 2074774422}
   m_Father: {fileID: 1601638054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &571724816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571724807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 559460196}
-  typingSpeed: 0.06
 --- !u!1 &571920491
 GameObject:
   m_ObjectHideFlags: 0
@@ -64671,6 +64754,7 @@ GameObject:
   - component: {fileID: 587561588}
   - component: {fileID: 587561587}
   - component: {fileID: 587561591}
+  - component: {fileID: 587561592}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -64874,6 +64958,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &587561592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587561585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1536140510}
+  typingSpeed: 0.06
 --- !u!23 &587705136
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67923,6 +68021,7 @@ GameObject:
   - component: {fileID: 616826010}
   - component: {fileID: 616826009}
   - component: {fileID: 616826013}
+  - component: {fileID: 616826014}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -68126,6 +68225,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &616826014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616826007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 602533001}
+  typingSpeed: 0.06
 --- !u!1 &619802985
 GameObject:
   m_ObjectHideFlags: 0
@@ -73867,7 +73980,6 @@ GameObject:
   - component: {fileID: 678303689}
   - component: {fileID: 678303688}
   - component: {fileID: 678303687}
-  - component: {fileID: 678303695}
   m_Layer: 0
   m_Name: Q15 Platform
   m_TagString: Ground
@@ -74045,20 +74157,6 @@ Transform:
   - {fileID: 1912197960}
   m_Father: {fileID: 1601638054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &678303695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678303686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 654206846}
-  typingSpeed: 0.06
 --- !u!64 &678667984
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -74666,7 +74764,6 @@ GameObject:
   - component: {fileID: 682769020}
   - component: {fileID: 682769019}
   - component: {fileID: 682769018}
-  - component: {fileID: 682769025}
   m_Layer: 0
   m_Name: Q17 Platform
   m_TagString: Ground
@@ -74844,20 +74941,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682769016}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &682769025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682769016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 30153090}
-  typingSpeed: 0.06
 --- !u!1 &683517467
 GameObject:
   m_ObjectHideFlags: 0
@@ -75806,6 +75889,7 @@ GameObject:
   - component: {fileID: 692816114}
   - component: {fileID: 692816113}
   - component: {fileID: 692816118}
+  - component: {fileID: 692816119}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -76009,6 +76093,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &692816119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692816112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 559460196}
+  typingSpeed: 0.06
 --- !u!33 &692839620
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -80660,7 +80758,6 @@ GameObject:
   - component: {fileID: 744710980}
   - component: {fileID: 744710979}
   - component: {fileID: 744710978}
-  - component: {fileID: 744710985}
   m_Layer: 0
   m_Name: Q14 Platform
   m_TagString: Ground
@@ -80838,20 +80935,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744710976}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &744710985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744710976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1890429326}
-  typingSpeed: 0.06
 --- !u!1 &745119450
 GameObject:
   m_ObjectHideFlags: 0
@@ -83535,7 +83618,6 @@ GameObject:
   - component: {fileID: 773431481}
   - component: {fileID: 773431480}
   - component: {fileID: 773431479}
-  - component: {fileID: 773431486}
   m_Layer: 0
   m_Name: Q13 Platform
   m_TagString: Ground
@@ -83713,20 +83795,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773431477}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &773431486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773431477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1911797154}
-  typingSpeed: 0.06
 --- !u!33 &773970290
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97566,6 +97634,7 @@ GameObject:
   - component: {fileID: 926755382}
   - component: {fileID: 926755381}
   - component: {fileID: 926755380}
+  - component: {fileID: 926755384}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -97672,6 +97741,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &926755384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926755378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1014157133}
+  typingSpeed: 0.06
 --- !u!4 &926767027
 Transform:
   m_ObjectHideFlags: 0
@@ -98469,7 +98552,6 @@ GameObject:
   - component: {fileID: 934746683}
   - component: {fileID: 934746682}
   - component: {fileID: 934746681}
-  - component: {fileID: 934746689}
   m_Layer: 0
   m_Name: Q10 Platform
   m_TagString: Ground
@@ -98647,20 +98729,6 @@ Transform:
   - {fileID: 1596801997}
   m_Father: {fileID: 1601638054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &934746689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934746680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1103009692}
-  typingSpeed: 0.06
 --- !u!4 &935578887
 Transform:
   m_ObjectHideFlags: 0
@@ -115670,7 +115738,6 @@ GameObject:
   - component: {fileID: 1042531481}
   - component: {fileID: 1042531482}
   - component: {fileID: 1042531483}
-  - component: {fileID: 1042531484}
   m_Layer: 0
   m_Name: Q3 Platform
   m_TagString: Ground
@@ -115848,20 +115915,6 @@ MonoBehaviour:
   - {fileID: 1231056235}
   - {fileID: 37726754}
   shuffledOrder: 
---- !u!114 &1042531484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042531475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1873739575}
-  typingSpeed: 0.06
 --- !u!1 &1042533228
 GameObject:
   m_ObjectHideFlags: 0
@@ -129617,7 +129670,6 @@ GameObject:
   - component: {fileID: 1107194718}
   - component: {fileID: 1107194717}
   - component: {fileID: 1107194716}
-  - component: {fileID: 1107194723}
   m_Layer: 0
   m_Name: Q11 Platform
   m_TagString: Ground
@@ -129795,20 +129847,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107194714}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1107194723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107194714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 358787812}
-  typingSpeed: 0.06
 --- !u!1 &1107534590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 120449a04911a924ca1239be382ff0be, type: 3}
@@ -136698,6 +136736,7 @@ GameObject:
   - component: {fileID: 1175352700}
   - component: {fileID: 1175352699}
   - component: {fileID: 1175352703}
+  - component: {fileID: 1175352704}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -136901,6 +136940,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1175352704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175352697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 2013536311}
+  typingSpeed: 0.06
 --- !u!1 &1175766343
 GameObject:
   m_ObjectHideFlags: 0
@@ -137098,6 +137151,7 @@ GameObject:
   - component: {fileID: 1178295466}
   - component: {fileID: 1178295469}
   - component: {fileID: 1178295470}
+  - component: {fileID: 1178295471}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -137301,6 +137355,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1178295471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178295464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1001206682}
+  typingSpeed: 0.06
 --- !u!64 &1179536261
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -154657,6 +154725,7 @@ GameObject:
   - component: {fileID: 1265818470}
   - component: {fileID: 1265818469}
   - component: {fileID: 1265818474}
+  - component: {fileID: 1265818475}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -154860,6 +154929,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1265818475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265818468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 2126404123}
+  typingSpeed: 0.06
 --- !u!4 &1265982610
 Transform:
   m_ObjectHideFlags: 0
@@ -156991,7 +157074,6 @@ GameObject:
   - component: {fileID: 1297553720}
   - component: {fileID: 1297553719}
   - component: {fileID: 1297553718}
-  - component: {fileID: 1297553725}
   m_Layer: 0
   m_Name: Q8 Platform
   m_TagString: Ground
@@ -157169,20 +157251,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297553716}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1297553725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297553716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1536140510}
-  typingSpeed: 0.06
 --- !u!1 &1298184129
 GameObject:
   m_ObjectHideFlags: 0
@@ -166711,7 +166779,6 @@ GameObject:
   - component: {fileID: 1381822992}
   - component: {fileID: 1381822991}
   - component: {fileID: 1381822990}
-  - component: {fileID: 1381822997}
   m_Layer: 0
   m_Name: Q19 Platform
   m_TagString: Ground
@@ -166889,20 +166956,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381822988}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1381822997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381822988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 602533001}
-  typingSpeed: 0.06
 --- !u!64 &1382422554
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -175830,6 +175883,7 @@ GameObject:
   - component: {fileID: 1460244050}
   - component: {fileID: 1460244049}
   - component: {fileID: 1460244054}
+  - component: {fileID: 1460244055}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -176033,6 +176087,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1460244055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460244048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1103009692}
+  typingSpeed: 0.06
 --- !u!33 &1460333282
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -176886,6 +176954,7 @@ GameObject:
   - component: {fileID: 1464875394}
   - component: {fileID: 1464875397}
   - component: {fileID: 1464875398}
+  - component: {fileID: 1464875399}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -177089,6 +177158,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1464875399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464875392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1873739575}
+  typingSpeed: 0.06
 --- !u!23 &1464931488
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -182088,7 +182171,6 @@ GameObject:
   - component: {fileID: 1502436938}
   - component: {fileID: 1502436937}
   - component: {fileID: 1502436936}
-  - component: {fileID: 1502436944}
   m_Layer: 0
   m_Name: Q18 Platform
   m_TagString: Ground
@@ -182266,20 +182348,6 @@ Transform:
   - {fileID: 1393453531}
   m_Father: {fileID: 1601638054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1502436944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502436935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 2126404123}
-  typingSpeed: 0.06
 --- !u!1 &1502485266 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: acf38ccf2258add4ba3aa2d89b708d2a, type: 3}
@@ -199884,6 +199952,7 @@ GameObject:
   - component: {fileID: 1657542665}
   - component: {fileID: 1657542664}
   - component: {fileID: 1657542668}
+  - component: {fileID: 1657542669}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -200087,6 +200156,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1657542669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657542662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 384340031}
+  typingSpeed: 0.06
 --- !u!1 &1657565842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
@@ -207176,7 +207259,6 @@ GameObject:
   - component: {fileID: 1722767934}
   - component: {fileID: 1722767935}
   - component: {fileID: 1722767936}
-  - component: {fileID: 1722767937}
   m_Layer: 0
   m_Name: Q1 Platform
   m_TagString: Ground
@@ -207354,20 +207436,6 @@ MonoBehaviour:
   - {fileID: 1032517151}
   - {fileID: 2014325494}
   shuffledOrder: 
---- !u!114 &1722767937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722767928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1001206682}
-  typingSpeed: 0.06
 --- !u!4 &1723429567
 Transform:
   m_ObjectHideFlags: 0
@@ -209922,7 +209990,6 @@ GameObject:
   - component: {fileID: 1747541423}
   - component: {fileID: 1747541422}
   - component: {fileID: 1747541421}
-  - component: {fileID: 1747541428}
   m_Layer: 0
   m_Name: Q20 Platform
   m_TagString: Ground
@@ -210100,20 +210167,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747541419}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1747541428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747541419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1578533008}
-  typingSpeed: 0.06
 --- !u!1 &1747808991
 GameObject:
   m_ObjectHideFlags: 0
@@ -213921,6 +213974,7 @@ GameObject:
   - component: {fileID: 1786592919}
   - component: {fileID: 1786592918}
   - component: {fileID: 1786592923}
+  - component: {fileID: 1786592924}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -214124,6 +214178,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1786592924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786592917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 654206846}
+  typingSpeed: 0.06
 --- !u!1 &1787272571
 GameObject:
   m_ObjectHideFlags: 0
@@ -215598,7 +215666,6 @@ GameObject:
   - component: {fileID: 1805067546}
   - component: {fileID: 1805067545}
   - component: {fileID: 1805067544}
-  - component: {fileID: 1805067551}
   m_Layer: 0
   m_Name: Q5 Platform
   m_TagString: Ground
@@ -215776,20 +215843,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805067542}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1805067551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805067542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1199161538}
-  typingSpeed: 0.06
 --- !u!33 &1805107448
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -220939,7 +220992,6 @@ GameObject:
   - component: {fileID: 1848002554}
   - component: {fileID: 1848002553}
   - component: {fileID: 1848002552}
-  - component: {fileID: 1848002559}
   m_Layer: 0
   m_Name: Q16 Platform
   m_TagString: Ground
@@ -221117,20 +221169,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848002550}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1848002559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848002550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1032438700}
-  typingSpeed: 0.06
 --- !u!23 &1848212914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -224926,6 +224964,7 @@ GameObject:
   - component: {fileID: 1878445899}
   - component: {fileID: 1878445902}
   - component: {fileID: 1878445903}
+  - component: {fileID: 1878445904}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -225129,6 +225168,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1878445904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878445897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 872259164}
+  typingSpeed: 0.06
 --- !u!4 &1878505289
 Transform:
   m_ObjectHideFlags: 0
@@ -236649,6 +236702,7 @@ GameObject:
   - component: {fileID: 1934576290}
   - component: {fileID: 1934576289}
   - component: {fileID: 1934576293}
+  - component: {fileID: 1934576294}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -236852,6 +236906,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1934576294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934576287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1578533008}
+  typingSpeed: 0.06
 --- !u!64 &1934581373
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -239121,7 +239189,6 @@ GameObject:
   - component: {fileID: 1952769410}
   - component: {fileID: 1952769412}
   - component: {fileID: 1952769413}
-  - component: {fileID: 1952769414}
   m_Layer: 0
   m_Name: Q2 Platform
   m_TagString: Ground
@@ -239299,20 +239366,6 @@ MonoBehaviour:
   - {fileID: 1596559356}
   - {fileID: 1110770800}
   shuffledOrder: 
---- !u!114 &1952769414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952769405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 872259164}
-  typingSpeed: 0.06
 --- !u!1 &1952863067
 GameObject:
   m_ObjectHideFlags: 0
@@ -245119,6 +245172,7 @@ GameObject:
   - component: {fileID: 1998817729}
   - component: {fileID: 1998817728}
   - component: {fileID: 1998817732}
+  - component: {fileID: 1998817733}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -245322,6 +245376,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1998817733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998817726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1911797154}
+  typingSpeed: 0.06
 --- !u!1 &1999487683
 GameObject:
   m_ObjectHideFlags: 0
@@ -254580,6 +254648,7 @@ GameObject:
   - component: {fileID: 2040039572}
   - component: {fileID: 2040039571}
   - component: {fileID: 2040039573}
+  - component: {fileID: 2040039574}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -254721,6 +254790,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 2040039571}
   typingSpeed: 0.06
+--- !u!82 &2040039574
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040039569}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 114a142ac98097448a5331f3067e9317, type: 3}
+  m_Resource: {fileID: 8300000, guid: 114a142ac98097448a5331f3067e9317, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2040330803
 GameObject:
   m_ObjectHideFlags: 0
@@ -264999,6 +265165,7 @@ GameObject:
   - component: {fileID: 2085820454}
   - component: {fileID: 2085820453}
   - component: {fileID: 2085820455}
+  - component: {fileID: 2085820456}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -265140,6 +265307,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 2085820453}
   typingSpeed: 0.06
+--- !u!82 &2085820456
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085820451}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f01dd204f24e46a4ea2afcf936409a80, type: 3}
+  m_Resource: {fileID: 8300000, guid: f01dd204f24e46a4ea2afcf936409a80, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &2086852315
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -267170,6 +267434,7 @@ GameObject:
   - component: {fileID: 2102559533}
   - component: {fileID: 2102559532}
   - component: {fileID: 2102559537}
+  - component: {fileID: 2102559538}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -267373,6 +267638,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2102559538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102559531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1393768938}
+  typingSpeed: 0.06
 --- !u!23 &2104061913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -268633,6 +268912,7 @@ GameObject:
   - component: {fileID: 2110156177}
   - component: {fileID: 2110156176}
   - component: {fileID: 2110156180}
+  - component: {fileID: 2110156181}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -268836,6 +269116,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2110156181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110156174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfbe964c14e354bb7bc613512cc790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 358787812}
+  typingSpeed: 0.06
 --- !u!1 &2110329513
 GameObject:
   m_ObjectHideFlags: 0
