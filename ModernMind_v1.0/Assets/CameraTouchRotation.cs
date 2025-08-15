@@ -5,8 +5,8 @@ public class CameraTouchRotation : MonoBehaviour
     public Transform player;        // Player to orbit around
     public GameObject cam;           // The camera object to rotate
     public float rotationSpeed = 2f; // Rotation sensitivity
-    public float distance = 5f;      // Camera distance from player
-    public float height = 4f;        // Camera height above player
+    public float distance = 10f;      // Camera distance from player
+    public float height = 2f;        // Camera height above player
 
     private Vector2 lastTouchPos;
     private bool rotating = false;
