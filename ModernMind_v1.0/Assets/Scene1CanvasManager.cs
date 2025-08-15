@@ -6,13 +6,13 @@ public class Scene1CanvasManager : MonoBehaviour
 {
     public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas;
     public GameObject TenthCanvas, EleventhCanvas, TwelfthCanvas, ThirteenthCanvas, FourteenthCanvas, FifteenthCanvas, SixteenthCanvas, SeventeenthCanvas;
-    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera, TV , Usok, BoardCamera;
+    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera, TV , Usok, BoardCamera, loading;
     public TeleportPosition teleport;
     public SceneLoader scene;
 
     void Start()
     {
-        FirstCanvasShow();
+        loading.SetActive(true);
         TrashCircles.SetActive(false);
         TaskButton.SetActive(false);
         TaskArrow.SetActive(false);
@@ -172,6 +172,7 @@ public class Scene1CanvasManager : MonoBehaviour
 
     private void ShowDialogue(GameObject dialogue)
     {
+        loading.SetActive(false);
         FirstCanvas.SetActive(false);
         SecondCanvas.SetActive(false);
         ThirdCanvas.SetActive(false);
