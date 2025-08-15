@@ -192733,8 +192733,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601638053}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015748957, y: 0, z: 0, w: -0.999876}
-  m_LocalPosition: {x: 153.88, y: 34.36, z: -61.63}
+  m_LocalRotation: {x: -0.0056289206, y: -0, z: -0, w: -0.99998415}
+  m_LocalPosition: {x: 153.88, y: 34.483883, z: -61.451557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -192763,7 +192763,7 @@ Transform:
   - {fileID: 300128018}
   - {fileID: 504306173}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.645, y: 0, z: 0}
 --- !u!114 &1601638055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309651,6 +309651,7 @@ GameObject:
   - component: {fileID: 8821259119666112556}
   - component: {fileID: 8821259119666112557}
   - component: {fileID: 8821259119666112558}
+  - component: {fileID: 8821259119666112559}
   m_Layer: 0
   m_Name: Jose
   m_TagString: Player
@@ -324536,6 +324537,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8821259119666112559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489942604672490040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6dacf2427782649ad9e7b36506fe7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8821259119666112555}
+  cam: {fileID: 1982023512}
+  rotationSpeed: 2
+  distance: 10
+  height: 2
 --- !u!137 &8850119559017553392
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
