@@ -1,79 +1,68 @@
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.EventSystems;
+
+[System.Serializable]
+public class TrashItem
+{
+    public string key;             // e.g. "blue", "green", "black"
+    public GameObject parentObj;   // parent object to hide
+    public GameObject buttonObj;   // button to hide
+    [HideInInspector] public bool isDone = false;
+}
 
 public class TrashLogic : MonoBehaviour
 {
+    [Header("UI References")]
     public TrashResultClose result;
     public ShowUI bag;
-    public GameObject BurgerParent, LibroParent, CupParent, BlueButton, GreenButton, BlackButton, check, circles;
     public ShowUI task;
-    private bool blueDone = false;
-    private bool greenDone = false;
-    private bool blackDone = false;
+
+    [Header("Objects")]
+    public GameObject check;
+    public GameObject circles;
+
+    [Header("Trash Items")]
+    public List<TrashItem> trashItems = new List<TrashItem>();
 
     private void CheckAllDone()
     {
-        if (blueDone && greenDone && blackDone)
+        foreach (var item in trashItems)
         {
-            Debug.Log("ALLDONE");
-            result.ResultClose();
-            bag.UICanvasClose();
-            task.UICanvasShow();
-            check.SetActive(true);
-            circles.SetActive(false);
-
-
+            if (!item.isDone) return; // stop if any unfinished
         }
+
+        // If all are done
+        Debug.Log("ALLDONE");
+        result.ResultClose();
+        bag.UICanvasClose();
+        task.UICanvasShow();
+        check.SetActive(true);
+        circles.SetActive(false);
     }
 
-    public void blueLogic()
+    // ✅ Call this from the Button’s OnClick, passing in its buttonObj
+    public void CheckLogic(string colorKey)
     {
         string savedValue = PlayerPrefs.GetString("CheckerValue");
         bag.UICanvasClose();
 
-        if (savedValue == "blue")
+        // detect which button was pressed
+        GameObject pressedButton = EventSystem.current.currentSelectedGameObject;
+
+        TrashItem item = trashItems.Find(x => x.key == colorKey && x.buttonObj == pressedButton);
+        if (item == null)
+        {
+            Debug.LogWarning($"No TrashItem found for key: {colorKey}");
+            return;
+        }
+
+        if (savedValue == colorKey)
         {
             result.TumpakShow();
-            BlueButton.SetActive(false);
-            LibroParent.SetActive(false);
-            blueDone = true;
-            CheckAllDone();
-        }
-        else
-        {
-            result.MaliShow();
-        }
-    }
-
-    public void greenLogic()
-    {
-        string savedValue = PlayerPrefs.GetString("CheckerValue");
-        bag.UICanvasClose();
-
-        if (savedValue == "green")
-        {
-            result.TumpakShow();
-            GreenButton.SetActive(false);
-            BurgerParent.SetActive(false);
-            greenDone = true;
-            CheckAllDone();
-        }
-        else
-        {
-            result.MaliShow();
-        }
-    }
-
-    public void blackLogic()
-    {
-        string savedValue = PlayerPrefs.GetString("CheckerValue");
-        bag.UICanvasClose();
-
-        if (savedValue == "black")
-        {
-            result.TumpakShow();
-            BlackButton.SetActive(false);
-            CupParent.SetActive(false);
-            blackDone = true;
+            if (item.buttonObj != null) item.buttonObj.SetActive(false);
+            if (item.parentObj != null) item.parentObj.SetActive(false);
+            item.isDone = true;
             CheckAllDone();
         }
         else
