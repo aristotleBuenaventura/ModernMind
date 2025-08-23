@@ -26511,7 +26511,6 @@ GameObject:
   - component: {fileID: 284680162}
   - component: {fileID: 284680161}
   - component: {fileID: 284680160}
-  - component: {fileID: 284680159}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -26539,22 +26538,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.53440666, y: 0.012563705}
   m_SizeDelta: {x: 7.8764, y: 2.873}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &284680159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284680157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03cd451f76719a345aef6ad8ace8de19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QuestionWall: {fileID: 914059320}
-  choice1: {fileID: 0}
-  choice2: {fileID: 0}
-  countdownText: {fileID: 0}
 --- !u!114 &284680160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172188,7 +172171,6 @@ GameObject:
   - component: {fileID: 1417445448}
   - component: {fileID: 1417445447}
   - component: {fileID: 1417445446}
-  - component: {fileID: 1417445445}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Untagged
@@ -172215,21 +172197,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1003.99976, y: 220}
   m_SizeDelta: {x: 119.2559, y: 161.2863}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1417445445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417445443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b79e6b2f0bf9a74688583714d4766a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UICanvas: {fileID: 0}
-  UIButton: {fileID: 1417445443}
-  TaskArrow: {fileID: 0}
 --- !u!114 &1417445446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172290,6 +172257,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1601638056}
+        m_TargetAssemblyTypeName: PlatformCounter, Assembly-CSharp
+        m_MethodName: SkipToNextCube
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -194266,6 +194245,7 @@ MonoBehaviour:
   - {fileID: 643179401}
   PlayerCube: {fileID: 1651466526}
   counter: 0
+  player: {fileID: 5489942604672490040}
 --- !u!1 &1601643957
 GameObject:
   m_ObjectHideFlags: 0
