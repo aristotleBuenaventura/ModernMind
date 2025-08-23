@@ -34,11 +34,19 @@ public class TrashLogic : MonoBehaviour
     [Header("UI Text")]
     public TextMeshProUGUI commentsTrash; // global TMP text to show feedback
 
+    // Score rewards for each trash type
+    private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
+    {
+        { "green", 7 },
+        { "blue", 5 },
+        { "black", 3 }
+    };
+
     private void CheckAllDone()
     {
         foreach (var item in trashItems)
         {
-            if (!item.isDone) return; // stop if any unfinished
+            if (!item.isDone) return; // bail if any unfinished
         }
 
         // If all are done
@@ -51,54 +59,61 @@ public class TrashLogic : MonoBehaviour
         circles.SetActive(false);
     }
 
-    // ✅ Call this from the Button’s OnClick, passing in its buttonObj
+    // Centralized finishing logic; always calls CheckAllDone()
+    private void FinishItem(TrashItem item, bool correct)
+    {
+        if (item.buttonObj != null) item.buttonObj.SetActive(false);
+        if (item.parentObj != null) item.parentObj.SetActive(false);
+
+        item.isDone = true;
+
+        if (commentsTrash != null)
+            commentsTrash.text = correct ? "Correct!" : item.comments;
+
+        // Optional: progress log
+        int done = 0;
+        foreach (var t in trashItems) if (t.isDone) done++;
+        Debug.Log($"Progress: {done}/{trashItems.Count} items done.");
+
+        CheckAllDone();
+    }
+
+    // Call this from the Button’s OnClick, passing in its color key
     public void CheckLogic(string colorKey)
     {
         string savedValue = PlayerPrefs.GetString("CheckerValue");
         bag.UICanvasClose();
 
-        // detect which button was pressed
-        GameObject pressedButton = EventSystem.current.currentSelectedGameObject;
+        // Detect which UI object was pressed (could be a child of the button)
+        GameObject pressedGO = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
 
-        TrashItem item = trashItems.Find(x => x.key == colorKey && x.buttonObj == pressedButton);
+        TrashItem item = trashItems.Find(x =>
+            x.key == colorKey &&
+            pressedGO != null &&
+            (x.buttonObj == pressedGO || pressedGO.transform.IsChildOf(x.buttonObj.transform))
+        );
+
         if (item == null)
         {
-            Debug.LogWarning($"No TrashItem found for key: {colorKey}");
+            Debug.LogWarning($"No TrashItem found for key: {colorKey} (pressedGO={pressedGO?.name})");
             return;
         }
 
-        if (savedValue == colorKey)
+        bool correct = (savedValue == colorKey);
+
+        if (correct)
         {
             result.TumpakShow();
-            coins.IncrementScore(5);
 
-            // Hide button and object
-            if (item.buttonObj != null) item.buttonObj.SetActive(false);
-            if (item.parentObj != null) item.parentObj.SetActive(false);
+            if (scoreRewards.TryGetValue(colorKey, out int reward))
+                coins.IncrementScore(reward);
 
-            // Mark as done
-            item.isDone = true;
-
-            // ✅ Optional: show a positive message too
-            if (commentsTrash != null)
-                commentsTrash.text = "Correct!";
-
-            CheckAllDone();
+            FinishItem(item, true);   // ✅ calls CheckAllDone()
         }
         else
         {
-            // Hide button and object
-            if (item.buttonObj != null) item.buttonObj.SetActive(false);
-            if (item.parentObj != null) item.parentObj.SetActive(false);
-
-            // Mark as done
-            item.isDone = true;
-
-            // Show item-specific feedback
-            if (commentsTrash != null)
-                commentsTrash.text = item.comments;
-
             result.MaliShow();
+            FinishItem(item, false);  // ✅ calls CheckAllDone() even on wrong
         }
     }
 }
