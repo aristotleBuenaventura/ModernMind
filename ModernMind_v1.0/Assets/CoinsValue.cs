@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro; // Import TextMeshPro namespace
 
 public class CoinsValue : MonoBehaviour
 {
     public static CoinsValue Instance { get; private set; }
-    private int score = 0;
+    private int score; // will be set from PlayerPrefs
     [SerializeField] private TextMeshProUGUI scoreText; // Reference to the TextMeshPro UI
 
     private void Awake()
@@ -13,6 +13,9 @@ public class CoinsValue : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // 🔥 Load saved score immediately when object is created
+            score = PlayerPrefs.GetInt("coins", 0);
         }
         else
         {
@@ -22,18 +25,26 @@ public class CoinsValue : MonoBehaviour
 
     private void Start()
     {
-        UpdateScoreText();
+        UpdateScoreText(); // update UI with loaded coins
     }
 
     public void IncrementScore(int amount)
     {
         score += amount;
-        UpdateScoreText();
+        SaveScore();
     }
 
     public void DecrementScore(int amount)
     {
         score -= amount;
+        if (score < 0) score = 0; // prevent negative coins
+        SaveScore();
+    }
+
+    private void SaveScore()
+    {
+        PlayerPrefs.SetInt("coins", score);
+        PlayerPrefs.Save();
         UpdateScoreText();
     }
 
