@@ -8,6 +8,7 @@ public class TrashItem
     public string key;             // e.g. "blue", "green", "black"
     public GameObject parentObj;   // parent object to hide
     public GameObject buttonObj;   // button to hide
+    
     [HideInInspector] public bool isDone = false;
 }
 
@@ -26,6 +27,7 @@ public class TrashLogic : MonoBehaviour
     public List<TrashItem> trashItems = new List<TrashItem>();
 
     public CoinsValue coins;
+    public TimerDisplay timer;
 
     private void CheckAllDone()
     {
@@ -36,6 +38,7 @@ public class TrashLogic : MonoBehaviour
 
         // If all are done
         Debug.Log("ALLDONE");
+        timer.StartTimer();
         result.ResultClose();
         bag.UICanvasClose();
         task.UICanvasShow();
