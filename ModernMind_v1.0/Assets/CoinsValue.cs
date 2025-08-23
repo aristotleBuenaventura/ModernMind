@@ -34,6 +34,12 @@ public class CoinsValue : MonoBehaviour
         SaveScore();
     }
 
+    public void ResetScore()
+    {
+        score = 0;
+        SaveScore();
+    }
+
     public void DecrementScore(int amount)
     {
         score -= amount;
