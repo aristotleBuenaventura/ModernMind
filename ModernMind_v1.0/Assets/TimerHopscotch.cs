@@ -9,7 +9,7 @@ public class TimerHopscotch : MonoBehaviour
     private bool isRunning = false; // Timer won't run until StartTimer() is called
     private bool isFrozen = false; // Added freeze flag
 
-    public GameObject gameover, settings;
+    public GameObject gameover, settings, freezeUI;
 
     void Update()
     {
@@ -65,7 +65,9 @@ public class TimerHopscotch : MonoBehaviour
     private IEnumerator FreezeCoroutine(int seconds)
     {
         isFrozen = true;
+        freezeUI.SetActive(true);
         yield return new WaitForSeconds(seconds); // waits in real time
+        freezeUI.SetActive(false);
         isFrozen = false;
     }
 }
