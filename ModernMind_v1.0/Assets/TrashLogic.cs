@@ -37,8 +37,8 @@ public class TrashLogic : MonoBehaviour
     // Score rewards for each trash type
     private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
     {
-        { "green", 7 },
-        { "blue", 5 },
+        { "green", 5 },
+        { "blue", 7 },
         { "black", 3 }
     };
 

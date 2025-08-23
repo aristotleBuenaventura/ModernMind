@@ -6,6 +6,7 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
 {
 
     public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, controls;
+    public TimerHopscotch timer;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
     {
         ThirdCanvas.SetActive(false);
         controls.SetActive(true);
+        timer.StartTimer();
     }
 
     private void ShowDialogue(GameObject dialogue)

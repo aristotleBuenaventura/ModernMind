@@ -2,7 +2,8 @@
 
 public class UseFreeze : MonoBehaviour
 {
-    public GameObject withStock, noStock;
+    public GameObject withStock, noStock, bag, inventory;
+    public TimerHopscotch timer;
 
     public void UseFreezePower()
     {
@@ -13,10 +14,12 @@ public class UseFreeze : MonoBehaviour
             currentCount--;
             PlayerPrefs.SetInt("freeze", currentCount);
             PlayerPrefs.Save();
-
+            timer.FreezeTimerForSeconds(30);
+            bag.SetActive(true);
+            inventory.SetActive(false);
             Debug.Log($"freeze used. Remaining: {currentCount}");
 
-            // 🔥 Update the UI immediately
+
             LoadData loadData = FindObjectOfType<LoadData>();
             if (loadData != null)
             {
