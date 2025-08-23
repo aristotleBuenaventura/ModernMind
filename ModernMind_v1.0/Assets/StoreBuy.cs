@@ -5,8 +5,9 @@ public class StoreBuy : MonoBehaviour
 {
     public int price;   // how much the item costs
     public int stock;   // how many items available
-    public GameObject buyButton, noStock;
+    public GameObject buyButton, noStock, noMoney;
     public TextMeshProUGUI stockText; // reference to your stock text UI
+
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class StoreBuy : MonoBehaviour
 
         if (currentCoins < price)
         {
+            noMoney.SetActive(true);
             return;
         }
 
