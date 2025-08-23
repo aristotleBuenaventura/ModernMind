@@ -87,6 +87,13 @@ public class TrashLogic : MonoBehaviour
         }
         else
         {
+            // Hide button and object
+            if (item.buttonObj != null) item.buttonObj.SetActive(false);
+            if (item.parentObj != null) item.parentObj.SetActive(false);
+
+            // Mark as done
+            item.isDone = true;
+
             // Show item-specific feedback
             if (commentsTrash != null)
                 commentsTrash.text = item.comments;
