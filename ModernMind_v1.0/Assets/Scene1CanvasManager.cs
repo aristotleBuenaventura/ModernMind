@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Scene1CanvasManager : MonoBehaviour
 {
-    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas;
+    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas, forth_2, forth_3, forth_4, forth_5, forth_6, forth_7, forth_8, loading2;
     public GameObject TenthCanvas, EleventhCanvas, TwelfthCanvas, ThirteenthCanvas, FourteenthCanvas, FifteenthCanvas, SixteenthCanvas, SeventeenthCanvas;
     public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera, TV , Usok, BoardCamera, loading;
     public TeleportPosition teleport;
@@ -28,6 +28,14 @@ public class Scene1CanvasManager : MonoBehaviour
         SeventhCanvas.SetActive(false);
         EighthCanvas.SetActive(false);
         NinthCanvas.SetActive(false);
+        forth_2.SetActive(false);
+        forth_3.SetActive(false);
+        forth_4.SetActive(false);
+        forth_5.SetActive(false);
+        forth_6.SetActive(false);
+        forth_7.SetActive(false);
+        forth_8.SetActive(false);
+        loading2.SetActive(false);
 
         TenthCanvas.SetActive(false);
         EleventhCanvas.SetActive(false);
@@ -60,6 +68,46 @@ public class Scene1CanvasManager : MonoBehaviour
     public void ForthCanvasShow()
     {
         ShowDialogue(ForthCanvas);
+    }
+
+    public void loading2Show()
+    {
+        ShowDialogue(loading2);
+    }
+
+    public void Forth_2CanvasShow()
+    {
+        ShowDialogue(forth_2);
+    }
+
+    public void Forth_3CanvasShow()
+    {
+        ShowDialogue(forth_3);
+    }
+
+    public void Forth_4CanvasShow()
+    {
+        ShowDialogue(forth_4);
+    }
+
+    public void Forth_5CanvasShow()
+    {
+        ShowDialogue(forth_5);
+    }
+
+    public void Forth_6CanvasShow()
+    {
+        ShowDialogue(forth_6);
+    }
+
+    public void Forth_7CanvasShow()
+    {
+        ShowDialogue(forth_7);
+    }
+
+    public void Forth_8CanvasShow()
+    {
+        ShowDialogue(forth_8);
     }
 
     public void FifthCanvasShow()
@@ -192,6 +240,14 @@ public class Scene1CanvasManager : MonoBehaviour
         FifteenthCanvas.SetActive(false);
         SixteenthCanvas.SetActive(false);
         SeventeenthCanvas.SetActive(false);
+        forth_2.SetActive(false);
+        forth_3.SetActive(false);
+        forth_4.SetActive(false);
+        forth_5.SetActive(false);
+        forth_6.SetActive(false);
+        forth_7.SetActive(false);
+        forth_8.SetActive(false);
+        loading2.SetActive(false);
         dialogue.SetActive(true);
     }
 }
