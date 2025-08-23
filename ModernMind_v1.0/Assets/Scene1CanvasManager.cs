@@ -9,6 +9,7 @@ public class Scene1CanvasManager : MonoBehaviour
     public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera, TV , Usok, BoardCamera, loading;
     public TeleportPosition teleport;
     public SceneLoader scene;
+    public TimerDisplay timer;
 
     void Start()
     {
@@ -67,6 +68,7 @@ public class Scene1CanvasManager : MonoBehaviour
         FirstCamera.SetActive(false);
         JoseCamera.SetActive(true);
         Controller.SetActive(true);
+        timer.StartTimer();
     }
 
     public void FifthCanvasClose()

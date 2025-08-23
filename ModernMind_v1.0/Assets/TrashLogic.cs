@@ -25,6 +25,8 @@ public class TrashLogic : MonoBehaviour
     [Header("Trash Items")]
     public List<TrashItem> trashItems = new List<TrashItem>();
 
+    public CoinsValue coins;
+
     private void CheckAllDone()
     {
         foreach (var item in trashItems)
@@ -60,6 +62,7 @@ public class TrashLogic : MonoBehaviour
         if (savedValue == colorKey)
         {
             result.TumpakShow();
+            coins.IncrementScore(5);
             if (item.buttonObj != null) item.buttonObj.SetActive(false);
             if (item.parentObj != null) item.parentObj.SetActive(false);
             item.isDone = true;
