@@ -6,6 +6,7 @@ public class TimerDisplay : MonoBehaviour
     public TextMeshProUGUI timerText;
     private float remainingTime = 300f; // 5 minutes in seconds
     private bool isRunning = false; // Timer won't run until StartTimer() is called
+    public GameObject gameover, settings;
 
     void Update()
     {
@@ -25,6 +26,8 @@ public class TimerDisplay : MonoBehaviour
                 remainingTime = 0;
                 isRunning = false; // Stop when it hits 0
                 timerText.text = "00:00";
+                gameover.SetActive(true);
+                settings.SetActive(false);
                 // (Optional) You can trigger an event here when the timer reaches zero
             }
         }
