@@ -34,7 +34,7 @@ public class TrashLogic : MonoBehaviour
     [Header("UI Text")]
     public TextMeshProUGUI commentsTrash; // global TMP text to show feedback
 
-    public GameObject Antas1Result;
+    public GameObject Antas1Result, blueStore;
 
     // Score rewards for each trash type
     private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
@@ -57,6 +57,7 @@ public class TrashLogic : MonoBehaviour
         result.ResultClose();
         bag.UICanvasClose();
         Antas1Result.SetActive(true);
+        blueStore.SetActive(true);
         check.SetActive(true);
         circles.SetActive(false);
     }
