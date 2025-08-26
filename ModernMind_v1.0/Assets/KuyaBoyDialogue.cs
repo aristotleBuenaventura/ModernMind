@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class KuyaBoyDialogue : MonoBehaviour
 {
-    public GameObject dialogue, circle;
+    public GameObject dialogue, circle, check;
 
 
     private void OnTriggerEnter(Collider other)
@@ -10,6 +10,7 @@ public class KuyaBoyDialogue : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             dialogue.SetActive(true);
+            check.SetActive(true);
             circle.SetActive(false);
         }
     }
