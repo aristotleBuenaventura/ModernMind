@@ -6,7 +6,7 @@ public class CorrectAnswer : MonoBehaviour
     public GameObject wrong, questionCanvas, correctCanvas;
     public PlatformCounter counter;
     public KeyManager key;
-
+    public CoinsValue coins;
     private bool hasTriggered = false; // Ensures it only runs once
 
     private void OnTriggerEnter(Collider other)
@@ -18,6 +18,7 @@ public class CorrectAnswer : MonoBehaviour
             PlayerCube.transform.position = cube.transform.position;
             correctCanvas.SetActive(true);
             key.IncrementKey(1);
+            coins.IncrementScore(3);
             counter.counterPlus();
             wrong.SetActive(false);
             questionCanvas.SetActive(false);
