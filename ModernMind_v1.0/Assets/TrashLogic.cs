@@ -1,84 +1,122 @@
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using TMPro;
+
+[System.Serializable]
+public class TrashItem
+{
+    public string key;             // e.g. "blue", "green", "black"
+    public GameObject parentObj;   // parent object to hide
+    public GameObject buttonObj;   // button to hide
+    [TextArea] public string comments; // message shown on wrong answer
+    [HideInInspector] public bool isDone = false;
+}
 
 public class TrashLogic : MonoBehaviour
 {
+    [Header("UI References")]
     public TrashResultClose result;
     public ShowUI bag;
-    public GameObject BurgerParent, LibroParent, CupParent, BlueButton, GreenButton, BlackButton, check, circles;
     public ShowUI task;
-    private bool blueDone = false;
-    private bool greenDone = false;
-    private bool blackDone = false;
+
+    [Header("Objects")]
+    public GameObject check;
+    public GameObject circles;
+
+    [Header("Trash Items")]
+    public List<TrashItem> trashItems = new List<TrashItem>();
+
+    [Header("Game Systems")]
+    public CoinsValue coins;
+    public TimerDisplay timer;
+
+    [Header("UI Text")]
+    public TextMeshProUGUI commentsTrash; // global TMP text to show feedback
+
+    public GameObject Antas1Result, blueStore;
+
+    // Score rewards for each trash type
+    private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
+    {
+        { "green", 5 },
+        { "blue", 7 },
+        { "black", 3 }
+    };
 
     private void CheckAllDone()
     {
-        if (blueDone && greenDone && blackDone)
+        foreach (var item in trashItems)
         {
-            Debug.Log("ALLDONE");
-            result.ResultClose();
-            bag.UICanvasClose();
-            task.UICanvasShow();
-            check.SetActive(true);
-            circles.SetActive(false);
-
-
+            if (!item.isDone) return; // bail if any unfinished
         }
+
+        // If all are done
+        Debug.Log("ALLDONE");
+        timer.StartTimer();
+        result.ResultClose();
+        bag.UICanvasClose();
+        Antas1Result.SetActive(true);
+        blueStore.SetActive(true);
+        check.SetActive(true);
+        circles.SetActive(false);
     }
 
-    public void blueLogic()
+    // Centralized finishing logic; always calls CheckAllDone()
+    private void FinishItem(TrashItem item, bool correct)
+    {
+        if (item.buttonObj != null) item.buttonObj.SetActive(false);
+        if (item.parentObj != null) item.parentObj.SetActive(false);
+
+        item.isDone = true;
+
+        if (commentsTrash != null)
+            commentsTrash.text = correct ? "Correct!" : item.comments;
+
+        // Optional: progress log
+        int done = 0;
+        foreach (var t in trashItems) if (t.isDone) done++;
+        Debug.Log($"Progress: {done}/{trashItems.Count} items done.");
+
+        CheckAllDone();
+    }
+
+    // Call this from the Button’s OnClick, passing in its color key
+    public void CheckLogic(string colorKey)
     {
         string savedValue = PlayerPrefs.GetString("CheckerValue");
         bag.UICanvasClose();
 
-        if (savedValue == "blue")
+        // Detect which UI object was pressed (could be a child of the button)
+        GameObject pressedGO = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
+
+        TrashItem item = trashItems.Find(x =>
+            x.key == colorKey &&
+            pressedGO != null &&
+            (x.buttonObj == pressedGO || pressedGO.transform.IsChildOf(x.buttonObj.transform))
+        );
+
+        if (item == null)
+        {
+            Debug.LogWarning($"No TrashItem found for key: {colorKey} (pressedGO={pressedGO?.name})");
+            return;
+        }
+
+        bool correct = (savedValue == colorKey);
+
+        if (correct)
         {
             result.TumpakShow();
-            BlueButton.SetActive(false);
-            LibroParent.SetActive(false);
-            blueDone = true;
-            CheckAllDone();
+
+            if (scoreRewards.TryGetValue(colorKey, out int reward))
+                coins.IncrementScore(reward);
+
+            FinishItem(item, true);   // ✅ calls CheckAllDone()
         }
         else
         {
             result.MaliShow();
-        }
-    }
-
-    public void greenLogic()
-    {
-        string savedValue = PlayerPrefs.GetString("CheckerValue");
-        bag.UICanvasClose();
-
-        if (savedValue == "green")
-        {
-            result.TumpakShow();
-            GreenButton.SetActive(false);
-            BurgerParent.SetActive(false);
-            greenDone = true;
-            CheckAllDone();
-        }
-        else
-        {
-            result.MaliShow();
-        }
-    }
-
-    public void blackLogic()
-    {
-        string savedValue = PlayerPrefs.GetString("CheckerValue");
-        bag.UICanvasClose();
-
-        if (savedValue == "black")
-        {
-            result.TumpakShow();
-            BlackButton.SetActive(false);
-            CupParent.SetActive(false);
-            blackDone = true;
-            CheckAllDone();
-        }
-        else
-        {
-            result.MaliShow();
+            FinishItem(item, false);  // ✅ calls CheckAllDone() even on wrong
         }
     }
 }
