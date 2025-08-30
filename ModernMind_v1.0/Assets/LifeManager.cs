@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // ✅ Import TextMeshPro namespace
 
 public class LifeManager : MonoBehaviour
 {
@@ -7,13 +8,15 @@ public class LifeManager : MonoBehaviour
 
     [SerializeField] private Image[] hearts;
     [SerializeField] private Image[] Secondhearts;
-    private int lives = 3; // Initial lives
+    [SerializeField] private TextMeshProUGUI livesText; // ✅ Add TMP text reference
+
+    public int lives = 3; // Initial lives
     public GameObject Joystick;
     public GameObject Pick;
     public GameObject Jump;
     public GameObject GameOver;
     public GameObject ULITIN, TUMULOY, Star, GameOverImage;
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,6 +27,12 @@ public class LifeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Update()
+    {
+        // ✅ Continuously update text every frame
+        livesText.text = lives.ToString();
     }
 
     public void DecreaseLife()
@@ -45,11 +54,7 @@ public class LifeManager : MonoBehaviour
             ULITIN.SetActive(true);
             TUMULOY.SetActive(false);
             Star.SetActive(false);
-            GameOverImage
-                
-                .SetActive(true);
-            // Implement Game Over logic here
-
+            GameOverImage.SetActive(true);
         }
     }
 
@@ -57,7 +62,7 @@ public class LifeManager : MonoBehaviour
     {
         for (int i = 0; i < hearts.Length; i++)
         {
-            hearts[i].enabled = (i < lives); // Hide hearts when lives decrease
+            hearts[i].enabled = (i < lives);
         }
     }
 
@@ -65,7 +70,7 @@ public class LifeManager : MonoBehaviour
     {
         for (int i = 0; i < Secondhearts.Length; i++)
         {
-            Secondhearts[i].enabled = (i < lives); // Hide hearts when lives decrease
+            Secondhearts[i].enabled = (i < lives);
         }
     }
 }
