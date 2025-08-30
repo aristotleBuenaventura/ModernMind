@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Scene1_HopscotchCanvasManager : MonoBehaviour
 {
 
-    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, controls;
+    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, FourthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, controls;
     public TimerHopscotch timer;
 
     void Start()
@@ -13,6 +13,11 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         FirstCanvasShow();
         SecondCanvas.SetActive(false);
         ThirdCanvas.SetActive(false);
+        FourthCanvas.SetActive(false);
+        FifthCanvas.SetActive(false);
+        SixthCanvas.SetActive(false);
+        SeventhCanvas.SetActive(false);
+        EighthCanvas.SetActive(false);
         controls.SetActive(false);
     }
 
@@ -43,7 +48,11 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         FirstCanvas.SetActive(false);
         SecondCanvas.SetActive(false);
         ThirdCanvas.SetActive(false);
-
+        FourthCanvas.SetActive(false);
+        FifthCanvas.SetActive(false);
+        SixthCanvas.SetActive(false);
+        SeventhCanvas.SetActive(false);
+        EighthCanvas.SetActive(false);
         dialogue.SetActive(true);
     }
 
