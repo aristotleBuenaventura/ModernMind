@@ -36,9 +36,34 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         ShowDialogue(ThirdCanvas);
     }
 
-    public void ThirdCanvasClose()
+    public void FourthCanvasShow()
     {
-        ThirdCanvas.SetActive(false);
+        ShowDialogue(FourthCanvas);
+    }
+
+    public void FifthCanvasShow()
+    {
+        ShowDialogue(FifthCanvas);
+    }
+
+    public void SixthCanvasShow()
+    {
+        ShowDialogue(SixthCanvas);
+    }
+
+    public void SeventhCanvasShow()
+    {
+        ShowDialogue(SeventhCanvas);
+    }
+
+    public void EighthCanvasShow()
+    {
+        ShowDialogue(EighthCanvas);
+    }
+
+    public void EighthCanvasClose()
+    {
+        EighthCanvas.SetActive(false);
         controls.SetActive(true);
         timer.StartTimer();
     }
