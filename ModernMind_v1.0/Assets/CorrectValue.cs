@@ -4,13 +4,12 @@ using TMPro;
 public class CorrectValue : MonoBehaviour
 {
 
-    public TextMeshProUGUI key, coins;
+    public TextMeshProUGUI key;
     public KeyManager keyValue;
 
     void Update()
     {
         key.text = keyValue.GetKeyCount().ToString();
-        coins.text = (keyValue.GetKeyCount()*3).ToString();
 
     }
 

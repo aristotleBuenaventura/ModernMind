@@ -30011,7 +30011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &303077807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60445,7 +60445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &516390379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -101499,7 +101499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &921031861
 RectTransform:
   m_ObjectHideFlags: 0
@@ -105506,6 +105506,7 @@ MonoBehaviour:
   ULITIN: {fileID: 117738106}
   TUMULOY: {fileID: 153666465}
   messageDisplay: {fileID: 451085594}
+  key: {fileID: 1485119904}
 --- !u!1 &957173170
 GameObject:
   m_ObjectHideFlags: 0
@@ -130122,6 +130123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 1072061920}
+  coins: {fileID: 1948455755}
   keyValue: {fileID: 1891925038}
 --- !u!1 &1072500946
 GameObject:
@@ -187233,6 +187235,7 @@ GameObject:
   - component: {fileID: 1485119901}
   - component: {fileID: 1485119903}
   - component: {fileID: 1485119902}
+  - component: {fileID: 1485119904}
   m_Layer: 0
   m_Name: Image (2)
   m_TagString: Untagged
@@ -187300,6 +187303,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485119900}
   m_CullTransparentMesh: 1
+--- !u!114 &1485119904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485119900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d79b98b2b947546b993d7035a8fe8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyText: {fileID: 2082739434}
 --- !u!1 &1485755741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
@@ -251214,7 +251230,7 @@ GameObject:
   - component: {fileID: 1948455756}
   - component: {fileID: 1948455755}
   m_Layer: 0
-  m_Name: Player Value
+  m_Name: coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278405,7 +278421,6 @@ GameObject:
   - component: {fileID: 2082739433}
   - component: {fileID: 2082739435}
   - component: {fileID: 2082739434}
-  - component: {fileID: 2082739436}
   m_Layer: 0
   m_Name: Correct Value
   m_TagString: Untagged
@@ -278531,21 +278546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082739432}
   m_CullTransparentMesh: 1
---- !u!114 &2082739436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082739432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc988905170a9d4f96a87386d4f99e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: {fileID: 2082739434}
-  coins: {fileID: 1948455755}
-  keyValue: {fileID: 1891925038}
 --- !u!33 &2083387253
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -282791,6 +282791,7 @@ MonoBehaviour:
   ULITIN: {fileID: 0}
   TUMULOY: {fileID: 0}
   messageDisplay: {fileID: 1889985084}
+  key: {fileID: 0}
 --- !u!114 &2109271109
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class StarValue : MonoBehaviour
 
     public GameObject oneStar, twoStar, threeStar, ULITIN, TUMULOY;
     public TextMeshProUGUI messageDisplay;
-
+    public KeyManager2 key;
     private int currentTier = -1; // -1 means nothing has been shown yet
 
     void Update()
@@ -38,23 +38,26 @@ public class StarValue : MonoBehaviour
                 case 1:
                     ShowMessage(oneStarMessages);
                     oneStar.SetActive(true);
+                    key.FixKey(0);
                     ULITIN.SetActive(true);
                     TUMULOY.SetActive(false);
                     break;
                 case 2:
                     ShowMessage(twoStarMessages);
                     twoStar.SetActive(true);
+                    key.FixKey(1);
                     ULITIN.SetActive(true);
                     TUMULOY.SetActive(true);
                     break;
                 case 3:
                     ShowMessage(threeStarMessages);
                     threeStar.SetActive(true);
+                    key.FixKey(2);
                     ULITIN.SetActive(false);
                     TUMULOY.SetActive(true);
                     break;
                 default:
-                    messageDisplay.text = ""; // Clear text if out of range
+                    messageDisplay.text = ""; 
                     break;
             }
         }
@@ -66,7 +69,7 @@ public class StarValue : MonoBehaviour
             return 1;
         else if (keyCount >= 15 && keyCount <= 18)
             return 2;
-        else if (keyCount >= 19 && keyCount <= 20) // Adjusted to >= 4 if you want the 3-star to show earlier
+        else if (keyCount >= 19 && keyCount <= 20) 
             return 3;
         else
             return 0;
