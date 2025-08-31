@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 public class Scene1_HopscotchCanvasManager : MonoBehaviour
 {
 
-    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, FourthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, controls;
+    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, FourthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, controls, FirstMiles, SecondMiles, ThirdMiles;
     public TimerHopscotch timer;
+    public TeleportPosition tp;
+    public GameObject Miles1, Miles2, MilesCircle, TaskCanvas, FourthMiles, FifthMiles, map;
 
     void Start()
     {
@@ -19,6 +21,11 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         SeventhCanvas.SetActive(false);
         EighthCanvas.SetActive(false);
         controls.SetActive(false);
+        FirstMiles.SetActive(false);
+        SecondMiles.SetActive(false);
+        ThirdMiles.SetActive(false);
+        FourthMiles.SetActive(false);
+        FifthMiles.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -68,6 +75,47 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         timer.StartTimer();
     }
 
+    public void FirstMilesShow()
+    {
+        tp.TeleportToCube();
+        ShowDialogue(FirstMiles);
+    }
+
+    public void SecondMilesShow()
+    {
+        ShowDialogue(SecondMiles);
+    }
+
+    public void ThirdMilesShow()
+    {
+        ShowDialogue(ThirdMiles);
+    }
+
+    public void ThirdMilesClose()
+    {
+        ThirdMiles.SetActive(false);
+        Miles1.SetActive(false);
+        Miles2.SetActive(true);
+        MilesCircle.SetActive(true);
+        TaskCanvas.SetActive(true);
+        map.SetActive(true);
+    }
+
+    public void FourthMilesShow()
+    {
+        ShowDialogue(FourthMiles);
+    }
+
+    public void FifthMilesShow()
+    {
+        ShowDialogue(FifthMiles);
+    }
+
+    public void FifthMilesClose()
+    {
+        FifthMiles.SetActive(false);
+    }
+
     private void ShowDialogue(GameObject dialogue)
     {
         FirstCanvas.SetActive(false);
@@ -78,6 +126,11 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         SixthCanvas.SetActive(false);
         SeventhCanvas.SetActive(false);
         EighthCanvas.SetActive(false);
+        FirstMiles.SetActive(false);
+        SecondMiles.SetActive(false);
+        ThirdMiles.SetActive(false);
+        FourthMiles.SetActive(false);
+        FifthMiles.SetActive(false);
         dialogue.SetActive(true);
     }
 
