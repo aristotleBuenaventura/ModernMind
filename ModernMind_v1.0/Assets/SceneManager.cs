@@ -18,8 +18,13 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Scene1_Hopscotch");
     }
 
-    public void Scene1_Last()
+    public void Scene1_Search()
     {
-        SceneManager.LoadScene("Scene1_Last");
+        SceneManager.LoadScene("Scene1_Search");
+    }
+
+    public void Gabay()
+    {
+        SceneManager.LoadScene("Gabay");
     }
 }

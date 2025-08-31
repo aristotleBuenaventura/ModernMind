@@ -3891,9 +3891,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1327854346}
-        m_TargetAssemblyTypeName: MainMenuCanvasManager, Assembly-CSharp
-        m_MethodName: GabayShow
+      - m_Target: {fileID: 1905445156}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3903,9 +3903,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1905445156}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 1327854349}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: Gabay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4188,6 +4188,7 @@ GameObject:
   - component: {fileID: 1327854346}
   - component: {fileID: 1327854347}
   - component: {fileID: 1327854348}
+  - component: {fileID: 1327854349}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4332,6 +4333,18 @@ MonoBehaviour:
   titleText: {fileID: 1164907749}
   descriptionText: {fileID: 2106029968}
   itemImage: {fileID: 1870327281}
+--- !u!114 &1327854349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327854341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400655026a425b478412fdafc107656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1354383854
 GameObject:
   m_ObjectHideFlags: 0
