@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneGabayManager : MonoBehaviour
 {
 
-    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas;
+    public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, Layunin, bag;
 
     void Start()
     {
@@ -16,6 +16,7 @@ public class SceneGabayManager : MonoBehaviour
         FifthCanvas.SetActive(false);
         SixthCanvas.SetActive(false);
         SeventhCanvas.SetActive(false);
+        Layunin.SetActive(false);
 
     }
 
@@ -57,6 +58,8 @@ public class SceneGabayManager : MonoBehaviour
     public void SeventhCanvasClose()
     {
         SeventhCanvas.SetActive(false);
+        Layunin.SetActive(true);
+        bag.SetActive(false);
     }
 
 
