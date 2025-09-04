@@ -121,15 +121,13 @@ public class FirebaseLogin : MonoBehaviour
 
     void ProceedToScene1()
     {
-        //SceneManager.LoadScene("Scene1");
         mainmenu.SetActive(false);
         bagonglaro.SetActive(false);
         selection.SetActive(true);
-
     }
 
-    // ✅ Function to update a specific stage
-    public void UpdateStage(string username, string levelName, string stageName, int value)
+    // ✅ Function to update a specific stage (true = completed/unlocked, false = locked)
+    public void UpdateStage(string username, string levelName, string stageName, bool value)
     {
         dbReference.Child("users")
             .Child(username)
@@ -178,14 +176,14 @@ public class UserData
     {
         this.username = username;
         this.score = 0;
-        this.levels = new Levels(); // initialize levels with 3 levels
+        this.levels = new Levels(); // initialize levels with defaults
     }
 }
 
 [Serializable]
 public class Levels
 {
-    public Level level1 = new Level();
+    public Level level1 = new Level(true); // 👈 start stage1 as true
     public Level level2 = new Level();
     public Level level3 = new Level();
 }
@@ -193,7 +191,23 @@ public class Levels
 [Serializable]
 public class Level
 {
-    public int stage1 = 0;
-    public int stage2 = 0;
-    public int stage3 = 0;
+    public bool stage1;
+    public bool stage2;
+    public bool stage3;
+
+    // Default constructor: all false
+    public Level()
+    {
+        stage1 = false;
+        stage2 = false;
+        stage3 = false;
+    }
+
+    // Custom constructor: first stage can be true
+    public Level(bool unlockStage1)
+    {
+        stage1 = unlockStage1;
+        stage2 = false;
+        stage3 = false;
+    }
 }
