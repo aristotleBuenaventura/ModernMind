@@ -12,7 +12,7 @@ public class FirebaseLogin : MonoBehaviour
     [Header("UI References")]
     public TMP_InputField usernameInput;
     public Button loginButton;
-
+    public GameObject mainmenu, selection, bagonglaro;
     private DatabaseReference dbReference;
 
     void Start()
@@ -76,11 +76,14 @@ public class FirebaseLogin : MonoBehaviour
             }
             else if (task.Result.Exists)
             {
-                Debug.Log("[FirebaseLogin] User exists. Proceeding to Scene1...");
+                Debug.Log("[FirebaseLogin] User exists. Loading progress...");
 
                 // ✅ Save the username before loading the next scene
                 PlayerPrefs.SetString("normalizedUsername", normalizedUsername);
                 PlayerPrefs.Save();
+
+                // Load progress before proceeding
+                LoadUserProgress(normalizedUsername);
 
                 ProceedToScene1();
             }
@@ -118,7 +121,49 @@ public class FirebaseLogin : MonoBehaviour
 
     void ProceedToScene1()
     {
-        SceneManager.LoadScene("Scene1");
+        //SceneManager.LoadScene("Scene1");
+        mainmenu.SetActive(false);
+        bagonglaro.SetActive(false);
+        selection.SetActive(true);
+
+    }
+
+    // ✅ Function to update a specific stage
+    public void UpdateStage(string username, string levelName, string stageName, int value)
+    {
+        dbReference.Child("users")
+            .Child(username)
+            .Child("levels")
+            .Child(levelName)
+            .Child(stageName)
+            .SetValueAsync(value)
+            .ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompletedSuccessfully)
+                {
+                    Debug.Log($"[FirebaseLogin] {levelName}/{stageName} updated to {value}");
+                }
+                else
+                {
+                    Debug.LogError("[FirebaseLogin] Failed to update stage: " + task.Exception);
+                }
+            });
+    }
+
+    // ✅ Function to load user progress (example)
+    void LoadUserProgress(string normalizedUsername)
+    {
+        dbReference.Child("users").Child(normalizedUsername).GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCompletedSuccessfully && task.Result.Exists)
+            {
+                string json = task.Result.GetRawJsonValue();
+                UserData userData = JsonUtility.FromJson<UserData>(json);
+
+                Debug.Log("[FirebaseLogin] User progress loaded:");
+                Debug.Log(JsonUtility.ToJson(userData, true));
+            }
+        });
     }
 }
 
@@ -127,10 +172,28 @@ public class UserData
 {
     public string username;
     public int score = 0;
-    public int level = 1;
+    public Levels levels;
 
     public UserData(string username)
     {
         this.username = username;
+        this.score = 0;
+        this.levels = new Levels(); // initialize levels with 3 levels
     }
+}
+
+[Serializable]
+public class Levels
+{
+    public Level level1 = new Level();
+    public Level level2 = new Level();
+    public Level level3 = new Level();
+}
+
+[Serializable]
+public class Level
+{
+    public int stage1 = 0;
+    public int stage2 = 0;
+    public int stage3 = 0;
 }
