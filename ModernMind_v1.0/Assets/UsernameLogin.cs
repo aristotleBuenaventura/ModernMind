@@ -13,6 +13,7 @@ public class FirebaseLogin : MonoBehaviour
     public TMP_InputField usernameInput;
     public Button loginButton;
     public GameObject mainmenu, selection, bagonglaro;
+
     private DatabaseReference dbReference;
 
     void Start()
@@ -126,7 +127,7 @@ public class FirebaseLogin : MonoBehaviour
         selection.SetActive(true);
     }
 
-    // ✅ Function to update a specific stage (true = completed/unlocked, false = locked)
+    // ✅ Function to update a specific stage
     public void UpdateStage(string username, string levelName, string stageName, bool value)
     {
         dbReference.Child("users")
@@ -144,6 +145,28 @@ public class FirebaseLogin : MonoBehaviour
                 else
                 {
                     Debug.LogError("[FirebaseLogin] Failed to update stage: " + task.Exception);
+                }
+            });
+    }
+
+    // ✅ Function to update a level's unlocked status
+    public void UpdateLevel(string username, string levelName, bool value)
+    {
+        dbReference.Child("users")
+            .Child(username)
+            .Child("levels")
+            .Child(levelName)
+            .Child("unlocked")
+            .SetValueAsync(value)
+            .ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompletedSuccessfully)
+                {
+                    Debug.Log($"[FirebaseLogin] {levelName} unlocked = {value}");
+                }
+                else
+                {
+                    Debug.LogError("[FirebaseLogin] Failed to update level: " + task.Exception);
                 }
             });
     }
@@ -183,29 +206,33 @@ public class UserData
 [Serializable]
 public class Levels
 {
-    public Level level1 = new Level(true); // 👈 start stage1 as true
-    public Level level2 = new Level();
-    public Level level3 = new Level();
+    public Level level1 = new Level(true, true); // 👈 Level 1 unlocked, Stage 1 unlocked by default
+    public Level level2 = new Level(false, false);
+    public Level level3 = new Level(false, false);
+    public Level level4 = new Level(false, false); // 👈 NEW Level 4 added
 }
 
 [Serializable]
 public class Level
 {
+    public bool unlocked; // 👈 new: level unlocked or locked
     public bool stage1;
     public bool stage2;
     public bool stage3;
 
-    // Default constructor: all false
+    // Default constructor: locked level, all stages locked
     public Level()
     {
+        unlocked = false;
         stage1 = false;
         stage2 = false;
         stage3 = false;
     }
 
-    // Custom constructor: first stage can be true
-    public Level(bool unlockStage1)
+    // Custom constructor: set level unlocked + stage1 unlocked if needed
+    public Level(bool levelUnlocked, bool unlockStage1)
     {
+        unlocked = levelUnlocked;
         stage1 = unlockStage1;
         stage2 = false;
         stage3 = false;
