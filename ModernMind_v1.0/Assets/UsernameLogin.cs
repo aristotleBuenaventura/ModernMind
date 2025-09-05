@@ -122,6 +122,7 @@ public class FirebaseLogin : MonoBehaviour
 
     void ProceedToScene1()
     {
+
         checker.StartManual();
         mainmenu.SetActive(false);
         bagonglaro.SetActive(false);
