@@ -3,18 +3,19 @@ using UnityEngine;
 public class LetterChecker : MonoBehaviour
 {
     public string letterValue;
-    public GameObject BagCanvas, BagIcon, ButtonUi;
+    public GameObject BagCanvas, BagIcon;
+    public SetAllButtons allButtons;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             PlayerPrefs.SetString("LetterValue", letterValue);
-            PlayerPrefs.Save(); // Optional, ensures data is written immediately
+            PlayerPrefs.Save(); // Ensures data is written immediately
             Debug.Log("Saved LetterValue: " + PlayerPrefs.GetString("LetterValue"));
+
             BagCanvas.SetActive(true);
-            BagIcon.SetActive(false);
-            ButtonUi.SetActive(true);
+            allButtons.SetAllButtonsActive(true);
         }
     }
 
@@ -24,7 +25,9 @@ public class LetterChecker : MonoBehaviour
         {
             BagCanvas.SetActive(false);
             BagIcon.SetActive(true);
-            ButtonUi.SetActive(false);
+            allButtons.SetAllButtonsActive(false);
         }
     }
+
+    
 }

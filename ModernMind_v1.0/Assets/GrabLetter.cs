@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GrabLetter : MonoBehaviour
 {
-    public GameObject Letter3D, Letter2D, LetterButton;
+    public GameObject Letter3D, Letter2D;
     public int position;
     public ItemPlacer placer;
 
@@ -12,7 +12,6 @@ public class GrabLetter : MonoBehaviour
         {
             Letter3D.SetActive(false);
             Letter2D.SetActive(true);
-            LetterButton.SetActive(true);
             placer.PlaceGrabbedItem(Letter2D);
         }
     }

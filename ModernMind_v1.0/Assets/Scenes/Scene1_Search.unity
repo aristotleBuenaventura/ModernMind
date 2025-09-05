@@ -1074,7 +1074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &11632166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18699,7 +18699,7 @@ MonoBehaviour:
   letterValue: S1H
   BagCanvas: {fileID: 422750751}
   BagIcon: {fileID: 1417445443}
-  ButtonUi: {fileID: 167178035}
+  allButtons: {fileID: 1991897214}
 --- !u!33 &159464008
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21644,7 +21644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &186779342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43467,7 +43467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &373648638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51056,7 +51056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &422750752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66897,7 +66897,7 @@ MonoBehaviour:
   letterValue: S1N
   BagCanvas: {fileID: 422750751}
   BagIcon: {fileID: 1417445443}
-  ButtonUi: {fileID: 167178035}
+  allButtons: {fileID: 1991897214}
 --- !u!1 &508145628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d2100f10c342364479e7a527f9ef5429, type: 3}
@@ -73557,7 +73557,7 @@ MonoBehaviour:
   letterValue: S1L
   BagCanvas: {fileID: 422750751}
   BagIcon: {fileID: 1417445443}
-  ButtonUi: {fileID: 167178035}
+  allButtons: {fileID: 1991897214}
 --- !u!23 &565840896
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101837,7 +101837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &801124209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211096,7 +211096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1516640677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221197,7 +221197,7 @@ MonoBehaviour:
   letterValue: S1G
   BagCanvas: {fileID: 422750751}
   BagIcon: {fileID: 1417445443}
-  ButtonUi: {fileID: 167178035}
+  allButtons: {fileID: 1991897214}
 --- !u!1 &1592710850
 GameObject:
   m_ObjectHideFlags: 0
@@ -275816,7 +275816,7 @@ MonoBehaviour:
   letterValue: S1T
   BagCanvas: {fileID: 422750751}
   BagIcon: {fileID: 1417445443}
-  ButtonUi: {fileID: 167178035}
+  allButtons: {fileID: 1991897214}
 --- !u!1 &1949564291
 GameObject:
   m_ObjectHideFlags: 0
@@ -281661,6 +281661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1991897213}
+  - component: {fileID: 1991897214}
   m_Layer: 0
   m_Name: Set1
   m_TagString: Untagged
@@ -281706,6 +281707,24 @@ Transform:
   - {fileID: 1592681719}
   m_Father: {fileID: 1960403884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1991897214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991897212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13def2ae1d27c494987711e7e825d533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allButtons:
+  - {fileID: 801124208}
+  - {fileID: 186779341}
+  - {fileID: 11632165}
+  - {fileID: 1516640676}
+  - {fileID: 373648637}
 --- !u!23 &1992160660
 MeshRenderer:
   m_ObjectHideFlags: 0
