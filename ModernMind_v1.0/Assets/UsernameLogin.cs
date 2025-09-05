@@ -13,7 +13,7 @@ public class FirebaseLogin : MonoBehaviour
     public TMP_InputField usernameInput;
     public Button loginButton;
     public GameObject mainmenu, selection, bagonglaro;
-
+    public FirebaseStageChecker checker;    
     private DatabaseReference dbReference;
 
     void Start()
@@ -122,6 +122,7 @@ public class FirebaseLogin : MonoBehaviour
 
     void ProceedToScene1()
     {
+        checker.StartManual();
         mainmenu.SetActive(false);
         bagonglaro.SetActive(false);
         selection.SetActive(true);

@@ -42,6 +42,34 @@ public class FirebaseStageChecker : MonoBehaviour
         });
     }
 
+
+    public void StartManual()
+    {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.Result == DependencyStatus.Available)
+            {
+                string databaseUrl = "https://modernmind-142ff-default-rtdb.firebaseio.com/";
+                FirebaseDatabase database = FirebaseDatabase.GetInstance(FirebaseApp.DefaultInstance, databaseUrl);
+                dbReference = database.RootReference;
+
+                string username = PlayerPrefs.GetString("normalizedUsername", "");
+                if (!string.IsNullOrEmpty(username))
+                {
+                    LoadUserStages(username);
+                }
+                else
+                {
+                    Debug.LogWarning("[FirebaseStageChecker] No username found in PlayerPrefs.");
+                }
+            }
+            else
+            {
+                Debug.LogError("[FirebaseStageChecker] Could not resolve Firebase dependencies: " + task.Result);
+            }
+        });
+    }
+
     void LoadUserStages(string username)
     {
         dbReference.Child("users").Child(username).GetValueAsync().ContinueWithOnMainThread(task =>
