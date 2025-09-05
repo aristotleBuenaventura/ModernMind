@@ -217,6 +217,8 @@ public class Scene1CanvasManager : MonoBehaviour
     public void SeventeenthCanvasClose()
     {
         SeventeenthCanvas.SetActive(false);
+        FirebaseStageUpdater updater = FindObjectOfType<FirebaseStageUpdater>();
+        updater.UpdateStage("level1", "stage2", true);
         scene.Scene1_Hopscotch();
     }
 
