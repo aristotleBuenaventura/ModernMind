@@ -17,7 +17,7 @@ public class LetterCorrect : MonoBehaviour
             Letter3D.SetActive(true);
             Letter2D.SetActive(false);
             QuestionMark.SetActive(false);
-            ButtonUI.SetActive(false);
+            Destroy(ButtonUI);
             Circle.SetActive(false);
             Bag.SetActive(false);
             BagIcon.SetActive(true);
