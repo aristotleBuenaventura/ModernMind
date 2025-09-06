@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -10,6 +10,9 @@ public class PlayerAnimator : MonoBehaviour
     public float runSpeed = 5f;
     public float rotationSpeed = 100f;
     public float jumpForce = 5f;
+
+    [Header("Carry Settings")]
+    public bool isCarry = false; // 👈 New flag for carry mode
 
     private bool isJumping = false;
     private bool isGrounded = true;
@@ -76,21 +79,25 @@ public class PlayerAnimator : MonoBehaviour
 
         if (magnitude < walkThreshold)
         {
-            animator.Play("idle");
+            // Idle
+            animator.Play(isCarry ? "idleCarry" : "idle");
         }
         else
         {
             if (vertical < -walkThreshold)
             {
-                animator.Play("walkback");
+                // Walk back → walkCarry if carrying
+                animator.Play(isCarry ? "walkCarry" : "walkback");
             }
             else if (magnitude >= runThreshold)
             {
-                animator.Play("run");
+                // Run / RunCarry
+                animator.Play(isCarry ? "runCarry" : "run");
             }
             else
             {
-                animator.Play("walk");
+                // Walk / WalkCarry
+                animator.Play(isCarry ? "walkCarry" : "walk");
             }
         }
     }
@@ -123,7 +130,7 @@ public class PlayerAnimator : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         isJumping = false;
         isPicking = false;
-        animator.Play("idle");
+        animator.Play(isCarry ? "idleCarry" : "idle");
     }
 
     public void ResumeMovement()
