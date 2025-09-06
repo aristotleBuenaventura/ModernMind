@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GrabLetter : MonoBehaviour
 {
@@ -10,9 +10,19 @@ public class GrabLetter : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Letter3D.SetActive(false);
-            Letter2D.SetActive(true);
-            placer.PlaceGrabbedItem(Letter2D);
+            // ✅ Check if there is still space in ItemPlacer
+            if (placer != null && placer.HasFreeSlot())
+            {
+                Letter3D.SetActive(false);
+                Letter2D.SetActive(true);
+
+                // Place this letter in the next free position
+                placer.PlaceGrabbedItem(Letter2D);
+            }
+            else
+            {
+                Debug.Log("❌ Cannot grab: all positions are already filled!");
+            }
         }
     }
 }
