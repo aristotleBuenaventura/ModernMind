@@ -1,10 +1,13 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LetterCorrect : MonoBehaviour
 {
     public string letterValue;
     public GameObject Letter3D, Letter2D, QuestionMark, ButtonUI, Circle, Bag, BagIcon, correct, wrong;
     public LetterCounter counter;
+    public ItemPlacer placer;
+
+    [HideInInspector] public int placedIndex = -1; // ✅ store which slot this letter was placed in
 
     public void LetterChecker()
     {
@@ -13,6 +16,11 @@ public class LetterCorrect : MonoBehaviour
 
         if (savedLetter == letterValue)
         {
+            if (placer != null && placedIndex >= 0)
+            {
+                placer.RemoveItemAt(placedIndex); // ✅ free up that slot
+            }
+
             counter.counterCheck();
             Letter3D.SetActive(true);
             Letter2D.SetActive(false);
@@ -26,12 +34,6 @@ public class LetterCorrect : MonoBehaviour
         else
         {
             wrong.SetActive(true);
-            // Optional: reset visibility if not matched
-            //Letter3D.SetActive(false);
-            //Letter2D.SetActive(true);
-            //QuestionMark.SetActive(true);
-            //ButtonUI.SetActive(true);
-            //Circle.SetActive(true);
         }
     }
 }
