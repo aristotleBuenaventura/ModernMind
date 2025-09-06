@@ -108,7 +108,10 @@ public class PlayerAnimator : MonoBehaviour
         {
             isJumping = true;
             isGrounded = false;
-            animator.Play("jump");
+
+            // 👇 When carrying, play walkCarry instead of jump
+            animator.Play(isCarry ? "walkCarry" : "jump");
+
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             StartCoroutine(ResetJumpAfterAnimation());
         }
@@ -119,7 +122,7 @@ public class PlayerAnimator : MonoBehaviour
         if (!isPicking && !isJumping)
         {
             isPicking = true;
-            animator.Play("pick");
+            animator.Play(isCarry ? "pickCarry" : "pick");
             StartCoroutine(ResetPickAfterAnimation());
         }
     }
@@ -140,12 +143,14 @@ public class PlayerAnimator : MonoBehaviour
 
     private System.Collections.IEnumerator ResetPickAfterAnimation()
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("pick"))
+        string pickAnim = isCarry ? "pickCarry" : "pick";
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName(pickAnim))
         {
             yield return null;
         }
 
-        while (animator.GetCurrentAnimatorStateInfo(0).IsName("pick") &&
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName(pickAnim) &&
                animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
             yield return null;
@@ -156,12 +161,14 @@ public class PlayerAnimator : MonoBehaviour
 
     private System.Collections.IEnumerator ResetJumpAfterAnimation()
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("jump"))
+        string jumpAnim = isCarry ? "walkCarry" : "jump";
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName(jumpAnim))
         {
             yield return null;
         }
 
-        while (animator.GetCurrentAnimatorStateInfo(0).IsName("jump") &&
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName(jumpAnim) &&
                animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
         {
             yield return null;
@@ -180,7 +187,8 @@ public class PlayerAnimator : MonoBehaviour
 
     private void OnAnimatorIK(int layerIndex)
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("pick"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("pick") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("pickCarry"))
         {
             animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1);
             animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 1);
