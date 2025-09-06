@@ -2,7 +2,7 @@
 
 public class GrabLetter : MonoBehaviour
 {
-    public GameObject Letter3D, Letter2D;
+    public GameObject Letter3D, Letter2D, punoCanvas;
     public ItemPlacer placer;
 
     private void OnTriggerEnter(Collider other)
@@ -24,6 +24,7 @@ public class GrabLetter : MonoBehaviour
         }
         else
         {
+            punoCanvas.SetActive(true);
             Debug.Log("❌ Cannot grab: all positions are already filled!");
         }
     }
