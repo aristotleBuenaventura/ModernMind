@@ -43,6 +43,7 @@ public class ItemPlacer : MonoBehaviour
         {
             if (placedItems[i] == null) // free slot
             {
+                // Move item into slot
                 grabbedItem.transform.position = slotPositions[i].position;
                 grabbedItem.transform.SetParent(slotPositions[i]);
 
@@ -54,6 +55,14 @@ public class ItemPlacer : MonoBehaviour
                 {
                     lc.placedIndex = i;
                     lc.placer = this;
+                }
+
+                // Track slot index in RemoveLetter
+                RemoveLetter rl = grabbedItem.GetComponent<RemoveLetter>();
+                if (rl != null)
+                {
+                    rl.placedIndex = i;
+                    rl.placer = this;
                 }
 
                 Debug.Log($"✅ {grabbedItem.name} placed at slot {i}");
