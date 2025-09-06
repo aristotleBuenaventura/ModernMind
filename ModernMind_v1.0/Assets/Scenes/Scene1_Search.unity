@@ -89663,6 +89663,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 0}
+  placedIndex: -1
 --- !u!114 &695912476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93416,6 +93418,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 0}
+  placedIndex: -1
 --- !u!114 &732837861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102152,6 +102156,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 1649196738}
+  placedIndex: -1
 --- !u!1001 &802548579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113966,6 +113972,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 1649196738}
+  placedIndex: -1
 --- !u!4 &910715780
 Transform:
   m_ObjectHideFlags: 0
@@ -176999,6 +177007,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 0}
+  placedIndex: -1
 --- !u!114 &1260816007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216788,6 +216798,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 0}
+  placedIndex: -1
 --- !u!114 &1562039773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228846,19 +228858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bc77ce1eb18bb4f90ee4a02104522d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positions:
-  - {fileID: 732837858}
-  - {fileID: 2074077904}
-  - {fileID: 1260816004}
-  - {fileID: 1562039770}
-  - {fileID: 695912473}
-  items:
-  - {fileID: 910468557}
-  - {fileID: 2020489710}
-  - {fileID: 802307953}
-  - {fileID: 1824466244}
-  - {fileID: 1917972309}
-  - {fileID: 2126628610}
+  slotPositions:
+  - {fileID: 732837859}
+  - {fileID: 2074077905}
+  - {fileID: 1260816005}
+  - {fileID: 1562039771}
+  - {fileID: 695912474}
 --- !u!64 &1649396580
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -251618,6 +251623,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 1649196738}
+  placedIndex: -1
 --- !u!1 &1824795555
 GameObject:
   m_ObjectHideFlags: 0
@@ -266750,6 +266757,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 1649196738}
+  placedIndex: -1
 --- !u!64 &1918336484
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -286609,6 +286618,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 1649196738}
+  placedIndex: -1
 --- !u!33 &2020646120
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -303143,6 +303154,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 0}
+  placedIndex: -1
 --- !u!114 &2074077907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316660,6 +316673,8 @@ MonoBehaviour:
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 1649196737}
+  placer: {fileID: 1649196738}
+  placedIndex: -1
 --- !u!114 &2126628613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326192,7 +326207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 1456401406551271361}
   Letter2D: {fileID: 802307953}
-  position: 3
   placer: {fileID: 1649196738}
 --- !u!4 &1482300723022975427
 Transform:
@@ -335067,7 +335081,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 3921500596393690654}
   Letter2D: {fileID: 910468557}
-  position: 1
   placer: {fileID: 1649196738}
 --- !u!1 &3922761579050130361
 GameObject:
@@ -343382,7 +343395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 1699472502114981815}
   Letter2D: {fileID: 1824466244}
-  position: 4
   placer: {fileID: 1649196738}
 --- !u!33 &6400123920083036384
 MeshFilter:
@@ -345274,7 +345286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 7324358505843029206}
   Letter2D: {fileID: 1917972309}
-  position: 5
   placer: {fileID: 1649196738}
 --- !u!4 &7332471495625726320
 Transform:
@@ -347844,7 +347855,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 2573728882383938360}
   Letter2D: {fileID: 2020489710}
-  position: 2
   placer: {fileID: 1649196738}
 --- !u!33 &8079134368781693876
 MeshFilter:
@@ -351078,7 +351088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 7420027903446177339}
   Letter2D: {fileID: 2126628610}
-  position: 6
   placer: {fileID: 1649196738}
 --- !u!23 &9193856436177825641
 MeshRenderer:

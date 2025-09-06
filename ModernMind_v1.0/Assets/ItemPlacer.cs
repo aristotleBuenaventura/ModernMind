@@ -2,126 +2,100 @@
 
 public class ItemPlacer : MonoBehaviour
 {
-    [Header("Assign your position GameObjects here (optional, will auto-detect if empty)")]
-    public GameObject[] positions;
+    [Header("Assign your slot transforms here (where items should appear)")]
+    public Transform[] slotPositions;
 
-    [Header("Assign your item GameObjects here (optional)")]
-    public GameObject[] items;
+    private GameObject[] placedItems;   // Track which GameObjects are in each slot
 
-    private bool[] slotOccupied; // ✅ Tracks if a slot has an item
-
-    private void Awake()
+    void Awake()
     {
-        // If positions not assigned, auto-detect child objects
-        if (positions == null || positions.Length == 0)
-        {
-            int childCount = transform.childCount;
-            positions = new GameObject[childCount];
-            for (int i = 0; i < childCount; i++)
-            {
-                positions[i] = transform.GetChild(i).gameObject;
-            }
-            Debug.Log($"[ItemPlacer] Auto-detected {positions.Length} positions from children.");
-        }
-
         InitializeSlots();
     }
 
-    // ✅ Initialize slots safely
+    // ✅ Ensure placedItems is always valid
     private void InitializeSlots()
     {
-        if (positions == null)
+        if (slotPositions == null || slotPositions.Length == 0)
         {
-            Debug.LogError("❌ ItemPlacer has no positions assigned!");
+            Debug.LogError("❌ ItemPlacer: slotPositions is not assigned in the Inspector!");
             return;
         }
 
-        slotOccupied = new bool[positions.Length];
-        for (int i = 0; i < slotOccupied.Length; i++)
+        if (placedItems == null || placedItems.Length != slotPositions.Length)
         {
-            slotOccupied[i] = false; // default: all empty
+            placedItems = new GameObject[slotPositions.Length];
+            Debug.Log($"✅ ItemPlacer initialized with {slotPositions.Length} slots.");
         }
     }
 
-    // ✅ Check if any slot is available
-    public bool HasFreeSlot()
-    {
-        if (slotOccupied == null || slotOccupied.Length != positions.Length)
-        {
-            InitializeSlots(); // re-init if needed
-        }
-
-        for (int i = 0; i < slotOccupied.Length; i++)
-        {
-            if (!slotOccupied[i]) return true; // found empty slot
-        }
-        return false;
-    }
-
-    // ✅ Place item in the first free slot
+    // ✅ Place an item in the first available slot
     public void PlaceGrabbedItem(GameObject grabbedItem)
     {
-        if (grabbedItem == null) return;
+        InitializeSlots(); // make sure arrays are ready
 
-        if (slotOccupied == null || slotOccupied.Length != positions.Length)
+        if (grabbedItem == null)
         {
-            InitializeSlots();
+            Debug.LogError("❌ Tried to place a NULL grabbedItem!");
+            return;
         }
 
-        for (int i = 0; i < positions.Length; i++)
+        for (int i = 0; i < placedItems.Length; i++)
         {
-            if (!slotOccupied[i])
+            if (placedItems[i] == null) // free slot
             {
-                grabbedItem.transform.position = positions[i].transform.position;
-                grabbedItem.transform.rotation = positions[i].transform.rotation;
+                grabbedItem.transform.position = slotPositions[i].position;
+                grabbedItem.transform.SetParent(slotPositions[i]);
 
-                slotOccupied[i] = true; // mark as filled
+                placedItems[i] = grabbedItem;
 
-                // ✅ Tell the letter which slot it's in
+                // Track slot index in LetterCorrect
                 LetterCorrect lc = grabbedItem.GetComponent<LetterCorrect>();
                 if (lc != null)
                 {
                     lc.placedIndex = i;
+                    lc.placer = this;
                 }
 
-                Debug.Log($"✅ Item placed in slot {i}");
+                Debug.Log($"✅ {grabbedItem.name} placed at slot {i}");
                 return;
             }
         }
 
-        Debug.Log("⚠️ No free slots available!");
+        Debug.LogWarning("⚠️ No free slots available!");
     }
 
-    // ✅ Remove item from a specific slot
+    // ✅ Remove item at a given slot
     public void RemoveItemAt(int index)
     {
-        if (positions == null || slotOccupied == null)
-        {
-            Debug.LogError("❌ RemoveItemAt failed: positions/slotOccupied not initialized.");
-            return;
-        }
+        InitializeSlots(); // make sure arrays are ready
 
-        if (index < 0 || index >= positions.Length)
+        if (index >= 0 && index < placedItems.Length)
         {
-            Debug.LogWarning("⚠️ Invalid index passed to RemoveItemAt");
-            return;
-        }
-
-        if (slotOccupied[index])
-        {
-            slotOccupied[index] = false; // free up slot
-            Debug.Log($"🗑️ Slot {index} is now free again");
+            if (placedItems[index] != null)
+            {
+                Debug.Log($"🗑️ Removed {placedItems[index].name} from slot {index} → now free");
+                placedItems[index] = null;
+            }
+            else
+            {
+                Debug.LogWarning($"⚠️ Slot {index} is already empty!");
+            }
         }
         else
         {
-            Debug.Log($"⚠️ Slot {index} was already empty");
+            Debug.LogError($"❌ Invalid index {index} for removal!");
         }
     }
 
-    // ✅ Check if a specific slot is occupied
-    public bool IsSlotOccupied(int index)
+    // ✅ Check if any slot is free
+    public bool HasFreeSlot()
     {
-        if (slotOccupied == null || index < 0 || index >= positions.Length) return false;
-        return slotOccupied[index];
+        InitializeSlots(); // make sure arrays are ready
+
+        foreach (var item in placedItems)
+        {
+            if (item == null) return true;
+        }
+        return false;
     }
 }

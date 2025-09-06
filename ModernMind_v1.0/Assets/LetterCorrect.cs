@@ -5,27 +5,27 @@ public class LetterCorrect : MonoBehaviour
     public string letterValue;
     public GameObject Letter3D, Letter2D, QuestionMark, ButtonUI, Circle, Bag, BagIcon, correct, wrong;
     public LetterCounter counter;
-    public ItemPlacer placer;
-
-    [HideInInspector] public int placedIndex = -1; // ✅ store which slot this letter was placed in
+    [HideInInspector] public ItemPlacer placer;
+    [HideInInspector] public int placedIndex = -1; // Track exact slot index
 
     public void LetterChecker()
     {
-        // Always fetch the latest saved letter
         string savedLetter = PlayerPrefs.GetString("LetterValue", "None");
+        Debug.Log($"[LetterChecker] Checking {letterValue}, Saved={savedLetter}, Slot={placedIndex}");
 
         if (savedLetter == letterValue)
         {
             if (placer != null && placedIndex >= 0)
             {
-                placer.RemoveItemAt(placedIndex); // ✅ free up that slot
+                placer.RemoveItemAt(placedIndex);
+                placedIndex = -1; // reset after removal
             }
 
-            counter.counterCheck();
+            counter?.counterCheck();
             Letter3D.SetActive(true);
             Letter2D.SetActive(false);
             QuestionMark.SetActive(false);
-            Destroy(ButtonUI);
+            if (ButtonUI != null) Destroy(ButtonUI);
             Circle.SetActive(false);
             Bag.SetActive(false);
             BagIcon.SetActive(true);
@@ -33,6 +33,7 @@ public class LetterCorrect : MonoBehaviour
         }
         else
         {
+            Debug.Log($"[LetterChecker] ❌ Wrong! Expected {letterValue}, got {savedLetter}");
             wrong.SetActive(true);
         }
     }
