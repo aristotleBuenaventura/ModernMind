@@ -7,6 +7,7 @@ public class LetterCorrect : MonoBehaviour
     public LetterCounter counter;
     [HideInInspector] public ItemPlacer placer;
     [HideInInspector] public int placedIndex = -1; // Track exact slot index
+    public SetAllButtons allButtons;
 
     public void LetterChecker()
     {
@@ -30,6 +31,7 @@ public class LetterCorrect : MonoBehaviour
             Bag.SetActive(false);
             BagIcon.SetActive(true);
             correct.SetActive(true);
+            allButtons.SetAllButtonsActive(false);
         }
         else
         {
