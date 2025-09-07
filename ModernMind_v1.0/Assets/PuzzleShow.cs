@@ -25,6 +25,7 @@ public class PuzzleShow : MonoBehaviour
     private bool correctPlaced = false; // ✅ new flag: lock slot if true
 
     public bool IsEmpty => isEmpty;
+    public PuzzlePieceCounter counter;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,6 +48,12 @@ public class PuzzleShow : MonoBehaviour
             }
 
             correctPlaced = true; // 🔒 lock forever
+            if (counter != null)
+            {
+                counter.CounterCheck();
+                counter = null; // ⛔ detach so it can't be called again
+            }
+
             return;
         }
 

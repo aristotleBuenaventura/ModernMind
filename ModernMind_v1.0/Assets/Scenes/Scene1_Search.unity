@@ -53931,13 +53931,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402515568}
+  - component: {fileID: 402515569}
   m_Layer: 0
   m_Name: Puzzle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &402515568
 Transform:
   m_ObjectHideFlags: 0
@@ -53956,6 +53957,20 @@ Transform:
   - {fileID: 1846672271}
   m_Father: {fileID: 1960403884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402515569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402515567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cbb068566d44343b837b64f60ee996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  maxCounter: 5
 --- !u!33 &402783245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -214734,13 +214749,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387653661}
+  - component: {fileID: 1387653662}
   m_Layer: 0
   m_Name: Puzzle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1387653661
 Transform:
   m_ObjectHideFlags: 0
@@ -214759,6 +214775,20 @@ Transform:
   - {fileID: 807969411}
   m_Father: {fileID: 1960403884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1387653662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387653660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cbb068566d44343b837b64f60ee996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  maxCounter: 3
 --- !u!64 &1388656152
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -366052,6 +366082,7 @@ MonoBehaviour:
   - P1Two
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 1387653662}
 --- !u!1 &3423345678782760284
 GameObject:
   m_ObjectHideFlags: 0
@@ -372097,6 +372128,7 @@ MonoBehaviour:
   - P2Five
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 402515569}
 --- !u!4 &4964512489814673652
 Transform:
   m_ObjectHideFlags: 0
@@ -372891,6 +372923,7 @@ MonoBehaviour:
   - P2Six
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 402515569}
 --- !u!1 &5296926165236470037
 GameObject:
   m_ObjectHideFlags: 0
@@ -377773,6 +377806,7 @@ MonoBehaviour:
   - P2Six
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 402515569}
 --- !u!4 &6663315289106025120
 Transform:
   m_ObjectHideFlags: 0
@@ -382122,6 +382156,7 @@ MonoBehaviour:
   - P1Three
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 1387653662}
 --- !u!1 &8041758073238494459
 GameObject:
   m_ObjectHideFlags: 0
@@ -382379,6 +382414,7 @@ MonoBehaviour:
   - P1Three
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 1387653662}
 --- !u!4 &8097144147465702628
 Transform:
   m_ObjectHideFlags: 0
@@ -383517,6 +383553,7 @@ MonoBehaviour:
   - P2Six
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 402515569}
 --- !u!137 &8475933173880239467
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -385637,6 +385674,7 @@ MonoBehaviour:
   - P2Six
   animator: {fileID: 8821259119666112556}
   isEmpty: 1
+  counter: {fileID: 402515569}
 --- !u!23 &8987654572921626653
 MeshRenderer:
   m_ObjectHideFlags: 0
