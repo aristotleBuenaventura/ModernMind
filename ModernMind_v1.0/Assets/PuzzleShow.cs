@@ -20,7 +20,7 @@ public class PuzzleShow : MonoBehaviour
 
     [Header("States (read-only)")]
     [SerializeField] private bool isEmpty = true; // ✅ private, only modifiable internally
-    [SerializeField] private bool isDone = false; // ✅ locked when puzzle is placed
+    [SerializeField] private bool isDone = false; // ✅ locked only when correct puzzle is placed
 
     // Public getter (read-only)
     public bool IsEmpty => isEmpty;
@@ -28,16 +28,27 @@ public class PuzzleShow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isDone) return; // ✅ Already filled, ignore new entries
+        if (isDone) return; // stop if correct puzzle already placed
 
-        // ✅ Correct puzzle
-        if (other.CompareTag(correctTag) && isEmpty)
+        // --- correct puzzle ---
+        if (other.CompareTag(correctTag))
         {
+            // ✅ Always allow correct puzzle if slot not permanently done
             HandlePuzzle(correctPuzzle, correctPuzzleOnHand, true);
+
+            // Hide any wrong puzzles still visible
+            if (wrongPuzzles != null)
+            {
+                foreach (var w in wrongPuzzles)
+                {
+                    if (w != null) w.SetActive(false);
+                }
+            }
+
             return;
         }
 
-        // ✅ Wrong puzzles
+        // --- wrong puzzle (only if slot is currently empty) ---
         if (isEmpty && wrongTags != null)
         {
             for (int i = 0; i < wrongTags.Length; i++)
@@ -52,13 +63,20 @@ public class PuzzleShow : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            Debug.Log($"[PuzzleShow] Blocked placement: Slot already has something (isEmpty={isEmpty}, isDone={isDone}).");
+        }
     }
 
     private void HandlePuzzle(GameObject puzzleObj, GameObject handObj, bool correct)
     {
-        animator.SetCarry(false);
+        if (animator != null) animator.SetCarry(false);
+
         isEmpty = false;
-        isDone = true; // ✅ lock slot after any piece is placed
+
+        if (correct)
+            isDone = true; // ✅ only lock if correct
 
         // Show puzzle on board
         if (puzzleObj != null) puzzleObj.SetActive(true);
@@ -72,17 +90,11 @@ public class PuzzleShow : MonoBehaviour
         Debug.Log($"📌 Puzzle placed: {puzzleObj?.name ?? "NULL"} | Correct: {correct}");
     }
 
+
     // ✅ Setter method for controlled access
     public void SetEmpty(bool value)
     {
-        if (!isDone) // only allow if puzzle slot not permanently locked
-        {
-            isEmpty = value;
-            Debug.Log($"⚡ PuzzleShow: isEmpty manually set to {value}");
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ Cannot change isEmpty: Puzzle already completed!");
-        }
+        isEmpty = value;
+        Debug.Log($"[PuzzleShow] Slot '{gameObject.name}' SetEmpty({value})");
     }
 }

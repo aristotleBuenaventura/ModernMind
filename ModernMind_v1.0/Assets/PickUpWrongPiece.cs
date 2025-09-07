@@ -1,8 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PickUpWrongPiece : MonoBehaviour
 {
-    public GameObject wrongPiece, wrongPieceOnHand;
+    public GameObject wrongPiece;         // Wrong piece on board
+    public GameObject wrongPieceOnHand;   // Wrong piece in hand
     public PuzzleShow puzzleBool;
     public PlayerAnimator animator;
 
@@ -10,10 +11,23 @@ public class PickUpWrongPiece : MonoBehaviour
     {
         if (other.CompareTag("RightHand"))
         {
+            // Hide wrong piece from board
             wrongPiece.SetActive(false);
+
+            // Show piece in hand again
             wrongPieceOnHand.SetActive(true);
-            puzzleBool.SetEmpty(false);
-            animator.SetCarry(true);
+
+            if (puzzleBool != null)
+            {
+                puzzleBool.SetEmpty(true); // ✅ Mark slot free again
+            }
+
+
+            // Carry animation
+            if (animator != null)
+                animator.SetCarry(true);
+
+            Debug.Log($"🖐️ Picked up {wrongPiece.name}, slot freed and can be placed again.");
         }
     }
 }
