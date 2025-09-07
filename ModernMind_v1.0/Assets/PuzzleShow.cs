@@ -21,7 +21,8 @@ public class PuzzleShow : MonoBehaviour
 
     [Header("States (read-only)")]
     [SerializeField] private bool isEmpty = true;
-    private bool cooldownActive = false; // ⏳ new flag
+    private bool cooldownActive = false;
+    private bool correctPlaced = false; // ✅ new flag: lock slot if true
 
     public bool IsEmpty => isEmpty;
 
@@ -32,8 +33,11 @@ public class PuzzleShow : MonoBehaviour
         // --- correct puzzle ---
         if (other.CompareTag(correctTag))
         {
+            if (correctPlaced) return; // already solved, ignore any more placements
+
             HandlePuzzle(correctPuzzle, correctPuzzleOnHand, true);
 
+            // Hide all wrong puzzles (clean-up)
             if (wrongPuzzles != null)
             {
                 foreach (var w in wrongPuzzles)
@@ -42,11 +46,12 @@ public class PuzzleShow : MonoBehaviour
                 }
             }
 
+            correctPlaced = true; // 🔒 lock forever
             return;
         }
 
-        // --- wrong puzzle (always allowed, but respects cooldown) ---
-        if (wrongTags != null)
+        // --- wrong puzzle (only if slot not solved yet) ---
+        if (!correctPlaced && wrongTags != null)
         {
             for (int i = 0; i < wrongTags.Length; i++)
             {
@@ -80,8 +85,9 @@ public class PuzzleShow : MonoBehaviour
 
         Debug.Log($"📌 Puzzle placed: {puzzleObj?.name ?? "NULL"} | Correct: {correct}");
 
-        // Start cooldown so it won't snap immediately again
-        StartCoroutine(SnapCooldown(3f));
+        // only apply cooldown if wrong puzzle
+        if (!correct)
+            StartCoroutine(SnapCooldown(3f));
     }
 
     private IEnumerator SnapCooldown(float delay)
