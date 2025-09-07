@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PuzzleShow : MonoBehaviour
 {
@@ -19,19 +20,20 @@ public class PuzzleShow : MonoBehaviour
     public PlayerAnimator animator;
 
     [Header("States (read-only)")]
-    [SerializeField] private bool isEmpty = true; // ✅ only locks when correct puzzle is placed
+    [SerializeField] private bool isEmpty = true;
+    private bool cooldownActive = false; // ⏳ new flag
 
-    // Public getter (read-only)
     public bool IsEmpty => isEmpty;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (cooldownActive) return; // ⛔ block placement if cooldown is active
+
         // --- correct puzzle ---
         if (other.CompareTag(correctTag))
         {
             HandlePuzzle(correctPuzzle, correctPuzzleOnHand, true);
 
-            // Hide any wrong puzzles still visible
             if (wrongPuzzles != null)
             {
                 foreach (var w in wrongPuzzles)
@@ -43,7 +45,7 @@ public class PuzzleShow : MonoBehaviour
             return;
         }
 
-        // --- wrong puzzle (always allowed, even if same wrongTag again) ---
+        // --- wrong puzzle (always allowed, but respects cooldown) ---
         if (wrongTags != null)
         {
             for (int i = 0; i < wrongTags.Length; i++)
@@ -64,7 +66,6 @@ public class PuzzleShow : MonoBehaviour
     {
         if (animator != null) animator.SetCarry(false);
 
-        // lock the slot only if correct
         if (correct)
             isEmpty = false;
 
@@ -78,9 +79,18 @@ public class PuzzleShow : MonoBehaviour
         if (handObj != null) handObj.SetActive(false);
 
         Debug.Log($"📌 Puzzle placed: {puzzleObj?.name ?? "NULL"} | Correct: {correct}");
+
+        // Start cooldown so it won't snap immediately again
+        StartCoroutine(SnapCooldown(3f));
     }
 
-    // ✅ Setter method for controlled access
+    private IEnumerator SnapCooldown(float delay)
+    {
+        cooldownActive = true;
+        yield return new WaitForSeconds(delay);
+        cooldownActive = false;
+    }
+
     public void SetEmpty(bool value)
     {
         isEmpty = value;
