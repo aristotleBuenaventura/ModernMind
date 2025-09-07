@@ -18,9 +18,13 @@ public class PuzzleShow : MonoBehaviour
     [Header("References")]
     public PlayerAnimator animator;
 
-    [Header("States")]
-    public bool isEmpty = true;
-    public bool isDone = false; // ✅ true = slot solved (correct or wrong)
+    [Header("States (read-only)")]
+    [SerializeField] private bool isEmpty = true; // ✅ private, only modifiable internally
+    [SerializeField] private bool isDone = false; // ✅ locked when puzzle is placed
+
+    // Public getter (read-only)
+    public bool IsEmpty => isEmpty;
+    public bool IsDone => isDone;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,7 +56,7 @@ public class PuzzleShow : MonoBehaviour
 
     private void HandlePuzzle(GameObject puzzleObj, GameObject handObj, bool correct)
     {
-        animator.isCarry = false;
+        animator.SetCarry(false);
         isEmpty = false;
         isDone = true; // ✅ lock slot after any piece is placed
 
@@ -66,5 +70,19 @@ public class PuzzleShow : MonoBehaviour
         if (handObj != null) handObj.SetActive(false);
 
         Debug.Log($"📌 Puzzle placed: {puzzleObj?.name ?? "NULL"} | Correct: {correct}");
+    }
+
+    // ✅ Setter method for controlled access
+    public void SetEmpty(bool value)
+    {
+        if (!isDone) // only allow if puzzle slot not permanently locked
+        {
+            isEmpty = value;
+            Debug.Log($"⚡ PuzzleShow: isEmpty manually set to {value}");
+        }
+        else
+        {
+            Debug.LogWarning("⚠️ Cannot change isEmpty: Puzzle already completed!");
+        }
     }
 }

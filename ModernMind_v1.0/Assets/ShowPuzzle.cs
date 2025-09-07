@@ -39,6 +39,6 @@ public class ShowPuzzle : MonoBehaviour
 
         // Set carry animation
         if (animator != null)
-            animator.isCarry = true;
+            animator.SetCarry(true);
     }
 }

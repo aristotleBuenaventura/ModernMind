@@ -11,8 +11,8 @@ public class PlayerAnimator : MonoBehaviour
     public float rotationSpeed = 100f;
     public float jumpForce = 5f;
 
-    [Header("Carry Settings")]
-    public bool isCarry = false; // 👈 New flag for carry mode
+    [Header("Carry Settings (read-only)")]
+    [SerializeField] private bool isCarry = false; // ✅ now private
 
     private bool isJumping = false;
     private bool isGrounded = true;
@@ -21,6 +21,16 @@ public class PlayerAnimator : MonoBehaviour
     private bool canMove = true;
 
     private Rigidbody rb;
+
+    // ✅ Getter
+    public bool IsCarry => isCarry;
+
+    // ✅ Setter
+    public void SetCarry(bool value)
+    {
+        isCarry = value;
+        Debug.Log($"🎒 Carry state set to: {value}");
+    }
 
     private void Start()
     {
