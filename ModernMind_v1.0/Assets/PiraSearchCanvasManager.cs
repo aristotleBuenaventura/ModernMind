@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 public class PiraSearchCanvasManager : MonoBehaviour
 {
     public GameObject Loading, FirstCanvas, SecondCanvas, ThirdCanvas, FourthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas;
-    
+    public GameObject puzzleUiPart1, puzzleUiPart2, Puzzle3dPart1, Puzzle3dPart2;
+    public TimerHopscotch timer;
+    public GameObject set1MissingLetter, set2MissingLetter, Letters1, Letters2, cameraTop, Letter1UI, Letter2UI;
+
     void Start()
     {
         LoadingShow();
@@ -67,6 +70,18 @@ public class PiraSearchCanvasManager : MonoBehaviour
     public void EighthCanvasClose()
     {
         EighthCanvas.SetActive(false);
+        puzzleUiPart1.SetActive(true);
+        puzzleUiPart2.SetActive(false);
+        Puzzle3dPart1.SetActive(true);
+        timer.StartTimer();
+    }
+
+    public void MissingLetterPart1Show()
+    {
+        set1MissingLetter.SetActive(true);
+        Letters1.SetActive(true);
+        cameraTop.SetActive(false);
+        Letter1UI.SetActive(true);
     }
 
     private void ShowDialogue(GameObject dialogue)
