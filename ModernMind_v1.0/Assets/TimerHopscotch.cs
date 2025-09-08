@@ -8,6 +8,7 @@ public class TimerHopscotch : MonoBehaviour
     private float remainingTime = 300f; // 5 minutes in seconds
     private bool isRunning = false; // Timer won't run until StartTimer() is called
     private bool isFrozen = false; // Added freeze flag
+    public float resetTime;
 
     public GameObject gameover, settings, freezeUI;
 
@@ -38,7 +39,7 @@ public class TimerHopscotch : MonoBehaviour
     // Function to start the countdown
     public void StartTimer()
     {
-        remainingTime = 300f; // Reset to 5 minutes
+        remainingTime = resetTime; // Reset to 5 minutes
         isRunning = true;
         isFrozen = false;
     }

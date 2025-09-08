@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +8,7 @@ public class PiraSearchCanvasManager : MonoBehaviour
     public GameObject puzzleUiPart1, puzzleUiPart2, Puzzle3dPart1, Puzzle3dPart2;
     public TimerHopscotch timer;
     public GameObject set1MissingLetter, set2MissingLetter, Letters1, Letters2, cameraTop, Letter1UI, Letter2UI;
+    public GameObject dummyCamera, cameraReal;
 
     void Start()
     {
@@ -27,45 +28,14 @@ public class PiraSearchCanvasManager : MonoBehaviour
         ShowDialogue(Loading);
     }
 
-    public void FirstCanvasShow()
-    {
-        ShowDialogue(FirstCanvas);
-    }
-
-    public void SecondCanvasShow()
-    {
-        ShowDialogue(SecondCanvas);
-    }
-
-    public void ThirdCanvasShow()
-    {
-        ShowDialogue(ThirdCanvas);
-    }
-
-    public void FourthCanvasShow()
-    {
-        ShowDialogue(FourthCanvas);
-    }
-
-    public void FifthCanvasShow()
-    {
-        ShowDialogue(FifthCanvas);
-    }
-
-    public void SixthCanvasShow()
-    {
-        ShowDialogue(SixthCanvas);
-    }
-
-    public void SeventhCanvasShow()
-    {
-        ShowDialogue(SeventhCanvas);
-    }
-
-    public void EighthCanvasShow()
-    {
-        ShowDialogue(EighthCanvas);
-    }
+    public void FirstCanvasShow() => ShowDialogue(FirstCanvas);
+    public void SecondCanvasShow() => ShowDialogue(SecondCanvas);
+    public void ThirdCanvasShow() => ShowDialogue(ThirdCanvas);
+    public void FourthCanvasShow() => ShowDialogue(FourthCanvas);
+    public void FifthCanvasShow() => ShowDialogue(FifthCanvas);
+    public void SixthCanvasShow() => ShowDialogue(SixthCanvas);
+    public void SeventhCanvasShow() => ShowDialogue(SeventhCanvas);
+    public void EighthCanvasShow() => ShowDialogue(EighthCanvas);
 
     public void EighthCanvasClose()
     {
@@ -82,7 +52,33 @@ public class PiraSearchCanvasManager : MonoBehaviour
         Letters1.SetActive(true);
         cameraTop.SetActive(false);
         Letter1UI.SetActive(true);
+        Puzzle3dPart1.SetActive(false);
     }
+
+    public void PuzzlePart2Show()
+    {
+        set1MissingLetter.SetActive(false);
+        Letters1.SetActive(false);
+        cameraTop.SetActive(true);
+        Puzzle3dPart2.SetActive(true);
+        puzzleUiPart2.SetActive(true);
+        puzzleUiPart1.SetActive(false);
+        Puzzle3dPart1.SetActive(false);
+        cameraReal.transform.position = dummyCamera.transform.position;
+        cameraReal.transform.rotation = dummyCamera.transform.rotation;
+
+    }
+
+    public void MissingLetterPart2Show()
+    {
+        Puzzle3dPart2.SetActive(false);
+        set2MissingLetter.SetActive(true);
+        Letters2.SetActive(true);
+        cameraTop.SetActive(false);
+        Letter2UI.SetActive(true);
+    }
+
+
 
     private void ShowDialogue(GameObject dialogue)
     {
