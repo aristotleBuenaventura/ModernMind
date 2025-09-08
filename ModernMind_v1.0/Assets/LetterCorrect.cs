@@ -30,7 +30,16 @@ public class LetterCorrect : MonoBehaviour
             Circle.SetActive(false);
             Bag.SetActive(false);
             BagIcon.SetActive(true);
-            correct.SetActive(true);
+            
+            if (counter.IsBelowWordCount)
+            {
+                correct.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("All letters done!");
+            }
+
             allButtons.SetAllButtonsActive(false);
         }
         else
