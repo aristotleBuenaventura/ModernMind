@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8821259119666112555}
   cam: {fileID: 1982023512}
-  rotationSpeed: 2
+  rotationSpeed: 0.5
   distance: 10
   height: 2
 --- !u!4 &12382394
@@ -6208,6 +6208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 56632964}
+  resetTime: 0
   gameover: {fileID: 1833909458}
   settings: {fileID: 931066710}
   freezeUI: {fileID: 1202845290}
@@ -316897,6 +316898,7 @@ MonoBehaviour:
   runSpeed: 8
   rotationSpeed: 100
   jumpForce: 5
+  isCarry: 0
 --- !u!136 &8821259119666112557
 CapsuleCollider:
   m_ObjectHideFlags: 0
