@@ -40,10 +40,16 @@ public class TimerDisplay : MonoBehaviour
         isRunning = true;
     }
 
-    // Function to stop the timer
-    public void StopTimer()
+    // Function to pause the timer
+    public void PauseTimer()
     {
         isRunning = false;
+    }
+
+    // Function to resume the timer
+    public void ResumeTimer()
+    {
+        isRunning = true;
     }
 
     // Function to get current timer text
