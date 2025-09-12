@@ -25,4 +25,17 @@ public class TVFinishDetector : MonoBehaviour
         canvas.SeventeenthCanvasShow();
         TV.SetActive(false);
     }
+
+    public void EndVideo()
+    {
+        if (videoSource != null)
+        {
+            videoSource.Stop(); 
+        }
+
+        Debug.Log("DONE");
+        canvas.SeventeenthCanvasShow();
+        TV.SetActive(false);
+    }
+
 }

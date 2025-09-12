@@ -6,7 +6,7 @@ public class Scene1CanvasManager : MonoBehaviour
 {
     public GameObject FirstCanvas, SecondCanvas, ThirdCanvas, ForthCanvas, FifthCanvas, SixthCanvas, SeventhCanvas, EighthCanvas, NinthCanvas, forth_2, forth_3, forth_4, forth_5, forth_6, forth_7, forth_8, loading2;
     public GameObject TenthCanvas, EleventhCanvas, TwelfthCanvas, ThirteenthCanvas, FourteenthCanvas, FifteenthCanvas, SixteenthCanvas, SeventeenthCanvas;
-    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera, TV , Usok, BoardCamera, loading;
+    public GameObject FirstCamera, JoseCamera, Controller, TaskButton, TaskArrow, TrashCircles, MilesCamera, TV , Usok, BoardCamera, loading, skip;
     public TeleportPosition teleport;
     public SceneLoader scene;
     public TimerDisplay timer;
@@ -48,6 +48,7 @@ public class Scene1CanvasManager : MonoBehaviour
         TV.SetActive(false);
         Usok.SetActive(false);
         BoardCamera.SetActive(false);
+        skip.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -205,6 +206,7 @@ public class Scene1CanvasManager : MonoBehaviour
         SixteenthCanvas.SetActive(false);
         Usok.SetActive(false);
         TV.SetActive(true);
+        skip.SetActive(true);
     }
 
     public void SeventeenthCanvasShow()
