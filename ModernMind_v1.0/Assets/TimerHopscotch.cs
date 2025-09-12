@@ -45,9 +45,14 @@ public class TimerHopscotch : MonoBehaviour
     }
 
     // Function to stop the timer
-    public void StopTimer()
+    public void PauseTimer()
     {
         isRunning = false;
+    }
+
+    public void ContinueTimer()
+    {
+        isRunning = true;
     }
 
     // Function to get current timer text
