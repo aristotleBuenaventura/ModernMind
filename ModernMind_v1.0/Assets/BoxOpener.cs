@@ -4,6 +4,8 @@ public class BoxOpener : MonoBehaviour
 {
     private bool isOpen = false;
     public GameObject Products, box;
+    public BoxUiManager boxManager;
+    public GameObject boxValue;
 
     public void OpenBox()
     {
@@ -11,6 +13,7 @@ public class BoxOpener : MonoBehaviour
         isOpen = true;
         Products.SetActive(true);
         box.SetActive(false);
+        boxManager.ShowDialogue(boxValue);
         Debug.Log($"{gameObject.name} opened!");
         // TODO: play animation, disable collider, etc.
     }
