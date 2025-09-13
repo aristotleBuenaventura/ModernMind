@@ -32,7 +32,7 @@ public class ProductLogic : MonoBehaviour
     public TimerDisplay timer;
 
     [Header("UI Text")]
-    //public TextMeshProUGUI commentsTrash; // global TMP text to show feedback
+    public TextMeshProUGUI commentsTrash; // global TMP text to show feedback
 
     //public GameObject Antas1Result, blueStore;
 
@@ -70,8 +70,8 @@ public class ProductLogic : MonoBehaviour
 
         item.isDone = true;
 
-        //if (commentsTrash != null)
-        //    commentsTrash.text = correct ? "Correct!" : item.comments;
+        if (commentsTrash != null)
+            commentsTrash.text = correct ? "Correct!" : item.comments;
 
         // Optional: progress log
         int done = 0;
