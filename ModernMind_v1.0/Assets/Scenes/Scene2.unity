@@ -53617,6 +53617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 1901743488}
+  boxCounter: {fileID: 1584152995}
 --- !u!33 &594810223
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -66226,6 +66227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 1901743488}
+  boxCounter: {fileID: 1584152995}
 --- !u!1 &750217082
 GameObject:
   m_ObjectHideFlags: 0
@@ -112005,6 +112007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 1901743488}
+  boxCounter: {fileID: 1584152995}
 --- !u!33 &1136069875
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -137346,6 +137349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 1901743488}
+  boxCounter: {fileID: 1584152995}
 --- !u!4 &1332430718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
@@ -145520,6 +145524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 1901743488}
+  boxCounter: {fileID: 1584152995}
 --- !u!1 &1401620396
 GameObject:
   m_ObjectHideFlags: 0
@@ -162650,6 +162655,7 @@ GameObject:
   - component: {fileID: 1584152992}
   - component: {fileID: 1584152993}
   - component: {fileID: 1584152994}
+  - component: {fileID: 1584152995}
   m_Layer: 0
   m_Name: BagCanvas
   m_TagString: Untagged
@@ -162829,6 +162835,18 @@ MonoBehaviour:
     isDone: 0
   coins: {fileID: 1161235046}
   timer: {fileID: 1824701594}
+--- !u!114 &1584152995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584152988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3bab1abda3fb44382f7a55bc2269ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1584549223
 MeshRenderer:
   m_ObjectHideFlags: 0
