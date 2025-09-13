@@ -27,4 +27,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Gabay");
     }
+
+    public void Scene2()
+    {
+        SceneManager.LoadScene("Scene2");
+    }
 }
