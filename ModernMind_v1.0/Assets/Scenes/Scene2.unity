@@ -1250,18 +1250,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1901743488}
-        m_TargetAssemblyTypeName: BoxManager, Assembly-CSharp
-        m_MethodName: ResetBoxes
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &14151714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4192,6 +4180,18 @@ MonoBehaviour:
           m_StringArgument: import
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 594219228}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &45494698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5268,6 +5268,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: import
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 750072212}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &67308393
@@ -7146,7 +7158,19 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: green
+          m_StringArgument: reject
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1401371647}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &95833706
@@ -28667,6 +28691,18 @@ MonoBehaviour:
           m_StringArgument: reject
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 594219228}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &372768639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30237,6 +30273,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: import
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1401371647}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &386618728
@@ -33721,6 +33769,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: reject
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1401371647}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &423237755
@@ -53497,6 +53557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 594219226}
   - component: {fileID: 594219227}
+  - component: {fileID: 594219228}
   m_Layer: 0
   m_Name: Box1UI
   m_TagString: Untagged
@@ -53543,6 +53604,19 @@ MonoBehaviour:
   - {fileID: 366346029}
   - {fileID: 1913051802}
   shuffledOrder: 
+--- !u!114 &594219228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594219225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b8109949cc2e44a87cbb244752fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 1901743488}
 --- !u!33 &594810223
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59563,6 +59637,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: reject
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1332324373}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &674768738
@@ -66080,6 +66166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750072209}
   - component: {fileID: 750072211}
+  - component: {fileID: 750072212}
   m_Layer: 0
   m_Name: Box4UI
   m_TagString: Untagged
@@ -66126,6 +66213,19 @@ MonoBehaviour:
   - {fileID: 1624287813}
   - {fileID: 1791878062}
   shuffledOrder: 
+--- !u!114 &750072212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750072208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b8109949cc2e44a87cbb244752fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 1901743488}
 --- !u!1 &750217082
 GameObject:
   m_ObjectHideFlags: 0
@@ -77414,6 +77514,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: import
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1135779784}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &898050454
@@ -96235,6 +96347,18 @@ MonoBehaviour:
           m_StringArgument: export
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 594219228}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1042533231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111590,6 +111714,18 @@ MonoBehaviour:
           m_StringArgument: export
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1135779784}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1134016821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111809,6 +111945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1135779781}
   - component: {fileID: 1135779783}
+  - component: {fileID: 1135779784}
   m_Layer: 0
   m_Name: Box2UI
   m_TagString: Untagged
@@ -111855,6 +111992,19 @@ MonoBehaviour:
   - {fileID: 797633228}
   - {fileID: 1427710873}
   shuffledOrder: 
+--- !u!114 &1135779784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135779780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b8109949cc2e44a87cbb244752fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 1901743488}
 --- !u!33 &1136069875
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -133161,6 +133311,18 @@ MonoBehaviour:
           m_StringArgument: export
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 750072212}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1287530657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137124,6 +137286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332324370}
   - component: {fileID: 1332324372}
+  - component: {fileID: 1332324373}
   m_Layer: 0
   m_Name: Box5UI
   m_TagString: Untagged
@@ -137170,6 +137333,19 @@ MonoBehaviour:
   - {fileID: 1852230240}
   - {fileID: 924204772}
   shuffledOrder: 
+--- !u!114 &1332324373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332324369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b8109949cc2e44a87cbb244752fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 1901743488}
 --- !u!4 &1332430718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
@@ -144097,6 +144273,18 @@ MonoBehaviour:
           m_StringArgument: export
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1332324373}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1389926563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145272,6 +145460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401371644}
   - component: {fileID: 1401371646}
+  - component: {fileID: 1401371647}
   m_Layer: 0
   m_Name: Box3UI
   m_TagString: Untagged
@@ -145318,6 +145507,19 @@ MonoBehaviour:
   - {fileID: 301977141}
   - {fileID: 716372485}
   shuffledOrder: 
+--- !u!114 &1401371647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401371643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b8109949cc2e44a87cbb244752fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 1901743488}
 --- !u!1 &1401620396
 GameObject:
   m_ObjectHideFlags: 0
@@ -218577,6 +218779,18 @@ MonoBehaviour:
           m_StringArgument: reject
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1332324373}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027909800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229619,6 +229833,18 @@ MonoBehaviour:
           m_StringArgument: import
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1135779784}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2089103845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233113,6 +233339,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: export
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 750072212}
+        m_TargetAssemblyTypeName: ProductButtonClickCounter, Assembly-CSharp
+        m_MethodName: CounterIncrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2113082241
