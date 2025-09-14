@@ -2106,6 +2106,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &20352500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4422,6 +4423,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!1001 &39081110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34749,6 +34751,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!54 &313966145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35858,6 +35861,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &328091133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44171,6 +44175,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &395148822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67834,6 +67839,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &530277988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118802,6 +118808,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &996745867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121281,6 +121288,7 @@ GameObject:
   - component: {fileID: 1016966539}
   - component: {fileID: 1016966538}
   - component: {fileID: 1016966537}
+  - component: {fileID: 1016966540}
   m_Layer: 0
   m_Name: CoinsValue
   m_TagString: Untagged
@@ -121419,6 +121427,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016966535}
   m_CullTransparentMesh: 1
+--- !u!114 &1016966540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016966535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d500bd07b3d08f345a46f9a05c94d295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1017198453 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 97229e82747352a43b48688ec573f8e4, type: 3}
@@ -123223,6 +123243,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &1032517158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -148227,6 +148248,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &1152653901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -185180,6 +185202,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &1393453528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191333,6 +191356,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!54 &1437335381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191669,6 +191693,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!54 &1438502269
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -213492,6 +213517,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!1 &1596801990
 GameObject:
   m_ObjectHideFlags: 0
@@ -213582,6 +213608,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &1596801994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -224420,7 +224447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989638aff695b094a9a6fd37365977ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: {fileID: 1016966537}
+  coins: {fileID: 1016966540}
   scoreText: {fileID: 1671352062}
 --- !u!114 &1671352062
 MonoBehaviour:
@@ -224697,6 +224724,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &1672399357
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -229237,6 +229265,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!54 &1709797784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -243759,6 +243788,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!54 &1827371801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -255930,6 +255960,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &1912197957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -273316,6 +273347,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!54 &1999487685
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -292881,6 +292913,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 1016966540}
 --- !u!65 &2074774419
 BoxCollider:
   m_ObjectHideFlags: 0
