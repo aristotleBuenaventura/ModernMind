@@ -3,7 +3,7 @@ using TMPro; // ✅ Needed for TextMeshProUGUI
 
 public class DisplayCoins : MonoBehaviour
 {
-    public CoinsValue coins;             // Reference to your CoinsValue script
+    public TrackCoins coins;             // Reference to your CoinsValue script
     public TextMeshProUGUI scoreText;    // Reference to TMPRO UI
 
     void Start()

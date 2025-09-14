@@ -23302,7 +23302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989638aff695b094a9a6fd37365977ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: {fileID: 1161235046}
+  coins: {fileID: 1161235047}
   scoreText: {fileID: 285015380}
 --- !u!114 &285015380
 MonoBehaviour:
@@ -124533,6 +124533,7 @@ GameObject:
   - component: {fileID: 1161235045}
   - component: {fileID: 1161235044}
   - component: {fileID: 1161235046}
+  - component: {fileID: 1161235047}
   m_Layer: 0
   m_Name: CoinsValue
   m_TagString: Untagged
@@ -124671,6 +124672,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1161235044}
+--- !u!114 &1161235047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161235042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d500bd07b3d08f345a46f9a05c94d295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1161347861
 Transform:
   m_ObjectHideFlags: 0
@@ -178200,6 +178213,7 @@ MonoBehaviour:
     comments: Mali, ang Laruan ay isang uri ng di-nabubulok na basura
     isDone: 0
   coins: {fileID: 1161235046}
+  newCoins: {fileID: 1161235047}
   timer: {fileID: 1824701594}
   commentsTrash: {fileID: 274637319}
   Antas1Result: {fileID: 427093303}

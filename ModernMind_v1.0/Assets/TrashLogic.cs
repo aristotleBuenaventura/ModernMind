@@ -29,6 +29,7 @@ public class TrashLogic : MonoBehaviour
 
     [Header("Game Systems")]
     public CoinsValue coins;
+    public TrackCoins newCoins;
     public TimerDisplay timer;
 
     [Header("UI Text")]
@@ -110,6 +111,7 @@ public class TrashLogic : MonoBehaviour
 
             if (scoreRewards.TryGetValue(colorKey, out int reward))
                 coins.IncrementScore(reward);
+                newCoins.IncrementScore(reward);
 
             FinishItem(item, true);   // ✅ calls CheckAllDone()
         }
