@@ -32,4 +32,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Scene2");
     }
+
+    public void Scene2_Hopscotch()
+    {
+        SceneManager.LoadScene("Scene2_Hopscotch");
+    }
 }
