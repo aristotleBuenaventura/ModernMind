@@ -6,7 +6,7 @@ public class Scene2CanvasManager : MonoBehaviour
     public ShowUI taskCanvas;
     public GameObject unboxShip;
     public TimerDisplay timer;
-    public GameObject C14, C15, C16, C17, C18, C19, C20;
+    public GameObject C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, atlasSelection, pasaporte, kalakalan, kultura, teknolohiya, migrasyon;
 
     void Start()
     {
@@ -33,6 +33,16 @@ public class Scene2CanvasManager : MonoBehaviour
         C18.SetActive(false);
         C19.SetActive(false);
         C20.SetActive(false);
+        C21.SetActive(false);
+        C22.SetActive(false);
+        C23.SetActive(false);
+        C24.SetActive(false);
+        atlasSelection.SetActive(false);
+        pasaporte.SetActive(false);
+        kalakalan.SetActive(false);
+        kultura.SetActive(false);
+        teknolohiya.SetActive(false);
+        migrasyon.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -148,11 +158,31 @@ public class Scene2CanvasManager : MonoBehaviour
         ShowDialogue(C20);
     }
 
-    public void C20CanvasClose()
+    public void atlasSelectionCanvasShow()
     {
-        C20.SetActive(false);
-
+        ShowDialogue(atlasSelection);
     }
+
+    public void C21CanvasShow()
+    {
+        ShowDialogue(C21);
+    }
+
+    public void C22CanvasShow()
+    {
+        ShowDialogue(C22);
+    }
+
+    public void C23CanvasShow()
+    {
+        ShowDialogue(C23);
+    }
+
+    public void C24CanvasShow()
+    {
+        ShowDialogue(C24);
+    }
+
 
     private void ShowDialogue(GameObject dialogue)
     {
@@ -178,6 +208,16 @@ public class Scene2CanvasManager : MonoBehaviour
         C18.SetActive(false);
         C19.SetActive(false);
         C20.SetActive(false);
+        C21.SetActive(false);
+        C22.SetActive(false);
+        C23.SetActive(false);
+        C24.SetActive(false);
+        atlasSelection.SetActive(false);
+        pasaporte.SetActive(false);
+        kalakalan.SetActive(false);
+        kultura.SetActive(false);
+        teknolohiya.SetActive(false);
+        migrasyon.SetActive(false);
         dialogue.SetActive(true);
     }
 }
