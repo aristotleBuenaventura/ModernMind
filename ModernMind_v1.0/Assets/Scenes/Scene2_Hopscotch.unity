@@ -16874,10 +16874,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 516390378}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1354837659}
+        m_TargetAssemblyTypeName: levelUpdater, Assembly-CSharp
+        m_MethodName: leverUpdaterFunction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16886,10 +16886,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1354837656}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: Scene1_Search
-        m_Mode: 1
+      - m_Target: {fileID: 516390378}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -65815,6 +65815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 516390379}
   - component: {fileID: 516390380}
+  - component: {fileID: 516390381}
   m_Layer: 0
   m_Name: Results
   m_TagString: Untagged
@@ -65857,6 +65858,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e400655026a425b478412fdafc107656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &516390381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516390378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38af3a67f846d164f904d4075206b5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: level2
+  stage: stage3
 --- !u!1 &516573925
 GameObject:
   m_ObjectHideFlags: 0
@@ -145734,6 +145749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1123183738}
+  - component: {fileID: 1123183739}
   m_Layer: 0
   m_Name: UI
   m_TagString: Ground
@@ -145758,6 +145774,18 @@ Transform:
   - {fileID: 1681379676}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123183739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123183737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a09353dacee3d42ae83d8c7c7c2b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1123752912
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -180896,6 +180924,7 @@ GameObject:
   - component: {fileID: 1354837656}
   - component: {fileID: 1354837657}
   - component: {fileID: 1354837658}
+  - component: {fileID: 1354837659}
   m_Layer: 0
   m_Name: Canvasses
   m_TagString: Untagged
@@ -180994,6 +181023,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 5489942604672490040}
   Cube: {fileID: 552893469}
+--- !u!114 &1354837659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354837654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38af3a67f846d164f904d4075206b5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: level2
+  stage: stage3
 --- !u!23 &1355233119
 MeshRenderer:
   m_ObjectHideFlags: 0

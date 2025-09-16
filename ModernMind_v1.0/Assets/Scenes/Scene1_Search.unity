@@ -3254,6 +3254,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &20352500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6360,6 +6361,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!1001 &39081110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47568,6 +47570,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!54 &313966145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49634,6 +49637,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &328091133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59977,6 +59981,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &395148822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87942,6 +87947,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &530277988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -159888,6 +159894,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &996745867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -165383,6 +165390,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &1032517158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -195869,6 +195877,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &1152653901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -238060,6 +238069,9 @@ GameObject:
   - component: {fileID: 1354837655}
   - component: {fileID: 1354837656}
   - component: {fileID: 1354837657}
+  - component: {fileID: 1354837658}
+  - component: {fileID: 1354837659}
+  - component: {fileID: 1354837660}
   m_Layer: 0
   m_Name: Canvasses
   m_TagString: Untagged
@@ -238149,6 +238161,46 @@ MonoBehaviour:
   dummyCamera: {fileID: 1717068132}
   cameraReal: {fileID: 1080974192}
   dummyCamera2: {fileID: 252235595}
+--- !u!114 &1354837658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354837654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38af3a67f846d164f904d4075206b5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: level2
+  stage: stage1
+--- !u!114 &1354837659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354837654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38af3a67f846d164f904d4075206b5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: level2
+  stage: unlocked
+--- !u!114 &1354837660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354837654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a09353dacee3d42ae83d8c7c7c2b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1355233119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -243332,6 +243384,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &1393453528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -250851,6 +250904,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!54 &1437335381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -251176,6 +251230,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!54 &1438502269
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -278361,6 +278416,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!1 &1596801990
 GameObject:
   m_ObjectHideFlags: 0
@@ -278451,6 +278507,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &1596801994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -291386,6 +291443,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &1672399357
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -297392,6 +297450,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!54 &1709797784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -316338,6 +316397,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!54 &1827371801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -333231,6 +333291,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &1912197957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -353645,6 +353706,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!54 &1999487685
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364295,6 +364357,42 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: levelUpdater, Assembly-CSharp
+        m_MethodName: leverUpdaterFunction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1354837659}
+        m_TargetAssemblyTypeName: levelUpdater, Assembly-CSharp
+        m_MethodName: leverUpdaterFunction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1354837656}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: Scene2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -375694,6 +375792,7 @@ MonoBehaviour:
   counter: {fileID: 1601638056}
   key: {fileID: 1891925038}
   coins: {fileID: 1016966537}
+  newCoins: {fileID: 0}
 --- !u!65 &2074774419
 BoxCollider:
   m_ObjectHideFlags: 0
