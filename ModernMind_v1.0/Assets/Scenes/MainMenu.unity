@@ -639,7 +639,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 156000148}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 412777374}
+        m_TargetAssemblyTypeName: ShowButtons, Assembly-CSharp
+        m_MethodName: Antas3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &172251750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1422,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 301383801}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 329289824}
+        m_TargetAssemblyTypeName: ShowButtons, Assembly-CSharp
+        m_MethodName: Antas3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &312557962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,6 +1965,7 @@ GameObject:
   - component: {fileID: 412777371}
   - component: {fileID: 412777373}
   - component: {fileID: 412777372}
+  - component: {fileID: 412777374}
   m_Layer: 5
   m_Name: Yunit2
   m_TagString: Untagged
@@ -2010,6 +2035,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412777370}
   m_CullTransparentMesh: 1
+--- !u!114 &412777374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412777370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dd7f4cfe8cfd94a9d6b93adf521be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button1: {fileID: 1846186759}
+  button2: {fileID: 815671455}
+  button3: {fileID: 585953923}
 --- !u!1 &421632126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,7 +5482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 831949881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 329289824}
+        m_TargetAssemblyTypeName: ShowButtons, Assembly-CSharp
+        m_MethodName: Antas2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &868602661
 GameObject:
   m_ObjectHideFlags: 0
@@ -8829,7 +8881,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1199059237}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 412777374}
+        m_TargetAssemblyTypeName: ShowButtons, Assembly-CSharp
+        m_MethodName: Antas2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1234587101
 GameObject:
   m_ObjectHideFlags: 0
@@ -10425,17 +10489,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 412777370}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1424116275
 GameObject:
@@ -11812,7 +11876,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1580673719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 412777374}
+        m_TargetAssemblyTypeName: ShowButtons, Assembly-CSharp
+        m_MethodName: Antas1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1597265122
 GameObject:
   m_ObjectHideFlags: 0
