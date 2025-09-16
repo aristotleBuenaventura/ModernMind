@@ -6,6 +6,7 @@ public class Scene2CanvasManager : MonoBehaviour
     public ShowUI taskCanvas;
     public GameObject unboxShip;
     public TimerDisplay timer;
+    public GameObject C14, C15, C16, C17, C18, C19, C20;
 
     void Start()
     {
@@ -25,6 +26,13 @@ public class Scene2CanvasManager : MonoBehaviour
         ThirteenthCanvas.SetActive(false);
         Loading2Canvas.SetActive(false);
         unboxShip.SetActive(false);
+        C14.SetActive(false);
+        C15.SetActive(false);
+        C16.SetActive(false);
+        C17.SetActive(false);
+        C18.SetActive(false);
+        C19.SetActive(false);
+        C20.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -105,6 +113,47 @@ public class Scene2CanvasManager : MonoBehaviour
         timer.StartTimer();
     }
 
+    public void C14CanvasShow()
+    {
+        ShowDialogue(C14);
+    }
+
+    public void C15CanvasShow()
+    {
+        ShowDialogue(C15);
+    }
+
+    public void C16CanvasShow()
+    {
+        ShowDialogue(C16);
+    }
+
+    public void C17CanvasShow()
+    {
+        ShowDialogue(C17);
+    }
+
+    public void C18CanvasShow()
+    {
+        ShowDialogue(C18);
+    }
+
+    public void C19CanvasShow()
+    {
+        ShowDialogue(C19);
+    }
+
+    public void C20CanvasShow()
+    {
+        ShowDialogue(C20);
+    }
+
+    public void C20CanvasClose()
+    {
+        C20.SetActive(false);
+
+    }
+
     private void ShowDialogue(GameObject dialogue)
     {
         loading.SetActive(false);
@@ -122,7 +171,13 @@ public class Scene2CanvasManager : MonoBehaviour
         EleventhCanvas.SetActive(false);
         TwelfthCanvas.SetActive(false);
         ThirteenthCanvas.SetActive(false);
-
+        C14.SetActive(false);
+        C15.SetActive(false);
+        C16.SetActive(false);
+        C17.SetActive(false);
+        C18.SetActive(false);
+        C19.SetActive(false);
+        C20.SetActive(false);
         dialogue.SetActive(true);
     }
 }

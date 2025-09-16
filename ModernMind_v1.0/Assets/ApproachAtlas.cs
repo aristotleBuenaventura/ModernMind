@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ApproachAtlas : MonoBehaviour
 {
-    public GameObject task, mahusay, layunin, check, circle, taskIcon;
+    public GameObject task, mahusay, layunin, check, circle, taskIcon, atlasTalk;
 
 
     private void OnTriggerEnter(Collider other)
@@ -15,6 +15,7 @@ public class ApproachAtlas : MonoBehaviour
             mahusay.SetActive(true);
             check.SetActive(true);
             circle.SetActive(false);
+            atlasTalk.SetActive(true);
         }
     }
 }
