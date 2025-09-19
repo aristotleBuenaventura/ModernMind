@@ -5,12 +5,14 @@ public class TrapLogic : MonoBehaviour
 {
     private bool canCollide = true; // flag to control collision cooldown
     public float cooldownTime = 2f; // seconds delay
+    public CameraCollision shake;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && canCollide)
         {
             Debug.Log("Detected");
+            shake.Shake();
             StartCoroutine(CollisionCooldown());
         }
     }
