@@ -1,24 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class CameraCollision : MonoBehaviour
 {
-    public Transform player;
-    public float smooth = 10f;
-    public float minDistance = 1f;
-    public float maxDistance = 4f;
-    public float offsetY = 1.5f;
+    public Transform player;       // reference to player
+    public float smooth = 10f;     // smoothing speed
+    public float minDistance = 1f; // minimum zoom (pag dikit sa wall)
+    public float maxDistance = 4f; // normal distance
+    public float offsetY = 1.5f;   // taas ng camera galing sa player
+    public string[] ignoreTags;    // list ng tags na hindi rereact ang camera
 
     private float currentDistance;
-
-    // For shake
-    private Vector3 originalPos;
-    private Coroutine shakeCoroutine;
 
     void Start()
     {
         currentDistance = maxDistance;
-        originalPos = transform.localPosition;
     }
 
     void LateUpdate()
@@ -28,7 +23,21 @@ public class CameraCollision : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(origin, -transform.forward, out hit, maxDistance))
         {
-            currentDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
+            // check kung ang collider ay may tag na dapat i-ignore
+            bool shouldIgnore = false;
+            foreach (string t in ignoreTags)
+            {
+                if (hit.collider.CompareTag(t))
+                {
+                    shouldIgnore = true;
+                    break;
+                }
+            }
+
+            if (!shouldIgnore)
+            {
+                currentDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
+            }
         }
         else
         {
@@ -36,32 +45,5 @@ public class CameraCollision : MonoBehaviour
         }
 
         transform.position = player.position - transform.forward * currentDistance + Vector3.up * offsetY;
-    }
-
-    // 🔥 Simple shake with default values
-    public void Shake()
-    {
-        if (shakeCoroutine != null) StopCoroutine(shakeCoroutine);
-        shakeCoroutine = StartCoroutine(DoShake(0.3f, 0.2f)); // duration, intensity
-    }
-
-    private IEnumerator DoShake(float duration, float magnitude)
-    {
-        Vector3 startPos = transform.localPosition;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
-
-            transform.localPosition = startPos + new Vector3(x, y, 0);
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.localPosition = startPos;
-        shakeCoroutine = null;
     }
 }

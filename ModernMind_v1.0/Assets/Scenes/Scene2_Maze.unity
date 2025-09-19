@@ -231819,6 +231819,7 @@ GameObject:
   - component: {fileID: 1982023513}
   - component: {fileID: 1982023516}
   - component: {fileID: 1982023517}
+  - component: {fileID: 1982023518}
   m_Layer: 0
   m_Name: Jose Camera
   m_TagString: MainCamera
@@ -231929,6 +231930,20 @@ MonoBehaviour:
   minDistance: 1
   maxDistance: 7
   offsetY: 1.5
+  ignoreTags:
+  - IgnoreCamera
+--- !u!114 &1982023518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982023512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e965ad683eed02f44bb3a44d198d03e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1982470387
 Transform:
   m_ObjectHideFlags: 0
@@ -318940,7 +318955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!137 &7352869068094702765
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -328531,7 +328546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!23 &8638290662952452963
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -328638,7 +328653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!23 &8638290663664741762
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -328745,7 +328760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!23 &8638290664108483334
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -328852,7 +328867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!23 &8638290664131719393
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -328959,7 +328974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!23 &8638290664557905266
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -329066,7 +329081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!4 &8639950379997592218
 Transform:
   m_ObjectHideFlags: 0
@@ -329764,7 +329779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!33 &8815496743061035785
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -329834,7 +329849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!33 &8815496743234285065
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -329904,7 +329919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!33 &8815496743293731164
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -329974,7 +329989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!4 &8821259119666112555
 Transform:
   m_ObjectHideFlags: 0
@@ -331959,7 +331974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!1 &9055701639931372827
 GameObject:
   m_ObjectHideFlags: 0
@@ -332043,7 +332058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!1 &9055701640086128276
 GameObject:
   m_ObjectHideFlags: 0
@@ -332127,7 +332142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!1 &9055701640195939500
 GameObject:
   m_ObjectHideFlags: 0
@@ -332211,7 +332226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!1 &9055701640316517026
 GameObject:
   m_ObjectHideFlags: 0
@@ -332295,7 +332310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
-  shake: {fileID: 1982023517}
+  shake: {fileID: 1982023518}
 --- !u!1 &9056783830690987945
 GameObject:
   m_ObjectHideFlags: 0
