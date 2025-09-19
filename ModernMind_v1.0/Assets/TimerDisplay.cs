@@ -1,10 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class TimerDisplay : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    private float remainingTime = 300f; // 5 minutes in seconds
+    public float remainingTime = 300f; // 5 minutes in seconds
+    public float ResetremainingTime = 300f;
     private bool isRunning = false; // Timer won't run until StartTimer() is called
     public GameObject gameover, settings;
 
@@ -28,7 +29,6 @@ public class TimerDisplay : MonoBehaviour
                 timerText.text = "00:00";
                 gameover.SetActive(true);
                 settings.SetActive(false);
-                // (Optional) You can trigger an event here when the timer reaches zero
             }
         }
     }
@@ -36,7 +36,7 @@ public class TimerDisplay : MonoBehaviour
     // Function to start the countdown
     public void StartTimer()
     {
-        remainingTime = 300f; // Reset to 5 minutes
+        remainingTime = ResetremainingTime; // Reset to 5 minutes
         isRunning = true;
     }
 
@@ -56,5 +56,21 @@ public class TimerDisplay : MonoBehaviour
     public string GetTimerText()
     {
         return timerText.text;
+    }
+
+    // ✅ Function to decrease time
+    public void DecreaseTime(float amount)
+    {
+        remainingTime -= amount;
+
+        // Prevent negative values
+        if (remainingTime < 0)
+        {
+            remainingTime = 0;
+            isRunning = false;
+            timerText.text = "00:00";
+            gameover.SetActive(true);
+            settings.SetActive(false);
+        }
     }
 }

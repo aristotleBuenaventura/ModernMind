@@ -6,6 +6,7 @@ public class TrapLogic : MonoBehaviour
     private bool canCollide = true; // flag to control collision cooldown
     public float cooldownTime = 2f; // seconds delay
     public PlayerShake shake;
+    public TimerDisplay time;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class TrapLogic : MonoBehaviour
         {
             Debug.Log("Detected");
             shake.Shake();
+            time.DecreaseTime(10f);
             StartCoroutine(CollisionCooldown());
         }
     }
