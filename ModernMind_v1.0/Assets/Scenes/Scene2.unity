@@ -232714,6 +232714,7 @@ GameObject:
   - component: {fileID: 1982023514}
   - component: {fileID: 1982023513}
   - component: {fileID: 1982023516}
+  - component: {fileID: 1982023517}
   m_Layer: 0
   m_Name: Jose Camera
   m_TagString: MainCamera
@@ -232807,6 +232808,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1982023517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982023512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1bb6b6411e8b34682945e5e9238c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8821259119666112555}
+  smooth: 10
+  minDistance: 1
+  maxDistance: 7
+  offsetY: 1.5
+  ignoreTags: []
 --- !u!4 &1982470387
 Transform:
   m_ObjectHideFlags: 0

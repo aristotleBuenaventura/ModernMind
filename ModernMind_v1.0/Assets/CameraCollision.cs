@@ -5,7 +5,7 @@ public class CameraCollision : MonoBehaviour
     public Transform player;       // reference to player
     public float smooth = 10f;     // smoothing speed
     public float minDistance = 1f; // minimum zoom (pag dikit sa wall)
-    public float maxDistance = 4f; // normal distance
+    public float maxDistance = 7f; // normal distance
     public float offsetY = 1.5f;   // taas ng camera galing sa player
     public string[] ignoreTags;    // list ng tags na hindi rereact ang camera
 
