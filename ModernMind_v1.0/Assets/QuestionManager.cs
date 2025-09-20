@@ -74,7 +74,6 @@ public class QuestionManager : MonoBehaviour
 
         if (isCorrect)
         {
-            Debug.Log("✅ Tama!");
             algo.ShuffleObjects();
             questionPanel.SetActive(false);
             currentIndex++;
@@ -82,7 +81,6 @@ public class QuestionManager : MonoBehaviour
         else
         {
             algo.ShuffleObjects();
-            Debug.Log("❌ Mali, next question...");
             currentIndex++;
 
             if (currentIndex >= questions.Length)
