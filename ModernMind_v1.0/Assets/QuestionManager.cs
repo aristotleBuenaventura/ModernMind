@@ -26,7 +26,7 @@ public class QuestionManager : MonoBehaviour
 
     private int currentIndex = 0;
 
-    public static QuestionManager Instance; // singleton para madaling tawagin
+    public static QuestionManager Instance; // singleton
 
     private void Awake()
     {
@@ -45,7 +45,10 @@ public class QuestionManager : MonoBehaviour
 
     public void StartQuestions()
     {
-        currentIndex = 0;
+        // kapag na-call ulit, next question na agad
+        if (currentIndex >= questions.Length)
+            currentIndex = 0; // reset kapag naubos
+
         ShowQuestion();
     }
 
@@ -67,8 +70,11 @@ public class QuestionManager : MonoBehaviour
 
         if (choice == q.correctAnswer)
         {
-            Debug.Log("✅ Done!");
+            Debug.Log("✅ Tama!");
             questionPanel.SetActive(false);
+
+            // ready na agad for next question sa susunod na StartQuestions() call
+            currentIndex++;
         }
         else
         {
