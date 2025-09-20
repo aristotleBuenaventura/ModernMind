@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -26,7 +27,10 @@ public class QuestionManager : MonoBehaviour
 
     private int currentIndex = 0;
 
-    public static QuestionManager Instance; // singleton
+    public static QuestionManager Instance;
+
+    // 👉 Event para ma-notify si BoxQuestion
+    public event Action<bool> OnAnswered;
 
     private void Awake()
     {
@@ -38,16 +42,14 @@ public class QuestionManager : MonoBehaviour
     {
         questionPanel.SetActive(false);
 
-        // Attach listeners
-        buttonA.onClick.AddListener(() => Answer(0));
-        buttonB.onClick.AddListener(() => Answer(1));
+        buttonA.onClick.AddListener(() => HandleAnswer(0));
+        buttonB.onClick.AddListener(() => HandleAnswer(1));
     }
 
     public void StartQuestions()
     {
-        // kapag na-call ulit, next question na agad
         if (currentIndex >= questions.Length)
-            currentIndex = 0; // reset kapag naubos
+            currentIndex = 0;
 
         ShowQuestion();
     }
@@ -64,16 +66,15 @@ public class QuestionManager : MonoBehaviour
         buttonBText.text = q.optionB;
     }
 
-    void Answer(int choice)
+    bool Answer(int choice)
     {
         Question q = questions[currentIndex];
+        bool isCorrect = (choice == q.correctAnswer);
 
-        if (choice == q.correctAnswer)
+        if (isCorrect)
         {
             Debug.Log("✅ Tama!");
             questionPanel.SetActive(false);
-
-            // ready na agad for next question sa susunod na StartQuestions() call
             currentIndex++;
         }
         else
@@ -82,11 +83,19 @@ public class QuestionManager : MonoBehaviour
             currentIndex++;
 
             if (currentIndex >= questions.Length)
-            {
-                currentIndex = 0; // reset kapag naubos
-            }
+                currentIndex = 0;
 
             ShowQuestion();
         }
+
+        return isCorrect;
+    }
+
+    void HandleAnswer(int choice)
+    {
+        bool result = Answer(choice);
+
+        // 👉 Notify lahat ng listeners (kasama si BoxQuestion)
+        OnAnswered?.Invoke(result);
     }
 }
