@@ -24,6 +24,7 @@ public class QuestionManager : MonoBehaviour
     public Button buttonB;
     public TextMeshProUGUI buttonAText;
     public TextMeshProUGUI buttonBText;
+    public FisherYatesAlgorithm algo;
 
     private int currentIndex = 0;
 
@@ -74,11 +75,13 @@ public class QuestionManager : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("✅ Tama!");
+            algo.ShuffleObjects();
             questionPanel.SetActive(false);
             currentIndex++;
         }
         else
         {
+            algo.ShuffleObjects();
             Debug.Log("❌ Mali, next question...");
             currentIndex++;
 
