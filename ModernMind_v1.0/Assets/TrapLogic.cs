@@ -14,7 +14,7 @@ public class TrapLogic : MonoBehaviour
         {
             Debug.Log("Detected");
             shake.Shake();
-            time.DecreaseTime(10f);
+            time.DecreaseTime(20f);
             StartCoroutine(CollisionCooldown());
         }
     }
