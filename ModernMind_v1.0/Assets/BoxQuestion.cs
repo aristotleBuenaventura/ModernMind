@@ -2,14 +2,21 @@
 
 public class BoxQuestion : MonoBehaviour
 {
+    private bool isWaitingForCorrect = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             if (QuestionManager.Instance != null)
             {
-                // 👉 subscribe temporary lang para dito sa box
-                QuestionManager.Instance.OnAnswered += HandleAnswer;
+                // subscribe once lang, habang hindi pa siya nawawala
+                if (!isWaitingForCorrect)
+                {
+                    QuestionManager.Instance.OnAnswered += HandleAnswer;
+                    isWaitingForCorrect = true;
+                }
+
                 QuestionManager.Instance.StartQuestions();
             }
             else
@@ -24,11 +31,15 @@ public class BoxQuestion : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("done");
-            gameObject.SetActive(false); // hide this specific box
-        }
+            gameObject.SetActive(false); // this specific box only
 
-        // 👉 unsubscribe agad para hindi maapektuhan ang ibang box
-        if (QuestionManager.Instance != null)
-            QuestionManager.Instance.OnAnswered -= HandleAnswer;
+            // ✅ unsubscribe once tama na
+            if (QuestionManager.Instance != null)
+                QuestionManager.Instance.OnAnswered -= HandleAnswer;
+
+            isWaitingForCorrect = false;
+        }
+        // ❌ kung mali, hindi mag-a-unsubscribe
+        // → hihintay pa rin hanggang tama
     }
 }
