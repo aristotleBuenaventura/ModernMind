@@ -110,6 +110,7 @@ public class ProductMazeLogic : MonoBehaviour
         else
         {
             result.MaliShow();
+            coins.DecrementScore(5);
             FinishItem(item, false);
         }
     }
