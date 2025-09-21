@@ -32,7 +32,7 @@ public class BoxQuestion : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("done");
-            coins.IncrementScore(10);
+            //coins.IncrementScore(10);
             gameObject.SetActive(false); // this specific box only
 
             // ✅ unsubscribe once tama na
