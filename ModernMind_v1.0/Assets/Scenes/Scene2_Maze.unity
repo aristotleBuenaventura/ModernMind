@@ -87109,6 +87109,8 @@ GameObject:
   - component: {fileID: 889331374}
   - component: {fileID: 889331375}
   - component: {fileID: 889331376}
+  - component: {fileID: 889331378}
+  - component: {fileID: 889331377}
   m_Layer: 0
   m_Name: 19. BOXES
   m_TagString: Untagged
@@ -87267,6 +87269,38 @@ MonoBehaviour:
   buttonAText: {fileID: 458151535}
   buttonBText: {fileID: 557287509}
   algo: {fileID: 545232642}
+--- !u!114 &889331377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889331373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360d3676b633efd4ab07e0dcca777344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToShuffle:
+  - {fileID: 7349156124116917412}
+  - {fileID: 7349156123862648198}
+  shuffledOrder: 
+--- !u!114 &889331378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889331373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360d3676b633efd4ab07e0dcca777344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToShuffle:
+  - {fileID: 7349156124810308865}
+  - {fileID: 7349156125296028951}
+  shuffledOrder: 
 --- !u!64 &889748635
 MeshCollider:
   m_ObjectHideFlags: 0
