@@ -3,6 +3,7 @@
 public class BoxQuestion : MonoBehaviour
 {
     private bool isWaitingForCorrect = false;
+    public CoinsValue coins;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,6 +32,7 @@ public class BoxQuestion : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("done");
+            coins.IncrementScore(10);
             gameObject.SetActive(false); // this specific box only
 
             // ✅ unsubscribe once tama na

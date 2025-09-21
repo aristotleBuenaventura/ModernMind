@@ -33,6 +33,8 @@ public class QuestionManager : MonoBehaviour
     // 👉 Event para ma-notify si BoxQuestion
     public event Action<bool> OnAnswered;
 
+    public TimerDisplay time;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -80,6 +82,7 @@ public class QuestionManager : MonoBehaviour
         }
         else
         {
+            time.DecreaseTime(10f);
             algo.ShuffleObjects();
             currentIndex++;
 
