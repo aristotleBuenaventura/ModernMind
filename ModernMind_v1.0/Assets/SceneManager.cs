@@ -37,4 +37,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Scene2_Hopscotch");
     }
+
+    public void Scene2_Maze()
+    {
+        SceneManager.LoadScene("Scene2_Maze");
+    }
 }
