@@ -3,6 +3,8 @@ using UnityEngine;
 public class Scene2MazeCanvasManager : MonoBehaviour
 {
     public GameObject Loading, Atlas1, Atlas2, Atlas3, Atlas4, First, Second, Third, Fourth, Fifth, Sixth, Atlas5;
+    public GameObject Fence;
+    public TimerDisplay time;
 
     void Start()
     {
@@ -18,6 +20,7 @@ public class Scene2MazeCanvasManager : MonoBehaviour
         Fifth.SetActive(false);
         Sixth.SetActive(false);
         Atlas5.SetActive(false);
+        Fence.SetActive(true);
     }
 
     public void LoadingCanvasShow()
@@ -83,6 +86,8 @@ public class Scene2MazeCanvasManager : MonoBehaviour
     public void Atlas5CanvasClose()
     {
         Atlas5.SetActive(false);
+        Fence.SetActive(false);
+        time.StartTimer();
     }
 
 
