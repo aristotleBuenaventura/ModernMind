@@ -1933,9 +1933,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scene2CanvasManager, Assembly-CSharp
-        m_MethodName: EighthCanvasShow
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: ThirdCanvasShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19597,9 +19597,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scene2CanvasManager, Assembly-CSharp
-        m_MethodName: EighthCanvasShow
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: SecondCanvasShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53125,9 +53125,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scene2CanvasManager, Assembly-CSharp
-        m_MethodName: EighthCanvasShow
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: FifthCanvasShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -68769,9 +68769,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scene1CanvasManager, Assembly-CSharp
-        m_MethodName: FirstCanvasShow
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: Atlas1CanvasShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -112938,9 +112938,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scene2CanvasManager, Assembly-CSharp
-        m_MethodName: EighthCanvasShow
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: FourthCanvasShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -138772,10 +138772,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: Atlas5CanvasClose
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -138783,18 +138783,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1030895777}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1284655322
 MonoBehaviour:
@@ -146190,6 +146178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354837655}
   - component: {fileID: 1354837657}
+  - component: {fileID: 1354837658}
   m_Layer: 0
   m_Name: Canvasses
   m_TagString: Untagged
@@ -146240,6 +146229,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e400655026a425b478412fdafc107656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1354837658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354837654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d132bb049685aea41bde16791e271b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loading: {fileID: 1710150381}
+  Atlas1: {fileID: 1758743717}
+  Atlas2: {fileID: 1833754555}
+  Atlas3: {fileID: 1412236119}
+  Atlas4: {fileID: 101972784}
+  First: {fileID: 2104022219}
+  Second: {fileID: 1584995285}
+  Third: {fileID: 1218003266}
+  Fourth: {fileID: 911435941}
+  Fifth: {fileID: 1196740747}
+  Sixth: {fileID: 1736087287}
+  Atlas5: {fileID: 1030895777}
 --- !u!23 &1355233119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -158441,10 +158454,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: Atlas4CanvasShow
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -158452,18 +158465,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1412236119}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1478616942
 MonoBehaviour:
@@ -163281,22 +163282,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1833754555}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: Atlas3CanvasShow
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -171164,9 +171153,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scene2CanvasManager, Assembly-CSharp
-        m_MethodName: EighthCanvasShow
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: Atlas5CanvasShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -184109,9 +184098,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scene2CanvasManager, Assembly-CSharp
-        m_MethodName: EighthCanvasShow
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: SixthCanvasShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -195830,10 +195819,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: Atlas2CanvasShow
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -195841,18 +195830,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1758743717}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1834385098
 MonoBehaviour:
@@ -249102,10 +249079,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1354837658}
+        m_TargetAssemblyTypeName: Scene2MazeCanvasManager, Assembly-CSharp
+        m_MethodName: FirstCanvasShow
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -249113,18 +249090,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 101972784}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2134838514
 MonoBehaviour:
