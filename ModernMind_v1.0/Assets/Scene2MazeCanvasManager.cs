@@ -3,7 +3,7 @@ using UnityEngine;
 public class Scene2MazeCanvasManager : MonoBehaviour
 {
     public GameObject Loading, Atlas1, Atlas2, Atlas3, Atlas4, First, Second, Third, Fourth, Fifth, Sixth, Atlas5;
-    public GameObject Fence;
+    public GameObject Fence, Atlas6, Atlas7, Atlas8, Atlas9, Atlas10, Atlas11, Atlas12;
     public TimerDisplay time;
 
     void Start()
@@ -21,6 +21,13 @@ public class Scene2MazeCanvasManager : MonoBehaviour
         Sixth.SetActive(false);
         Atlas5.SetActive(false);
         Fence.SetActive(true);
+        Atlas6.SetActive(false);
+        Atlas7.SetActive(false);
+        Atlas8.SetActive(false);
+        Atlas9.SetActive(false);
+        Atlas10.SetActive(false);
+        Atlas11.SetActive(false);
+        Atlas12.SetActive(false);
     }
 
     public void LoadingCanvasShow()
@@ -90,7 +97,45 @@ public class Scene2MazeCanvasManager : MonoBehaviour
         time.StartTimer();
     }
 
+    public void Atlas6CanvasShow()
+    {
+        ShowDialogue(Atlas6);
+    }
 
+    public void Atlas7CanvasShow()
+    {
+        ShowDialogue(Atlas7);
+    }
+
+    public void Atlas8CanvasShow()
+    {
+        ShowDialogue(Atlas8);
+    }
+
+    public void Atlas9CanvasShow()
+    {
+        ShowDialogue(Atlas9);
+    }
+
+    public void Atlas10CanvasShow()
+    {
+        ShowDialogue(Atlas10);
+    }
+
+    public void Atlas11CanvasShow()
+    {
+        ShowDialogue(Atlas11);
+    }
+
+    public void Atlas12CanvasShow()
+    {
+        ShowDialogue(Atlas12);
+    }
+
+    public void Atlas12CanvasClose()
+    {
+        Atlas12.SetActive(false);
+    }
 
     private void ShowDialogue(GameObject dialogue)
     {
@@ -106,7 +151,13 @@ public class Scene2MazeCanvasManager : MonoBehaviour
         Fifth.SetActive(false);
         Sixth.SetActive(false);
         Atlas5.SetActive(false);
-
+        Atlas6.SetActive(false);
+        Atlas7.SetActive(false);
+        Atlas8.SetActive(false);
+        Atlas9.SetActive(false);
+        Atlas10.SetActive(false);
+        Atlas11.SetActive(false);
+        Atlas12.SetActive(false);
         dialogue.SetActive(true);
     }
 

@@ -30,6 +30,7 @@ public class ProductMazeLogic : MonoBehaviour
 
     [Header("UI Text")]
     public TextMeshProUGUI commentsTrash; // global TMP text to show feedback
+    public GameObject Results;
 
     // Score rewards for each trash type
     private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
@@ -49,6 +50,7 @@ public class ProductMazeLogic : MonoBehaviour
 
         // If all are done
         Debug.Log("ALLDONE");
+        Results.SetActive(true);
         timer.StartTimer();
         result.ResultClose();
         bag.UICanvasClose();
