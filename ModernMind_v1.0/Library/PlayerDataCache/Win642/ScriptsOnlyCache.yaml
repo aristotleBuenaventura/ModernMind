@@ -71,6 +71,7 @@ ScriptsOnlyBuild:
     - ShowQuestion
     - ShowStore
     - ShowUI
+    - SplashVideo
     - StarValue
     - StoreBuy
     - TVFinishDetector
@@ -2425,8 +2426,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -2448,8 +2447,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 25662}
     - Class: 114
-      Script: {instanceID: 25742}
-    - Class: 114
       Script: {instanceID: 26020}
     - Class: 114
       Script: {instanceID: 26146}
@@ -2468,17 +2465,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 28922}
     - Class: 114
-      Script: {instanceID: 29382}
-    - Class: 114
-      Script: {instanceID: 29538}
-    - Class: 114
       Script: {instanceID: 29614}
     - Class: 114
       Script: {instanceID: 29634}
     - Class: 114
       Script: {instanceID: 30438}
-    - Class: 114
-      Script: {instanceID: 30456}
     - Class: 114
       Script: {instanceID: 30518}
     - Class: 114
@@ -3591,6 +3582,67 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 258
+      Script: {instanceID: 0}
+    - Class: 328
+      Script: {instanceID: 0}
+    - Class: 329
+      Script: {instanceID: 0}
+    Assets/Scenes/Splash.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 25264}
+    - Class: 114
+      Script: {instanceID: 25742}
+    - Class: 114
+      Script: {instanceID: 29382}
+    - Class: 114
+      Script: {instanceID: 29538}
+    - Class: 114
+      Script: {instanceID: 29634}
+    - Class: 114
+      Script: {instanceID: 30292}
+    - Class: 114
+      Script: {instanceID: 30456}
+    - Class: 114
+      Script: {instanceID: 30518}
+    - Class: 114
+      Script: {instanceID: 995158}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 328
       Script: {instanceID: 0}
@@ -5343,8 +5395,15 @@ ScriptsOnlyBuild:
     assemblyName: Firebase.Platform.dll
     namespaceName: Firebase.Platform
     className: FirebaseMonoBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 4ada5e66c247a3e2589b49d8b1453939
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SplashVideo
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Splash.unity
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Scene1.unity
   - Assets/Scenes/Scene1_Hopscotch.unity
@@ -5352,4 +5411,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Scene1_Search.unity
   - Assets/Scenes/Scene2.unity
   - Assets/Scenes/Scene2_Hopscotch.unity
-  playerPath: C:/Users/aris2/Downloads/ModernMind_v1.0.exe
+  playerPath: C:/Users/aris2/Downloads/ModernMind_v1.0_Data/ModernMind_v1.0.exe
