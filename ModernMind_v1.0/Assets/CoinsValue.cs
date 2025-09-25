@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
-using TMPro; // Import TextMeshPro namespace
+using TMPro;
+using Firebase;
+using Firebase.Database;
+using Firebase.Extensions;
 
 public class CoinsValue : MonoBehaviour
 {
     public static CoinsValue Instance { get; private set; }
-    private int score; // will be set from PlayerPrefs
-    [SerializeField] private TextMeshProUGUI scoreText; // Reference to the TextMeshPro UI
+    private int score;
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+    private DatabaseReference dbReference;
+    private string username;
+    private bool isReady = false;
 
     private void Awake()
     {
@@ -14,8 +21,36 @@ public class CoinsValue : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // 🔥 Load saved score immediately when object is created
+            // Load coins from PlayerPrefs
             score = PlayerPrefs.GetInt("coins", 0);
+
+            // Get username from PlayerPrefs
+            username = PlayerPrefs.GetString("normalizedUsername", "");
+            if (string.IsNullOrEmpty(username))
+            {
+                Debug.LogError("[CoinsValue] No username found in PlayerPrefs. Did you login?");
+                return;
+            }
+
+            // Init Firebase
+            FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.Result == DependencyStatus.Available)
+                {
+                    string databaseUrl = "https://modernmind-142ff-default-rtdb.firebaseio.com/";
+                    FirebaseDatabase database = FirebaseDatabase.GetInstance(FirebaseApp.DefaultInstance, databaseUrl);
+                    dbReference = database.RootReference;
+                    isReady = true;
+                    Debug.Log("[CoinsValue] Firebase initialized for user: " + username);
+
+                    // ✅ Push current saved coins to Firebase
+                    UpdateScoreInFirebase();
+                }
+                else
+                {
+                    Debug.LogError("[CoinsValue] Firebase dependencies not resolved.");
+                }
+            });
         }
         else
         {
@@ -25,7 +60,7 @@ public class CoinsValue : MonoBehaviour
 
     private void Start()
     {
-        UpdateScoreText(); // update UI with loaded coins
+        UpdateScoreText();
     }
 
     public void IncrementScore(int amount)
@@ -43,7 +78,7 @@ public class CoinsValue : MonoBehaviour
     public void DecrementScore(int amount)
     {
         score -= amount;
-        if (score < 0) score = 0; // prevent negative coins
+        if (score < 0) score = 0;
         SaveScore();
     }
 
@@ -52,6 +87,7 @@ public class CoinsValue : MonoBehaviour
         PlayerPrefs.SetInt("coins", score);
         PlayerPrefs.Save();
         UpdateScoreText();
+        UpdateScoreInFirebase();
     }
 
     private void UpdateScoreText()
@@ -62,9 +98,34 @@ public class CoinsValue : MonoBehaviour
         }
     }
 
-    // Getter function to retrieve the current score
     public int GetScore()
     {
         return score;
+    }
+
+    // ✅ Update username/score in Firebase
+    private void UpdateScoreInFirebase()
+    {
+        if (!isReady || string.IsNullOrEmpty(username))
+        {
+            Debug.LogWarning("[CoinsValue] Firebase not ready yet. Score not updated.");
+            return;
+        }
+
+        dbReference.Child("users")
+        .Child(username)
+        .Child("score")
+        .SetValueAsync(score)
+        .ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCompletedSuccessfully)
+            {
+                Debug.Log("[CoinsValue] Firebase " + username + "/score updated to: " + score);
+            }
+            else
+            {
+                Debug.LogError("[CoinsValue] Failed to update score: " + task.Exception);
+            }
+        });
     }
 }
