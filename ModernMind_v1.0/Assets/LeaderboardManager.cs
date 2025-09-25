@@ -46,7 +46,7 @@ public class LeaderboardManager : MonoBehaviour
 
         dbReference.Child("users")
             .OrderByChild("score")
-            .LimitToLast(5) // top 5 highest scores
+            .LimitToLast(15) // top 5 highest scores
             .GetValueAsync()
             .ContinueWithOnMainThread(task =>
             {
