@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
@@ -13,7 +12,8 @@ public class FirebaseLogin : MonoBehaviour
     public TMP_InputField usernameInput;
     public Button loginButton;
     public GameObject mainmenu, selection, bagonglaro;
-    public FirebaseStageChecker checker;    
+    public FirebaseStageChecker checker;
+
     private DatabaseReference dbReference;
 
     void Start()
@@ -61,8 +61,8 @@ public class FirebaseLogin : MonoBehaviour
             return;
         }
 
-        string normalizedUsername = inputUsername.ToLower(); // Normalize for case-insensitive
-        CheckIfUserExists(normalizedUsername, inputUsername); // Pass both normalized and original
+        string normalizedUsername = inputUsername.ToLower();
+        CheckIfUserExists(normalizedUsername, inputUsername);
     }
 
     void CheckIfUserExists(string normalizedUsername, string originalUsername)
@@ -79,14 +79,11 @@ public class FirebaseLogin : MonoBehaviour
             {
                 Debug.Log("[FirebaseLogin] User exists. Loading progress...");
 
-                // ✅ Save the username before loading the next scene
                 PlayerPrefs.SetString("normalizedUsername", normalizedUsername);
                 PlayerPrefs.Save();
 
-                // Load progress before proceeding
                 LoadUserProgress(normalizedUsername);
-
-                ProceedToScene1();
+                ProceedToMenu();
             }
             else
             {
@@ -98,20 +95,19 @@ public class FirebaseLogin : MonoBehaviour
 
     void SaveNewUser(string normalizedUsername, string originalUsername)
     {
-        UserData newUser = new UserData(originalUsername);  // Save original casing for display
+        UserData newUser = new UserData(originalUsername);
         string json = JsonUtility.ToJson(newUser);
 
         dbReference.Child("users").Child(normalizedUsername).SetRawJsonValueAsync(json).ContinueWithOnMainThread(task =>
         {
             if (task.IsCompletedSuccessfully)
             {
-                Debug.Log("[FirebaseLogin] New user saved. Proceeding to Scene1...");
+                Debug.Log("[FirebaseLogin] New user saved. Proceeding to menu...");
 
-                // ✅ Save the username before loading the next scene
                 PlayerPrefs.SetString("normalizedUsername", normalizedUsername);
                 PlayerPrefs.Save();
 
-                ProceedToScene1();
+                ProceedToMenu();
             }
             else
             {
@@ -120,60 +116,14 @@ public class FirebaseLogin : MonoBehaviour
         });
     }
 
-    void ProceedToScene1()
+    void ProceedToMenu()
     {
-
         checker.StartManual();
         mainmenu.SetActive(false);
         bagonglaro.SetActive(false);
         selection.SetActive(true);
     }
 
-    // ✅ Function to update a specific stage
-    public void UpdateStage(string username, string levelName, string stageName, bool value)
-    {
-        dbReference.Child("users")
-            .Child(username)
-            .Child("levels")
-            .Child(levelName)
-            .Child(stageName)
-            .SetValueAsync(value)
-            .ContinueWithOnMainThread(task =>
-            {
-                if (task.IsCompletedSuccessfully)
-                {
-                    Debug.Log($"[FirebaseLogin] {levelName}/{stageName} updated to {value}");
-                }
-                else
-                {
-                    Debug.LogError("[FirebaseLogin] Failed to update stage: " + task.Exception);
-                }
-            });
-    }
-
-    // ✅ Function to update a level's unlocked status
-    public void UpdateLevel(string username, string levelName, bool value)
-    {
-        dbReference.Child("users")
-            .Child(username)
-            .Child("levels")
-            .Child(levelName)
-            .Child("unlocked")
-            .SetValueAsync(value)
-            .ContinueWithOnMainThread(task =>
-            {
-                if (task.IsCompletedSuccessfully)
-                {
-                    Debug.Log($"[FirebaseLogin] {levelName} unlocked = {value}");
-                }
-                else
-                {
-                    Debug.LogError("[FirebaseLogin] Failed to update level: " + task.Exception);
-                }
-            });
-    }
-
-    // ✅ Function to load user progress (example)
     void LoadUserProgress(string normalizedUsername)
     {
         dbReference.Child("users").Child(normalizedUsername).GetValueAsync().ContinueWithOnMainThread(task =>
@@ -201,28 +151,27 @@ public class UserData
     {
         this.username = username;
         this.score = 0;
-        this.levels = new Levels(); // initialize levels with defaults
+        this.levels = new Levels();
     }
 }
 
 [Serializable]
 public class Levels
 {
-    public Level level1 = new Level(true, true); // 👈 Level 1 unlocked, Stage 1 unlocked by default
+    public Level level1 = new Level(true, true);
     public Level level2 = new Level(false, false);
     public Level level3 = new Level(false, false);
-    public Level level4 = new Level(false, false); // 👈 NEW Level 4 added
+    public Level level4 = new Level(false, false);
 }
 
 [Serializable]
 public class Level
 {
-    public bool unlocked; // 👈 new: level unlocked or locked
+    public bool unlocked;
     public bool stage1;
     public bool stage2;
     public bool stage3;
 
-    // Default constructor: locked level, all stages locked
     public Level()
     {
         unlocked = false;
@@ -231,7 +180,6 @@ public class Level
         stage3 = false;
     }
 
-    // Custom constructor: set level unlocked + stage1 unlocked if needed
     public Level(bool levelUnlocked, bool unlockStage1)
     {
         unlocked = levelUnlocked;
