@@ -7,6 +7,8 @@ public class Scene2CanvasManager : MonoBehaviour
     public GameObject unboxShip;
     public TimerDisplay timer;
     public GameObject C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, atlasSelection, pasaporte, kalakalan, kultura, teknolohiya, migrasyon;
+    public GameObject AtlasCamera, JoseCamera, JoseMainCamera;
+
 
     void Start()
     {
@@ -126,61 +128,87 @@ public class Scene2CanvasManager : MonoBehaviour
     public void C14CanvasShow()
     {
         ShowDialogue(C14);
+        AtlasCamera.SetActive(true);
+        JoseCamera.SetActive(false);
     }
 
     public void C15CanvasShow()
     {
         ShowDialogue(C15);
+        AtlasCamera.SetActive(false);
+        JoseCamera.SetActive(true);
     }
 
     public void C16CanvasShow()
     {
         ShowDialogue(C16);
+        AtlasCamera.SetActive(true);
+        JoseCamera.SetActive(false);
     }
 
     public void C17CanvasShow()
     {
         ShowDialogue(C17);
+        AtlasCamera.SetActive(false);
+        JoseCamera.SetActive(true);
     }
 
     public void C18CanvasShow()
     {
         ShowDialogue(C18);
+        AtlasCamera.SetActive(true);
+        JoseCamera.SetActive(false);
     }
 
     public void C19CanvasShow()
     {
         ShowDialogue(C19);
+        AtlasCamera.SetActive(false);
+        JoseCamera.SetActive(true);
     }
 
     public void C20CanvasShow()
     {
         ShowDialogue(C20);
+        AtlasCamera.SetActive(true);
+        JoseCamera.SetActive(false);
     }
 
     public void atlasSelectionCanvasShow()
     {
         ShowDialogue(atlasSelection);
+        AtlasCamera.SetActive(false);
+        JoseCamera.SetActive(false);
+        JoseMainCamera.SetActive(true);
     }
 
     public void C21CanvasShow()
     {
         ShowDialogue(C21);
+        AtlasCamera.SetActive(true);
+        JoseCamera.SetActive(false);
+        JoseMainCamera.SetActive(false);
     }
 
     public void C22CanvasShow()
     {
         ShowDialogue(C22);
+        AtlasCamera.SetActive(false);
+        JoseCamera.SetActive(true);
     }
 
     public void C23CanvasShow()
     {
         ShowDialogue(C23);
+        AtlasCamera.SetActive(true);
+        JoseCamera.SetActive(false);
     }
 
     public void C24CanvasShow()
     {
         ShowDialogue(C24);
+        AtlasCamera.SetActive(false);
+        JoseCamera.SetActive(true);
     }
 
 
