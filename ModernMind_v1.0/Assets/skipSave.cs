@@ -2,79 +2,76 @@ using UnityEngine;
 
 public class skipSave : MonoBehaviour
 {
-    void Start()
-    {
-        CheckSearchSkip();
-    }
+    public GameObject Puzzle1Finish, Puzzle2Finish, Puzzle3Finish, FirstLetter, SecondLetter, ThirdLetter;
 
     public void OneP()
     {
         PlayerPrefs.SetString("SearchSkip", "OneP");
         PlayerPrefs.Save();
-        CheckSearchSkip();
     }
 
     public void OneL()
     {
         PlayerPrefs.SetString("SearchSkip", "OneL");
         PlayerPrefs.Save();
-        CheckSearchSkip();
     }
 
     public void TwoP()
     {
         PlayerPrefs.SetString("SearchSkip", "TwoP");
         PlayerPrefs.Save();
-        CheckSearchSkip();
     }
 
     public void TwoL()
     {
         PlayerPrefs.SetString("SearchSkip", "TwoL");
         PlayerPrefs.Save();
-        CheckSearchSkip();
     }
 
     public void ThreeP()
     {
         PlayerPrefs.SetString("SearchSkip", "ThreeP");
         PlayerPrefs.Save();
-        CheckSearchSkip();
     }
 
     public void ThreeL()
     {
         PlayerPrefs.SetString("SearchSkip", "ThreeL");
         PlayerPrefs.Save();
-        CheckSearchSkip();
     }
 
-    private void CheckSearchSkip()
+    public void UseSkip()
     {
         string value = PlayerPrefs.GetString("SearchSkip", "");
 
         if (value == "OneP")
         {
+            Puzzle1Finish.SetActive(true);
             Debug.Log("SearchSkip = OneP");
         }
         else if (value == "OneL")
         {
+            FirstLetter.SetActive(true);
             Debug.Log("SearchSkip = OneL");
         }
         else if (value == "TwoP")
         {
+            Puzzle2Finish.SetActive(true);
             Debug.Log("SearchSkip = TwoP");
         }
         else if (value == "TwoL")
         {
+            SecondLetter.SetActive(true);
             Debug.Log("SearchSkip = TwoL");
         }
         else if (value == "ThreeP")
         {
+            Puzzle3Finish.SetActive(true);
             Debug.Log("SearchSkip = ThreeP");
         }
         else if (value == "ThreeL")
         {
+            ThirdLetter.SetActive(true);
             Debug.Log("SearchSkip = ThreeL");
         }
         else

@@ -33143,6 +33143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 220502585}
   - component: {fileID: 220502586}
+  - component: {fileID: 220502587}
   m_Layer: 0
   m_Name: LoadData
   m_TagString: Untagged
@@ -33187,6 +33188,24 @@ MonoBehaviour:
   freezeNo: {fileID: 1290439243}
   skipUse: {fileID: 1099614328}
   skipNo: {fileID: 799614046}
+--- !u!114 &220502587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220502584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7989ef5bdf09b14188b04e631129017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle1Finish: {fileID: 2034540272}
+  Puzzle2Finish: {fileID: 1326895935}
+  Puzzle3Finish: {fileID: 2129091098}
+  FirstLetter: {fileID: 1146218766}
+  SecondLetter: {fileID: 29187455}
+  ThirdLetter: {fileID: 129191255}
 --- !u!1 &220692167
 GameObject:
   m_ObjectHideFlags: 0
@@ -189323,8 +189342,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1451331511}
-        m_TargetAssemblyTypeName: UseSkip, Assembly-CSharp
+      - m_Target: {fileID: 1451331514}
+        m_TargetAssemblyTypeName: UseSkipSearch, Assembly-CSharp
         m_MethodName: UseSkipPower
         m_Mode: 1
         m_Arguments:
@@ -189333,33 +189352,9 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlatformCounter, Assembly-CSharp
-        m_MethodName: SkipToNextCube
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1417445443}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -189370,6 +189365,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1417445443}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1099614331
 MonoBehaviour:
@@ -255921,7 +255928,7 @@ GameObject:
   - component: {fileID: 1451331510}
   - component: {fileID: 1451331513}
   - component: {fileID: 1451331512}
-  - component: {fileID: 1451331511}
+  - component: {fileID: 1451331514}
   m_Layer: 0
   m_Name: Skip
   m_TagString: Untagged
@@ -255952,20 +255959,6 @@ RectTransform:
   m_AnchoredPosition: {x: 288.72, y: 23}
   m_SizeDelta: {x: 206.891, y: 201.9575}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1451331511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451331509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621052f2e7ecd134386118a4f2174b36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  withStock: {fileID: 1099614328}
-  noStock: {fileID: 799614046}
 --- !u!114 &1451331512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256004,6 +255997,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451331509}
   m_CullTransparentMesh: 1
+--- !u!114 &1451331514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451331509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5438fcc5dff9c8a4dbc38000d8f2d44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  withStock: {fileID: 1099614328}
+  noStock: {fileID: 799614046}
+  skip: {fileID: 220502587}
 --- !u!4 &1451339746
 Transform:
   m_ObjectHideFlags: 0
