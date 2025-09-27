@@ -4,6 +4,11 @@ public class skipSave : MonoBehaviour
 {
     public GameObject Puzzle1Finish, Puzzle2Finish, Puzzle3Finish, FirstLetter, SecondLetter, ThirdLetter;
 
+    void Start()
+    {
+        OneP();
+    }
+
     public void OneP()
     {
         PlayerPrefs.SetString("SearchSkip", "OneP");
