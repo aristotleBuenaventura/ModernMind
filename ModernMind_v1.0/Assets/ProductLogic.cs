@@ -6,10 +6,11 @@ using TMPro;
 [System.Serializable]
 public class ProductItem
 {
-    public string key;             // e.g. "blue", "green", "black"
-    public GameObject parentObj;   // parent object to hide
-    public GameObject buttonObj;   // button to hide
-    [TextArea] public string comments; // message shown on wrong answer
+    public string key;
+    public GameObject parentObj;
+    public GameObject buttonObj;
+    [TextArea] public string comments;
+    [TextArea] public string scoreComments;
     [HideInInspector] public bool isDone = false;
 }
 
@@ -21,10 +22,6 @@ public class ProductLogic : MonoBehaviour
     public ShowUI task;
 
     [Header("Objects")]
-    //public GameObject check;
-    //public GameObject circles;
-
-    [Header("Trash Items")]
     public List<ProductItem> trashItems = new List<ProductItem>();
 
     [Header("Game Systems")]
@@ -33,11 +30,9 @@ public class ProductLogic : MonoBehaviour
     public TimerDisplay timer;
 
     [Header("UI Text")]
-    public TextMeshProUGUI commentsTrash; // global TMP text to show feedback
+    public TextMeshProUGUI commentsTrash;
+    public TextMeshProUGUI commentsScore;
 
-    //public GameObject Antas1Result, blueStore;
-
-    // Score rewards for each trash type
     private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
     {
         { "export", 5 },
@@ -49,76 +44,55 @@ public class ProductLogic : MonoBehaviour
     {
         foreach (var item in trashItems)
         {
-            if (!item.isDone) return; // bail if any unfinished
+            if (!item.isDone) return;
         }
-
-        // If all are done
         Debug.Log("ALLDONE");
         timer.StartTimer();
         result.ResultClose();
         bag.UICanvasClose();
-        //Antas1Result.SetActive(true);
-        //blueStore.SetActive(true);
-        //check.SetActive(true);
-        //circles.SetActive(false);
     }
 
-    // Centralized finishing logic; always calls CheckAllDone()
     private void FinishItem(ProductItem item, bool correct)
     {
         if (item.buttonObj != null) item.buttonObj.SetActive(false);
         if (item.parentObj != null) item.parentObj.SetActive(false);
-
         item.isDone = true;
-
-        if (commentsTrash != null)
-            commentsTrash.text = correct ? "Correct!" : item.comments;
-
-        // Optional: progress log
+        if (commentsTrash != null) commentsTrash.text = correct ? "Correct!" : item.comments;
+        if (commentsScore != null) commentsScore.text = correct ? item.scoreComments : "";
         int done = 0;
         foreach (var t in trashItems) if (t.isDone) done++;
         Debug.Log($"Progress: {done}/{trashItems.Count} items done.");
-
         CheckAllDone();
     }
 
-    // Call this from the Button’s OnClick, passing in its color key
     public void CheckLogic(string colorKey)
     {
         string savedValue = PlayerPrefs.GetString("productCheckerValue");
         bag.UICanvasClose();
-
-        // Detect which UI object was pressed (could be a child of the button)
         GameObject pressedGO = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
-
         ProductItem item = trashItems.Find(x =>
             x.key == colorKey &&
             pressedGO != null &&
             (x.buttonObj == pressedGO || pressedGO.transform.IsChildOf(x.buttonObj.transform))
         );
-
         if (item == null)
         {
             Debug.LogWarning($"No TrashItem found for key: {colorKey} (pressedGO={pressedGO?.name})");
             return;
         }
-
         bool correct = (savedValue == colorKey);
-
         if (correct)
         {
             result.TumpakShow();
-
             if (scoreRewards.TryGetValue(colorKey, out int reward))
                 coins.IncrementScore(reward);
-                newCoins.IncrementScore(reward);
-
-            FinishItem(item, true);   // ✅ calls CheckAllDone()
+            newCoins.IncrementScore(reward);
+            FinishItem(item, true);
         }
         else
         {
             result.MaliShow();
-            FinishItem(item, false);  // ✅ calls CheckAllDone() even on wrong
+            FinishItem(item, false);
         }
     }
 }
