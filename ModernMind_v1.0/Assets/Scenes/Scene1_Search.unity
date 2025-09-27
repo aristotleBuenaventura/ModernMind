@@ -50608,6 +50608,7 @@ GameObject:
   - component: {fileID: 336178104}
   - component: {fileID: 336178103}
   - component: {fileID: 336178102}
+  - component: {fileID: 336178106}
   m_Layer: 0
   m_Name: XrayCamera
   m_TagString: MainCamera
@@ -50719,6 +50720,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &336178106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336178100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c88ecf588a603147a1e4795b5a7eea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrayCamera: {fileID: 336178100}
 --- !u!33 &336354372
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88397,8 +88411,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714412804}
-        m_TargetAssemblyTypeName: UseHint, Assembly-CSharp
+      - m_Target: {fileID: 1714412807}
+        m_TargetAssemblyTypeName: UseHintSearch, Assembly-CSharp
         m_MethodName: UseHintPower
         m_Mode: 1
         m_Arguments:
@@ -88407,21 +88421,9 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1417445443}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -113330,7 +113332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &689522812
 Transform:
   m_ObjectHideFlags: 0
@@ -301047,7 +301049,7 @@ GameObject:
   - component: {fileID: 1714412803}
   - component: {fileID: 1714412806}
   - component: {fileID: 1714412805}
-  - component: {fileID: 1714412804}
+  - component: {fileID: 1714412807}
   m_Layer: 0
   m_Name: Hint
   m_TagString: Untagged
@@ -301078,20 +301080,6 @@ RectTransform:
   m_AnchoredPosition: {x: -281.63, y: 23}
   m_SizeDelta: {x: 206.891, y: 201.9575}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1714412804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714412802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab67fceefc7ad0241957527eac29bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  withStock: {fileID: 527312309}
-  noStock: {fileID: 379425362}
 --- !u!114 &1714412805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301130,6 +301118,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714412802}
   m_CullTransparentMesh: 1
+--- !u!114 &1714412807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714412802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f89c45ab3337242870cf20baefafac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  withStock: {fileID: 527312309}
+  noStock: {fileID: 379425362}
+  bag: {fileID: 422750751}
+  xraycamera: {fileID: 336178106}
 --- !u!64 &1714453902
 MeshCollider:
   m_ObjectHideFlags: 0
