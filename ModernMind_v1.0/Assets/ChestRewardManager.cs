@@ -21,10 +21,28 @@ public class ChestRewardManager : MonoBehaviour
     public Transform dummypositionchestThree_2;
     public Transform dummypositionchestThree_3;
 
+    // rewards (assign them in Inspector)
+    public GameObject freezeReward;
+    public GameObject hintReward;
+    public GameObject skipReward;
+
+    private GameObject[] rewards;
+
+    private void Start()
+    {
+        // store rewards in array
+        rewards = new GameObject[] { freezeReward, hintReward, skipReward };
+
+        // hide all rewards at start
+        foreach (GameObject r in rewards)
+        {
+            if (r != null) r.SetActive(false);
+        }
+    }
+
     public void SetChest1()
     {
         ResetAll();
-
         closedChest1.SetActive(true);
         openChest1.SetActive(false);
 
@@ -35,7 +53,6 @@ public class ChestRewardManager : MonoBehaviour
     public void SetChest2()
     {
         ResetAll();
-
         closedChest1.SetActive(true);
         openChest1.SetActive(false);
         closedChest2.SetActive(true);
@@ -51,7 +68,6 @@ public class ChestRewardManager : MonoBehaviour
     public void SetChest3()
     {
         ResetAll();
-
         closedChest1.SetActive(true);
         openChest1.SetActive(false);
         closedChest2.SetActive(true);
@@ -73,18 +89,24 @@ public class ChestRewardManager : MonoBehaviour
     {
         closedChest1.SetActive(false);
         openChest1.SetActive(true);
+
+        ShowRandomReward();
     }
 
     public void OpenChest2()
     {
         closedChest2.SetActive(false);
         openChest2.SetActive(true);
+
+        ShowRandomReward();
     }
 
     public void OpenChest3()
     {
         closedChest3.SetActive(false);
         openChest3.SetActive(true);
+
+        ShowRandomReward();
     }
 
     void ResetAll()
@@ -95,5 +117,18 @@ public class ChestRewardManager : MonoBehaviour
         openChest2.SetActive(false);
         closedChest3.SetActive(false);
         openChest3.SetActive(false);
+
+        // hide rewards each reset
+        foreach (GameObject r in rewards)
+        {
+            if (r != null) r.SetActive(false);
+        }
+    }
+
+    private void ShowRandomReward()
+    {
+        int randomIndex = Random.Range(0, rewards.Length);
+        GameObject reward = rewards[randomIndex];
+        reward.SetActive(true);
     }
 }
