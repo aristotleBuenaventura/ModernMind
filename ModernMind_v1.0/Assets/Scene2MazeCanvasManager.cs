@@ -4,7 +4,7 @@ public class Scene2MazeCanvasManager : MonoBehaviour
 {
     public GameObject Loading, Atlas1, Atlas2, Atlas3, Atlas4, First, Second, Third, Fourth, Fifth, Sixth, Atlas5;
     public GameObject Fence, Atlas6, Atlas7, Atlas8, Atlas9, Atlas10, Atlas11, Atlas12;
-    public TimerDisplay time;
+    public TimerHopscotch time;
 
     void Start()
     {
