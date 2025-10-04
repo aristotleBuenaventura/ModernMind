@@ -16,7 +16,8 @@ public class UseHintMaze : MonoBehaviour
             PlayerPrefs.Save();
 
             Debug.Log($"Hint used. Remaining: {currentCount}");
-            mapUI.SetActive(true);
+            mapUI.SetActive(true); 
+            
             // 🔥 Update the UI immediately
             LoadData loadData = FindObjectOfType<LoadData>();
             if (loadData != null)

@@ -124889,6 +124889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1123183738}
+  - component: {fileID: 1123183739}
   m_Layer: 0
   m_Name: UI
   m_TagString: Ground
@@ -124913,6 +124914,20 @@ Transform:
   - {fileID: 1369146123}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123183739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123183737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de949ed28caa20c40a139b09c38bc63f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapUI: {fileID: 364475285}
+  mapCanvas: {fileID: 2126204037}
 --- !u!33 &1123752912
 MeshFilter:
   m_ObjectHideFlags: 0
