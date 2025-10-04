@@ -78184,6 +78184,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1023507451}
+        m_TargetAssemblyTypeName: ChestCounter, Assembly-CSharp
+        m_MethodName: SetPlayerChestCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &621389653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113835,6 +113847,7 @@ MonoBehaviour:
   messageDisplay: {fileID: 451085594}
   key: {fileID: 1485119904}
   chest: {fileID: 1023507450}
+  chestCount: {fileID: 1023507451}
 --- !u!1 &956981462
 GameObject:
   m_ObjectHideFlags: 0
@@ -123065,6 +123078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1023507449}
   - component: {fileID: 1023507450}
+  - component: {fileID: 1023507451}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -123125,6 +123139,20 @@ MonoBehaviour:
   freezeReward: {fileID: 621389650}
   hintReward: {fileID: 1638741367}
   skipReward: {fileID: 1298686814}
+--- !u!114 &1023507451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023507448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82435131a17090b4b8bf6c3fb1bbe5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestCount: 0
+  chestUI: {fileID: 1023507448}
 --- !u!4 &1025266284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d2100f10c342364479e7a527f9ef5429, type: 3}
@@ -175025,6 +175053,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1023507451}
+        m_TargetAssemblyTypeName: ChestCounter, Assembly-CSharp
+        m_MethodName: SetPlayerChestCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1298686817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221721,6 +221761,18 @@ MonoBehaviour:
       - m_Target: {fileID: 160039562}
         m_TargetAssemblyTypeName: RewardSystem, Assembly-CSharp
         m_MethodName: Hint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1023507451}
+        m_TargetAssemblyTypeName: ChestCounter, Assembly-CSharp
+        m_MethodName: SetPlayerChestCount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -301055,6 +301107,7 @@ MonoBehaviour:
   messageDisplay: {fileID: 1889985084}
   key: {fileID: 0}
   chest: {fileID: 0}
+  chestCount: {fileID: 0}
 --- !u!114 &2109271109
 MonoBehaviour:
   m_ObjectHideFlags: 0

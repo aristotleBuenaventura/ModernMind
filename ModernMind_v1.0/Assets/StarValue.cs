@@ -15,6 +15,7 @@ public class StarValue : MonoBehaviour
     public KeyManager2 key;
     private int currentTier = -1; // -1 means nothing has been shown yet
     public ChestRewardManager chest;
+    public ChestCounter chestCount;
 
     void Update()
     {
@@ -41,6 +42,7 @@ public class StarValue : MonoBehaviour
                     oneStar.SetActive(true);
                     key.FixKey(0);
                     chest.SetChest1();
+                    chestCount.SetChestCount(1);
                     ULITIN.SetActive(true);
                     TUMULOY.SetActive(false);
                     break;
@@ -49,6 +51,7 @@ public class StarValue : MonoBehaviour
                     twoStar.SetActive(true);
                     key.FixKey(1);
                     chest.SetChest2();
+                    chestCount.SetChestCount(2);
                     ULITIN.SetActive(true);
                     TUMULOY.SetActive(true);
                     break;
@@ -57,6 +60,7 @@ public class StarValue : MonoBehaviour
                     threeStar.SetActive(true);
                     key.FixKey(2);
                     chest.SetChest3();
+                    chestCount.SetChestCount(3);
                     ULITIN.SetActive(false);
                     TUMULOY.SetActive(true);
                     break;
