@@ -14,6 +14,7 @@ public class StarValue : MonoBehaviour
     public TextMeshProUGUI messageDisplay;
     public KeyManager2 key;
     private int currentTier = -1; // -1 means nothing has been shown yet
+    public ChestRewardManager chest;
 
     void Update()
     {
@@ -39,6 +40,7 @@ public class StarValue : MonoBehaviour
                     ShowMessage(oneStarMessages);
                     oneStar.SetActive(true);
                     key.FixKey(0);
+                    chest.SetChest1();
                     ULITIN.SetActive(true);
                     TUMULOY.SetActive(false);
                     break;
@@ -46,6 +48,7 @@ public class StarValue : MonoBehaviour
                     ShowMessage(twoStarMessages);
                     twoStar.SetActive(true);
                     key.FixKey(1);
+                    chest.SetChest2();
                     ULITIN.SetActive(true);
                     TUMULOY.SetActive(true);
                     break;
@@ -53,6 +56,7 @@ public class StarValue : MonoBehaviour
                     ShowMessage(threeStarMessages);
                     threeStar.SetActive(true);
                     key.FixKey(2);
+                    chest.SetChest3();
                     ULITIN.SetActive(false);
                     TUMULOY.SetActive(true);
                     break;
