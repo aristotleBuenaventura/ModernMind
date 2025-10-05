@@ -18,7 +18,7 @@ public class FirebaseLogin : MonoBehaviour
 
     void Start()
     {
-        loginButton.interactable = false;  // Disable button until Firebase is ready
+        loginButton.interactable = false;
 
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
@@ -35,7 +35,7 @@ public class FirebaseLogin : MonoBehaviour
                     Debug.LogError("[FirebaseLogin] Exception getting DB reference: " + e);
                 }
 
-                loginButton.interactable = true;  // Enable button now that Firebase is ready
+                loginButton.interactable = true;
             }
             else
             {
@@ -44,22 +44,12 @@ public class FirebaseLogin : MonoBehaviour
         });
     }
 
-    // Called by the button OnClick
     public void OnLoginClicked()
     {
-        if (dbReference == null)
-        {
-            Debug.LogError("[FirebaseLogin] Database reference is not ready.");
-            return;
-        }
+        if (dbReference == null) return;
 
         string inputUsername = usernameInput.text.Trim();
-
-        if (string.IsNullOrEmpty(inputUsername))
-        {
-            Debug.LogWarning("[FirebaseLogin] Username input is empty.");
-            return;
-        }
+        if (string.IsNullOrEmpty(inputUsername)) return;
 
         string normalizedUsername = inputUsername.ToLower();
         CheckIfUserExists(normalizedUsername, inputUsername);
@@ -67,8 +57,6 @@ public class FirebaseLogin : MonoBehaviour
 
     void CheckIfUserExists(string normalizedUsername, string originalUsername)
     {
-        Debug.Log($"[FirebaseLogin] Checking if username '{normalizedUsername}' exists...");
-
         dbReference.Child("users").Child(normalizedUsername).GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
@@ -77,8 +65,6 @@ public class FirebaseLogin : MonoBehaviour
             }
             else if (task.Result.Exists)
             {
-                Debug.Log("[FirebaseLogin] User exists. Loading progress...");
-
                 PlayerPrefs.SetString("normalizedUsername", normalizedUsername);
                 PlayerPrefs.Save();
 
@@ -87,7 +73,6 @@ public class FirebaseLogin : MonoBehaviour
             }
             else
             {
-                Debug.Log("[FirebaseLogin] New user detected. Creating user...");
                 SaveNewUser(normalizedUsername, originalUsername);
             }
         });
@@ -102,8 +87,6 @@ public class FirebaseLogin : MonoBehaviour
         {
             if (task.IsCompletedSuccessfully)
             {
-                Debug.Log("[FirebaseLogin] New user saved. Proceeding to menu...");
-
                 PlayerPrefs.SetString("normalizedUsername", normalizedUsername);
                 PlayerPrefs.Save();
 
@@ -132,8 +115,6 @@ public class FirebaseLogin : MonoBehaviour
             {
                 string json = task.Result.GetRawJsonValue();
                 UserData userData = JsonUtility.FromJson<UserData>(json);
-
-                Debug.Log("[FirebaseLogin] User progress loaded:");
                 Debug.Log(JsonUtility.ToJson(userData, true));
             }
         });
@@ -168,23 +149,35 @@ public class Levels
 public class Level
 {
     public bool unlocked;
+
     public bool stage1;
+    public int stage1Coins;
+
     public bool stage2;
+    public int stage2Coins;
+
     public bool stage3;
+    public int stage3Coins;
 
     public Level()
     {
         unlocked = false;
         stage1 = false;
+        stage1Coins = 0;
         stage2 = false;
+        stage2Coins = 0;
         stage3 = false;
+        stage3Coins = 0;
     }
 
     public Level(bool levelUnlocked, bool unlockStage1)
     {
         unlocked = levelUnlocked;
         stage1 = unlockStage1;
+        stage1Coins = 0;
         stage2 = false;
+        stage2Coins = 0;
         stage3 = false;
+        stage3Coins = 0;
     }
 }

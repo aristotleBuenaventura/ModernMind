@@ -1,18 +1,31 @@
 ﻿using UnityEngine;
-using TMPro; // Import TextMeshPro namespace
 
 public class TrackCoins : MonoBehaviour
 {
+    public string coinsKey = "Coins";
     private int score;
+
+    private void Start()
+    {
+        score = PlayerPrefs.GetInt(coinsKey, 0);
+    }
 
     public void IncrementScore(int amount)
     {
         score += amount;
-
+        PlayerPrefs.SetInt(coinsKey, score);
+        PlayerPrefs.Save();
     }
-    // Getter function to retrieve the current score
+
     public int GetScore()
     {
         return score;
+    }
+
+    public void SetScore(int value)
+    {
+        score = value;
+        PlayerPrefs.SetInt(coinsKey, score);
+        PlayerPrefs.Save();
     }
 }
