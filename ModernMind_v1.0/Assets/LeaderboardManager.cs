@@ -4,19 +4,30 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class LeaderboardManager : MonoBehaviour
 {
-    [Header("UI References")]
-    [SerializeField] private TextMeshProUGUI[] nameTexts;   // drag 5 name TMPs
-    [SerializeField] private TextMeshProUGUI[] scoreTexts;  // drag 5 score TMPs
+    [Header("Leaderboard UI")]
+    [SerializeField] private TextMeshProUGUI[] nameTexts;
+    [SerializeField] private TextMeshProUGUI[] scoreTexts;
+    [SerializeField] private Button[] infoButtons;
+
+    [Header("Player Details Canvases")]
+    [SerializeField] private GameObject[] playerDetailCanvases; // 3 canvases
+    [SerializeField] private TextMeshProUGUI[] playerNameTexts;  // 3 player names, one per canvas
+
+    [Header("Stage Coins per Canvas")]
+    [SerializeField] private TextMeshProUGUI[] level1StageTexts; // 3 TMPs for Level1 stages
+    [SerializeField] private TextMeshProUGUI[] level2StageTexts; // 3 TMPs for Level2 stages
+    [SerializeField] private TextMeshProUGUI[] level3StageTexts; // 3 TMPs for Level3 stages
 
     private DatabaseReference dbReference;
     private bool isReady = false;
+    private List<string> playerNames = new List<string>();
 
     private void Start()
     {
-        // Init Firebase
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             if (task.Result == DependencyStatus.Available)
@@ -25,73 +36,111 @@ public class LeaderboardManager : MonoBehaviour
                 FirebaseDatabase database = FirebaseDatabase.GetInstance(FirebaseApp.DefaultInstance, databaseUrl);
                 dbReference = database.RootReference;
                 isReady = true;
-
-                RefreshLeaderboard(); // auto-load once
-            }
-            else
-            {
-                Debug.LogError("[LeaderboardManager] Firebase dependencies not resolved.");
+                RefreshLeaderboard();
             }
         });
     }
 
-    // ✅ Call this to refresh leaderboard anytime
     public void RefreshLeaderboard()
     {
-        if (!isReady)
-        {
-            Debug.LogWarning("[LeaderboardManager] Firebase not ready yet.");
-            return;
-        }
+        if (!isReady) return;
 
         dbReference.Child("users")
             .OrderByChild("score")
-            .LimitToLast(15) // top 5 highest scores
+            .LimitToLast(15)
             .GetValueAsync()
             .ContinueWithOnMainThread(task =>
             {
-                if (task.IsFaulted)
-                {
-                    Debug.LogError("[LeaderboardManager] Failed to load leaderboard: " + task.Exception);
-                    return;
-                }
-
                 if (task.IsCompletedSuccessfully)
                 {
                     DataSnapshot snapshot = task.Result;
                     List<(string name, int score)> leaderboard = new List<(string, int)>();
+                    playerNames.Clear();
 
                     foreach (DataSnapshot child in snapshot.Children)
                     {
                         string username = child.Key;
                         int score = 0;
                         if (child.Child("score").Exists)
-                        {
                             int.TryParse(child.Child("score").Value.ToString(), out score);
-                        }
                         leaderboard.Add((username, score));
                     }
 
-                    // sort descending (highest first)
                     leaderboard.Sort((a, b) => b.score.CompareTo(a.score));
 
-                    // fill UI
                     for (int i = 0; i < nameTexts.Length; i++)
                     {
                         if (i < leaderboard.Count)
                         {
                             nameTexts[i].text = leaderboard[i].name;
                             scoreTexts[i].text = leaderboard[i].score.ToString();
+                            playerNames.Add(leaderboard[i].name);
+
+                            int index = i;
+                            infoButtons[i].onClick.RemoveAllListeners();
+                            infoButtons[i].onClick.AddListener(() => ShowPlayerDetails(playerNames[index]));
+                            infoButtons[i].gameObject.SetActive(true);
                         }
                         else
                         {
                             nameTexts[i].text = "-";
                             scoreTexts[i].text = "0";
+                            infoButtons[i].gameObject.SetActive(false);
                         }
                     }
-
-                    Debug.Log("[LeaderboardManager] Leaderboard refreshed.");
                 }
             });
+    }
+
+    private void ShowPlayerDetails(string username)
+    {
+        dbReference.Child("users").Child(username).Child("levels").GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (!task.IsCompletedSuccessfully) return;
+            DataSnapshot levelsSnapshot = task.Result;
+
+            int canvasIndex = 0;
+            foreach (DataSnapshot level in levelsSnapshot.Children)
+            {
+                if (canvasIndex >= playerDetailCanvases.Length) break;
+
+                playerDetailCanvases[canvasIndex].SetActive(true);
+                playerNameTexts[canvasIndex].text = username;
+
+                int stage1Coins = level.Child("stage1Coins").Exists ? int.Parse(level.Child("stage1Coins").Value.ToString()) : 0;
+                int stage2Coins = level.Child("stage2Coins").Exists ? int.Parse(level.Child("stage2Coins").Value.ToString()) : 0;
+                int stage3Coins = level.Child("stage3Coins").Exists ? int.Parse(level.Child("stage3Coins").Value.ToString()) : 0;
+
+                if (canvasIndex == 0)
+                {
+                    level1StageTexts[0].text = stage1Coins.ToString();
+                    level1StageTexts[1].text = stage2Coins.ToString();
+                    level1StageTexts[2].text = stage3Coins.ToString();
+                }
+                else if (canvasIndex == 1)
+                {
+                    level2StageTexts[0].text = stage1Coins.ToString();
+                    level2StageTexts[1].text = stage2Coins.ToString();
+                    level2StageTexts[2].text = stage3Coins.ToString();
+                }
+                else if (canvasIndex == 2)
+                {
+                    level3StageTexts[0].text = stage1Coins.ToString();
+                    level3StageTexts[1].text = stage2Coins.ToString();
+                    level3StageTexts[2].text = stage3Coins.ToString();
+                }
+
+                canvasIndex++;
+            }
+
+            for (; canvasIndex < playerDetailCanvases.Length; canvasIndex++)
+                playerDetailCanvases[canvasIndex].SetActive(false);
+        });
+    }
+
+    public void ClosePlayerDetails()
+    {
+        foreach (var canvas in playerDetailCanvases)
+            canvas.SetActive(false);
     }
 }
