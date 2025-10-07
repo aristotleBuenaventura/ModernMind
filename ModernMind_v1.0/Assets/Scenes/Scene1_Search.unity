@@ -154979,6 +154979,8 @@ MonoBehaviour:
   TUMULOY: {fileID: 153666465}
   messageDisplay: {fileID: 451085594}
   key: {fileID: 1485119904}
+  chest: {fileID: 0}
+  chestCount: {fileID: 0}
 --- !u!1 &957173170
 GameObject:
   m_ObjectHideFlags: 0
@@ -164688,6 +164690,7 @@ GameObject:
   - component: {fileID: 1016966539}
   - component: {fileID: 1016966538}
   - component: {fileID: 1016966537}
+  - component: {fileID: 1016966540}
   m_Layer: 0
   m_Name: CoinsValue
   m_TagString: Untagged
@@ -164826,6 +164829,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016966535}
   m_CullTransparentMesh: 1
+--- !u!114 &1016966540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016966535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d500bd07b3d08f345a46f9a05c94d295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: level1
+  stageNumber: 3
 --- !u!1 &1017198453 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 97229e82747352a43b48688ec573f8e4, type: 3}
@@ -385713,6 +385730,8 @@ MonoBehaviour:
   TUMULOY: {fileID: 0}
   messageDisplay: {fileID: 1889985084}
   key: {fileID: 0}
+  chest: {fileID: 0}
+  chestCount: {fileID: 0}
 --- !u!114 &2109271109
 MonoBehaviour:
   m_ObjectHideFlags: 0
