@@ -5,6 +5,7 @@ public class ProductMazeChecker : MonoBehaviour
     public string productMazeCheckerValue;
     public SetAllButtons Buttons;
     public ShowUI Bag;
+    public GameObject powerups;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class ProductMazeChecker : MonoBehaviour
             Debug.Log("Saved productMazeCheckerValue: " + PlayerPrefs.GetString("productMazeCheckerValue"));
 
             Bag.UICanvasShow();
+            powerups.SetActive(false);
             Buttons.SetAllButtonsActive(true);
         }
     }

@@ -2411,6 +2411,7 @@ MonoBehaviour:
   productMazeCheckerValue: kultura
   Buttons: {fileID: 1065294813}
   Bag: {fileID: 1980298956}
+  powerups: {fileID: 1043156492}
 --- !u!23 &19454908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20752,7 +20753,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1043156492}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -88610,7 +88611,7 @@ MonoBehaviour:
   buttonAText: {fileID: 458151535}
   buttonBText: {fileID: 557287509}
   algo: {fileID: 545232642}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!114 &889331377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99872,6 +99873,7 @@ MonoBehaviour:
   productMazeCheckerValue: migrasyon
   Buttons: {fileID: 1065294813}
   Bag: {fileID: 1980298956}
+  powerups: {fileID: 1043156492}
 --- !u!4 &995535383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 97229e82747352a43b48688ec573f8e4, type: 3}
@@ -102573,7 +102575,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1043156492}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -128901,6 +128903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d500bd07b3d08f345a46f9a05c94d295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelNumber: level2
+  stageNumber: 3
 --- !u!4 &1161347861
 Transform:
   m_ObjectHideFlags: 0
@@ -246041,6 +246045,7 @@ MonoBehaviour:
   productMazeCheckerValue: kalakalan
   Buttons: {fileID: 1065294813}
   Bag: {fileID: 1980298956}
+  powerups: {fileID: 1043156492}
 --- !u!1001 &2056921749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253326,6 +253331,7 @@ MonoBehaviour:
   productMazeCheckerValue: teknolohiya
   Buttons: {fileID: 1065294813}
   Bag: {fileID: 1980298956}
+  powerups: {fileID: 1043156492}
 --- !u!1 &2075472717
 GameObject:
   m_ObjectHideFlags: 0
@@ -338551,7 +338557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!1 &7349156123526471315
 GameObject:
   m_ObjectHideFlags: 0
@@ -351348,7 +351354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!23 &8638290662952452963
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -351456,7 +351462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!23 &8638290663664741762
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -351564,7 +351570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!23 &8638290664108483334
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -351672,7 +351678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!23 &8638290664131719393
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -351780,7 +351786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!23 &8638290664557905266
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -351888,7 +351894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!4 &8639950379997592218
 Transform:
   m_ObjectHideFlags: 0
@@ -352931,7 +352937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!33 &8815496743061035785
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -353002,7 +353008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!33 &8815496743234285065
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -353073,7 +353079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!33 &8815496743293731164
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -353144,7 +353150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!33 &8820634655940718857
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -355893,7 +355899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!1 &9055701639931372827
 GameObject:
   m_ObjectHideFlags: 0
@@ -355978,7 +355984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!1 &9055701640086128276
 GameObject:
   m_ObjectHideFlags: 0
@@ -356063,7 +356069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!1 &9055701640195939500
 GameObject:
   m_ObjectHideFlags: 0
@@ -356148,7 +356154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!1 &9055701640316517026
 GameObject:
   m_ObjectHideFlags: 0
@@ -356233,7 +356239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   shake: {fileID: 8821259119666112559}
-  time: {fileID: 0}
+  time: {fileID: 1824701595}
 --- !u!1 &9056783830690987945
 GameObject:
   m_ObjectHideFlags: 0

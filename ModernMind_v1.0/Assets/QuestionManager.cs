@@ -33,7 +33,7 @@ public class QuestionManager : MonoBehaviour
     // 👉 Event para ma-notify si BoxQuestion
     public event Action<bool> OnAnswered;
 
-    public TimerDisplay time;
+    public TimerHopscotch time;
 
     private void Awake()
     {
