@@ -7,6 +7,7 @@ public class PuzzlePieceCounter : MonoBehaviour
     public CoinsValue coins;
     public int coinReward;
     public GameObject canvas;
+    public TrackCoins coinsDB;
 
     public void CounterCheck()
     {
@@ -18,6 +19,7 @@ public class PuzzlePieceCounter : MonoBehaviour
         if (counter >= maxCounter && maxCounter > 0)
         {
             coins.IncrementScore(coinReward);
+            coinsDB.IncrementScore(coinReward);
             canvas.SetActive(true);
             Debug.Log("PUZZLE DONE");
         }
