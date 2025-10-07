@@ -22,6 +22,9 @@ public class LeaderboardManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] level2StageTexts; // 3 TMPs for Level2 stages
     [SerializeField] private TextMeshProUGUI[] level3StageTexts; // 3 TMPs for Level3 stages
 
+    [Header("Total Coins per Level")]
+    [SerializeField] private TextMeshProUGUI[] levelTotalCoinsTexts; // 3 TMPs, one per level
+
     private DatabaseReference dbReference;
     private bool isReady = false;
     private List<string> playerNames = new List<string>();
@@ -111,23 +114,28 @@ public class LeaderboardManager : MonoBehaviour
                 int stage2Coins = level.Child("stage2Coins").Exists ? int.Parse(level.Child("stage2Coins").Value.ToString()) : 0;
                 int stage3Coins = level.Child("stage3Coins").Exists ? int.Parse(level.Child("stage3Coins").Value.ToString()) : 0;
 
+                int totalCoins = stage1Coins + stage2Coins + stage3Coins;
+
                 if (canvasIndex == 0)
                 {
                     level1StageTexts[0].text = stage1Coins.ToString();
                     level1StageTexts[1].text = stage2Coins.ToString();
                     level1StageTexts[2].text = stage3Coins.ToString();
+                    levelTotalCoinsTexts[0].text = totalCoins.ToString();
                 }
                 else if (canvasIndex == 1)
                 {
                     level2StageTexts[0].text = stage1Coins.ToString();
                     level2StageTexts[1].text = stage2Coins.ToString();
                     level2StageTexts[2].text = stage3Coins.ToString();
+                    levelTotalCoinsTexts[1].text = totalCoins.ToString();
                 }
                 else if (canvasIndex == 2)
                 {
                     level3StageTexts[0].text = stage1Coins.ToString();
                     level3StageTexts[1].text = stage2Coins.ToString();
                     level3StageTexts[2].text = stage3Coins.ToString();
+                    levelTotalCoinsTexts[2].text = totalCoins.ToString();
                 }
 
                 canvasIndex++;
