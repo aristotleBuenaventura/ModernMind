@@ -42,4 +42,15 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Scene2_Maze");
     }
+
+    public void Scene3_Hopscotch()
+    {
+        SceneManager.LoadScene("Scene3_Hopscotch");
+    }
+
+    public void Scene3_Bridge()
+    {
+        SceneManager.LoadScene("Scene3_Bridge");
+    }
+
 }
