@@ -3,7 +3,7 @@ using UnityEngine;
 public class Scene3Bridge : MonoBehaviour
 {
     public GameObject Loading, Lesbian1, Lesbian2, Gay1, Gay2, Bisexual1, Bisexual2, Transgender1, Transgender2, Queer1, Queer2;
-    public GameObject Lesbian, LesbianWords;
+    public GameObject Lesbian, LesbianWords, LesbianCircle;
     void Start()
     {
         LoadingCanvasShow();
@@ -19,6 +19,7 @@ public class Scene3Bridge : MonoBehaviour
         Queer2.SetActive(false);
         Lesbian.SetActive(false);
         LesbianWords.SetActive(false);
+        LesbianCircle.SetActive(false);
 
     }
 
@@ -41,12 +42,14 @@ public class Scene3Bridge : MonoBehaviour
     public void Lesbian2CanvasShow()
     {
         ShowDialogue(Lesbian2);
-        LesbianWords.SetActive(true);
+        
     }
 
     public void Lesbian2CanvasClose()
     {
         Lesbian2.SetActive(false);
+        LesbianWords.SetActive(true);
+        LesbianCircle.SetActive(true);
     }
 
     public void Gay1CanvasShow()

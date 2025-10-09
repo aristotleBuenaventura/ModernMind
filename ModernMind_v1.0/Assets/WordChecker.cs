@@ -3,6 +3,7 @@ using UnityEngine;
 public class WordChecker : MonoBehaviour
 {
     public string checkerValue;
+    public SetAllButtons Buttons;
     public ShowUI Bag;
 
     private void OnTriggerEnter(Collider other)
@@ -14,6 +15,7 @@ public class WordChecker : MonoBehaviour
             Debug.Log("Saved CheckerWordValue: " + PlayerPrefs.GetString("CheckerWordValue"));
 
             Bag.UICanvasShow();
+            Buttons.SetAllButtonsActive(true);
         }
     }
 
@@ -22,6 +24,7 @@ public class WordChecker : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Bag.UICanvasClose();
+            Buttons.SetAllButtonsActive(false);
         }
     }
 }
