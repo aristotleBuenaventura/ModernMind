@@ -10,6 +10,7 @@ public class WordCounter : MonoBehaviour
     public GameObject removeCanvas;
     public GameObject LGBTQcircle;
     public GameObject LGBTQwords;
+    public GameObject LGBTQwoods;
 
     [Header("Coin Rewards")]
     public CoinsValue coins;
@@ -34,6 +35,7 @@ public class WordCounter : MonoBehaviour
 
             Debug.Log("✅ WORD PUZZLE DONE!");
             LGBTQwords.SetActive(false);
+            LGBTQwoods.SetActive(true);
             // ✅ Trigger "Happy" animation if assigned
             if (animator != null)
             {
