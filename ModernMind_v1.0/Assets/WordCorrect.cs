@@ -4,7 +4,7 @@ public class WordCorrect : MonoBehaviour
 {
     public string letterValue;
     public GameObject Letter2D, ButtonUI, correct, wrong;
-    public LetterCounter counter;
+    public WordCounter counter;
     [HideInInspector] public WordPlacer placer;
     [HideInInspector] public int placedIndex = -1; // Track exact slot index
     public SetAllButtons allButtons;

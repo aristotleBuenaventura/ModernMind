@@ -19530,7 +19530,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 260446275}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -21122,7 +21122,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &211180823
 MonoBehaviour:
@@ -22161,7 +22161,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &217402880
 MonoBehaviour:
@@ -26984,7 +26984,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &257752571
 MonoBehaviour:
@@ -39277,7 +39277,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &370397902
 MonoBehaviour:
@@ -41430,7 +41430,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &387819677
 MonoBehaviour:
@@ -57811,7 +57811,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 1972968416}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -62842,7 +62842,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 1699687887}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -66627,8 +66627,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 574008656}
-  - component: {fileID: 574008658}
   - component: {fileID: 574008659}
+  - component: {fileID: 574008660}
   m_Layer: 0
   m_Name: Words1
   m_TagString: Untagged
@@ -66671,24 +66671,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -57}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &574008658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574008655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55ad607efafcf8349886555a9fe69f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wordCount: 5
-  doneCanvas: {fileID: 343222404}
-  removeCanvas: {fileID: 1088881812}
-  coins: {fileID: 1161235046}
-  coinReward: 5
-  coinsDB: {fileID: 1161235047}
 --- !u!114 &574008659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66707,6 +66689,27 @@ MonoBehaviour:
   - {fileID: 1924053428}
   - {fileID: 319897418}
   - {fileID: 1944892988}
+--- !u!114 &574008660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574008655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af87f1b0b8cb8642a43dc492fd54c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordCount: 5
+  doneCanvas: {fileID: 343222404}
+  removeCanvas: {fileID: 1088881812}
+  LGBTQcircle: {fileID: 1075512174}
+  LGBTQwords: {fileID: 1771447923}
+  coins: {fileID: 1161235046}
+  coinReward: 5
+  coinsDB: {fileID: 1161235047}
+  animator: {fileID: 919132147545907613}
 --- !u!23 &574103276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73188,7 +73191,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &631155506
 MonoBehaviour:
@@ -77654,7 +77657,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 845340084}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -138959,7 +138962,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 2066581897}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -176187,7 +176190,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 1579897543}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -182489,7 +182492,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &1402029588
 MonoBehaviour:
@@ -184838,7 +184841,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &1424385626
 MonoBehaviour:
@@ -185480,7 +185483,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!114 &1428203970
 MonoBehaviour:
@@ -207801,7 +207804,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 1851569520}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -219504,7 +219507,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 843645951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -242563,7 +242566,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 702215400}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -286465,7 +286468,7 @@ MonoBehaviour:
   ButtonUI: {fileID: 1773054211}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
-  counter: {fileID: 574008658}
+  counter: {fileID: 574008660}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
@@ -292716,7 +292719,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 35.530003, y: 5.1351957, z: 0.20000057}
+  m_Size: {x: 35.530003, y: 5.1351957, z: -4.26}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!54 &2115578773
 Rigidbody:
