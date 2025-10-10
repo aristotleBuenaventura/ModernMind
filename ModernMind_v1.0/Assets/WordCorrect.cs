@@ -3,9 +3,9 @@ using UnityEngine;
 public class WordCorrect : MonoBehaviour
 {
     public string letterValue;
-    public GameObject Letter3D, Letter2D, ButtonUI, Bag, BagIcon, correct, wrong;
+    public GameObject Letter2D, ButtonUI, correct, wrong;
     public LetterCounter counter;
-    [HideInInspector] public ItemPlacer placer;
+    [HideInInspector] public WordPlacer placer;
     [HideInInspector] public int placedIndex = -1; // Track exact slot index
     public SetAllButtons allButtons;
 
@@ -23,11 +23,8 @@ public class WordCorrect : MonoBehaviour
             }
 
             counter?.counterCheck();
-            Letter3D.SetActive(true);
             Letter2D.SetActive(false);
             if (ButtonUI != null) Destroy(ButtonUI);
-            Bag.SetActive(false);
-            BagIcon.SetActive(true);
             
             if (counter.IsBelowWordCount)
             {
@@ -42,6 +39,7 @@ public class WordCorrect : MonoBehaviour
         }
         else
         {
+            Letter2D.SetActive(false);
             Debug.Log($"[LetterChecker] ❌ Wrong! Expected {letterValue}, got {savedLetter}");
             wrong.SetActive(true);
         }

@@ -10317,7 +10317,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 671378490}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -19444,8 +19444,8 @@ GameObject:
   - component: {fileID: 189700248}
   - component: {fileID: 189700252}
   - component: {fileID: 189700251}
-  - component: {fileID: 189700250}
   - component: {fileID: 189700253}
+  - component: {fileID: 189700254}
   m_Layer: 0
   m_Name: Sinner
   m_TagString: Untagged
@@ -19475,22 +19475,6 @@ RectTransform:
   m_AnchoredPosition: {x: 255, y: -355}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &189700250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189700247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 217402877}
-  Letter2D: {fileID: 189700247}
 --- !u!114 &189700251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19542,17 +19526,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: wrong
-  Letter3D: {fileID: 217402877}
   Letter2D: {fileID: 189700247}
   ButtonUI: {fileID: 260446275}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &189700254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189700247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 217402877}
+  Letter2D: {fileID: 189700247}
 --- !u!1 &190292697
 GameObject:
   m_ObjectHideFlags: 0
@@ -21231,13 +21228,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 211180820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 211180820}
   Letter2D: {fileID: 1607238201}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!64 &211306912
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22270,13 +22267,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 217402877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 217402877}
   Letter2D: {fileID: 189700247}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!1001 &218642765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27093,13 +27090,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 257752568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 257752568}
   Letter2D: {fileID: 1692873795}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!1 &258253390
 GameObject:
   m_ObjectHideFlags: 0
@@ -39386,13 +39383,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 370397899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 370397899}
   Letter2D: {fileID: 542894624}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!23 &370883691
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41539,13 +41536,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 387819674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 387819674}
   Letter2D: {fileID: 2073121386}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!23 &388794429
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57728,8 +57725,8 @@ GameObject:
   - component: {fileID: 501092870}
   - component: {fileID: 501092874}
   - component: {fileID: 501092873}
-  - component: {fileID: 501092872}
   - component: {fileID: 501092875}
+  - component: {fileID: 501092876}
   m_Layer: 0
   m_Name: Free
   m_TagString: Untagged
@@ -57759,22 +57756,6 @@ RectTransform:
   m_AnchoredPosition: {x: 515, y: -201}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &501092872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501092869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 1424385623}
-  Letter2D: {fileID: 501092869}
 --- !u!114 &501092873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57826,17 +57807,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: Lesbian
-  Letter3D: {fileID: 1424385623}
   Letter2D: {fileID: 501092869}
   ButtonUI: {fileID: 1972968416}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &501092876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501092869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 1424385623}
+  Letter2D: {fileID: 501092869}
 --- !u!33 &501435431
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62762,8 +62756,8 @@ GameObject:
   - component: {fileID: 542894625}
   - component: {fileID: 542894629}
   - component: {fileID: 542894628}
-  - component: {fileID: 542894627}
   - component: {fileID: 542894630}
+  - component: {fileID: 542894631}
   m_Layer: 0
   m_Name: Beautiful
   m_TagString: Untagged
@@ -62793,22 +62787,6 @@ RectTransform:
   m_AnchoredPosition: {x: -9, y: -201}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &542894627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542894624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 370397899}
-  Letter2D: {fileID: 542894624}
 --- !u!114 &542894628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62860,17 +62838,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: Lesbian
-  Letter3D: {fileID: 370397899}
   Letter2D: {fileID: 542894624}
   ButtonUI: {fileID: 1699687887}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &542894631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542894624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 370397899}
+  Letter2D: {fileID: 542894624}
 --- !u!33 &543320575
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -66637,7 +66628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574008656}
   - component: {fileID: 574008658}
-  - component: {fileID: 574008657}
+  - component: {fileID: 574008659}
   m_Layer: 0
   m_Name: Words1
   m_TagString: Untagged
@@ -66680,24 +66671,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -57}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &574008657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574008655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97bc77ce1eb18bb4f90ee4a02104522d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotPositions:
-  - {fileID: 911417244}
-  - {fileID: 556804188}
-  - {fileID: 1924053428}
-  - {fileID: 319897418}
-  - {fileID: 1944892988}
 --- !u!114 &574008658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66716,6 +66689,24 @@ MonoBehaviour:
   coins: {fileID: 1161235046}
   coinReward: 5
   coinsDB: {fileID: 1161235047}
+--- !u!114 &574008659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574008655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132e0d5257876ce409885aa06b6c6159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPositions:
+  - {fileID: 911417244}
+  - {fileID: 556804188}
+  - {fileID: 1924053428}
+  - {fileID: 319897418}
+  - {fileID: 1944892988}
 --- !u!23 &574103276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73303,13 +73294,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 631155503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 631155503}
   Letter2D: {fileID: 671378487}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!1 &631796158
 GameObject:
   m_ObjectHideFlags: 0
@@ -77577,8 +77568,8 @@ GameObject:
   - component: {fileID: 671378488}
   - component: {fileID: 671378492}
   - component: {fileID: 671378491}
-  - component: {fileID: 671378490}
   - component: {fileID: 671378493}
+  - component: {fileID: 671378494}
   m_Layer: 0
   m_Name: Confused
   m_TagString: Untagged
@@ -77608,22 +77599,6 @@ RectTransform:
   m_AnchoredPosition: {x: 255, y: -201}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &671378490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671378487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 631155503}
-  Letter2D: {fileID: 671378487}
 --- !u!114 &671378491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77675,17 +77650,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: wrong
-  Letter3D: {fileID: 631155503}
   Letter2D: {fileID: 671378487}
   ButtonUI: {fileID: 845340084}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &671378494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671378487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 631155503}
+  Letter2D: {fileID: 671378487}
 --- !u!1 &671708259
 GameObject:
   m_ObjectHideFlags: 0
@@ -81332,7 +81320,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1117385742}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -133724,7 +133712,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2073121389}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -138885,8 +138873,8 @@ GameObject:
   - component: {fileID: 1117385740}
   - component: {fileID: 1117385744}
   - component: {fileID: 1117385743}
-  - component: {fileID: 1117385742}
   - component: {fileID: 1117385745}
+  - component: {fileID: 1117385746}
   m_Layer: 0
   m_Name: Loyal
   m_TagString: Untagged
@@ -138916,22 +138904,6 @@ RectTransform:
   m_AnchoredPosition: {x: -548, y: -355}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1117385742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117385739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 1428203967}
-  Letter2D: {fileID: 1117385739}
 --- !u!114 &1117385743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138983,17 +138955,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: Lesbian
-  Letter3D: {fileID: 1428203967}
   Letter2D: {fileID: 1117385739}
   ButtonUI: {fileID: 2066581897}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &1117385746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117385739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 1428203967}
+  Letter2D: {fileID: 1117385739}
 --- !u!1 &1117435679
 GameObject:
   m_ObjectHideFlags: 0
@@ -156213,7 +156198,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1607238204}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -174500,7 +174485,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501092872}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -176116,8 +176101,8 @@ GameObject:
   - component: {fileID: 1356195224}
   - component: {fileID: 1356195228}
   - component: {fileID: 1356195227}
-  - component: {fileID: 1356195226}
   - component: {fileID: 1356195229}
+  - component: {fileID: 1356195230}
   m_Layer: 0
   m_Name: Aggreesive
   m_TagString: Untagged
@@ -176147,22 +176132,6 @@ RectTransform:
   m_AnchoredPosition: {x: -277, y: -201}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1356195226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356195223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 2115578768}
-  Letter2D: {fileID: 1356195223}
 --- !u!114 &1356195227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176214,17 +176183,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: wrong
-  Letter3D: {fileID: 2115578768}
   Letter2D: {fileID: 1356195223}
   ButtonUI: {fileID: 1579897543}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &1356195230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356195223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 2115578768}
+  Letter2D: {fileID: 1356195223}
 --- !u!1 &1357044361
 GameObject:
   m_ObjectHideFlags: 0
@@ -182613,13 +182595,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1402029585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 1402029585}
   Letter2D: {fileID: 1871313375}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!1 &1402300869
 GameObject:
   m_ObjectHideFlags: 0
@@ -184962,13 +184944,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1424385623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 1424385623}
   Letter2D: {fileID: 501092869}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!23 &1424440251
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -185604,13 +185586,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1428203967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 1428203967}
   Letter2D: {fileID: 1117385739}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!23 &1428753753
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -205084,7 +205066,7 @@ MonoBehaviour:
   coins: {fileID: 1161235046}
   newCoins: {fileID: 1161235047}
   timer: {fileID: 1824701594}
-  itemPlacer: {fileID: 574008657}
+  itemPlacer: {fileID: 0}
   commentsLGBTQ: {fileID: 274637319}
   commentsScore: {fileID: 255899039}
 --- !u!114 &1584152993
@@ -207733,8 +207715,8 @@ GameObject:
   - component: {fileID: 1607238202}
   - component: {fileID: 1607238206}
   - component: {fileID: 1607238205}
-  - component: {fileID: 1607238204}
   - component: {fileID: 1607238207}
+  - component: {fileID: 1607238208}
   m_Layer: 0
   m_Name: Phase
   m_TagString: Untagged
@@ -207764,22 +207746,6 @@ RectTransform:
   m_AnchoredPosition: {x: -9, y: -355}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1607238204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607238201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 211180820}
-  Letter2D: {fileID: 1607238201}
 --- !u!114 &1607238205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207831,17 +207797,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: wrong
-  Letter3D: {fileID: 211180820}
   Letter2D: {fileID: 1607238201}
   ButtonUI: {fileID: 1851569520}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &1607238208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607238201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 211180820}
+  Letter2D: {fileID: 1607238201}
 --- !u!1001 &1607850153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219439,8 +219418,8 @@ GameObject:
   - component: {fileID: 1692873796}
   - component: {fileID: 1692873800}
   - component: {fileID: 1692873799}
-  - component: {fileID: 1692873798}
   - component: {fileID: 1692873801}
+  - component: {fileID: 1692873802}
   m_Layer: 0
   m_Name: Manhater
   m_TagString: Untagged
@@ -219470,22 +219449,6 @@ RectTransform:
   m_AnchoredPosition: {x: -277, y: -355}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1692873798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692873795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 257752568}
-  Letter2D: {fileID: 1692873795}
 --- !u!114 &1692873799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219537,17 +219500,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: wrong
-  Letter3D: {fileID: 257752568}
   Letter2D: {fileID: 1692873795}
   ButtonUI: {fileID: 843645951}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &1692873802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692873795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 257752568}
+  Letter2D: {fileID: 1692873795}
 --- !u!1 &1693093639
 GameObject:
   m_ObjectHideFlags: 0
@@ -229244,7 +229220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1771447924
 Transform:
   m_ObjectHideFlags: 0
@@ -242373,7 +242349,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1871313378}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -242501,8 +242477,8 @@ GameObject:
   - component: {fileID: 1871313376}
   - component: {fileID: 1871313380}
   - component: {fileID: 1871313379}
-  - component: {fileID: 1871313378}
   - component: {fileID: 1871313381}
+  - component: {fileID: 1871313382}
   m_Layer: 0
   m_Name: Strong
   m_TagString: Untagged
@@ -242532,22 +242508,6 @@ RectTransform:
   m_AnchoredPosition: {x: 515, y: -355}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1871313378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871313375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 1402029585}
-  Letter2D: {fileID: 1871313375}
 --- !u!114 &1871313379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242599,17 +242559,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: Lesbian
-  Letter3D: {fileID: 1402029585}
   Letter2D: {fileID: 1871313375}
   ButtonUI: {fileID: 702215400}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &1871313382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871313375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 1402029585}
+  Letter2D: {fileID: 1871313375}
 --- !u!64 &1871416376
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -245268,7 +245241,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1356195226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -245807,7 +245780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 189700250}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -286406,8 +286379,8 @@ GameObject:
   - component: {fileID: 2073121387}
   - component: {fileID: 2073121391}
   - component: {fileID: 2073121390}
-  - component: {fileID: 2073121389}
   - component: {fileID: 2073121392}
+  - component: {fileID: 2073121393}
   m_Layer: 0
   m_Name: Brave
   m_TagString: Untagged
@@ -286437,22 +286410,6 @@ RectTransform:
   m_AnchoredPosition: {x: -548, y: -201}
   m_SizeDelta: {x: 544.2374, y: 225.2825}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2073121389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073121386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268db947e610adb47ace2d16bf969c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  placedIndex: -1
-  Letter3D: {fileID: 387819674}
-  Letter2D: {fileID: 2073121386}
 --- !u!114 &2073121390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286504,17 +286461,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: Lesbian
-  Letter3D: {fileID: 387819674}
   Letter2D: {fileID: 2073121386}
   ButtonUI: {fileID: 1773054211}
-  Bag: {fileID: 1584152988}
-  BagIcon: {fileID: 1980298951}
   correct: {fileID: 1088881812}
   wrong: {fileID: 358282079}
   counter: {fileID: 574008658}
   placer: {fileID: 0}
   placedIndex: -1
   allButtons: {fileID: 1584152993}
+--- !u!114 &2073121393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073121386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c210e7181b888114682e5f6de1ad8f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placer: {fileID: 0}
+  placedIndex: -1
+  Letter3D: {fileID: 387819674}
+  Letter2D: {fileID: 2073121386}
 --- !u!23 &2073405513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -287697,7 +287667,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 542894627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -288905,7 +288875,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1692873798}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RemoveLetter, Assembly-CSharp
         m_MethodName: RemoveLetterArray
         m_Mode: 1
@@ -292784,13 +292754,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2115578768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1188d9f254cbe404aa89bd5e885963da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e2fb7816f7ae1444b53a05c59e55009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Letter3D: {fileID: 2115578768}
   Letter2D: {fileID: 1356195223}
   punoCanvas: {fileID: 1175862640}
-  placer: {fileID: 574008657}
+  placer: {fileID: 574008659}
 --- !u!33 &2116039222
 MeshFilter:
   m_ObjectHideFlags: 0
