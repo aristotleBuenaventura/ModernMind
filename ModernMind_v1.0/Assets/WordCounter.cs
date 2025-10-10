@@ -12,6 +12,8 @@ public class WordCounter : MonoBehaviour
     public GameObject LGBTQwords;
     public GameObject LGBTQwoods;
     public GameObject NextNPC;
+    public GameObject WordsUI;
+    public ShowUI bag;
 
     [Header("Coin Rewards")]
     public CoinsValue coins;
@@ -38,6 +40,8 @@ public class WordCounter : MonoBehaviour
             LGBTQwords.SetActive(false);
             LGBTQwoods.SetActive(true);
             NextNPC.SetActive(true);
+            WordsUI.SetActive(false);
+            bag.UICanvasClose();
             // ✅ Trigger "Happy" animation if assigned
             if (animator != null)
             {

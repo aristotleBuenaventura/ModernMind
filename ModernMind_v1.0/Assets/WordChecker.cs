@@ -5,6 +5,7 @@ public class WordChecker : MonoBehaviour
     public string checkerValue;
     public SetAllButtons Buttons;
     public ShowUI Bag;
+    public GameObject WordsUI;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +14,7 @@ public class WordChecker : MonoBehaviour
             PlayerPrefs.SetString("CheckerWordValue", checkerValue);
             PlayerPrefs.Save(); // Optional, ensures data is written immediately
             Debug.Log("Saved CheckerWordValue: " + PlayerPrefs.GetString("CheckerWordValue"));
-
+            WordsUI.SetActive(true);
             Bag.UICanvasShow();
             Buttons.SetAllButtonsActive(true);
         }
