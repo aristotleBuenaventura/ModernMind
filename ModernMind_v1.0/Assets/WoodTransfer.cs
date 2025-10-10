@@ -12,15 +12,36 @@ public class WoodTransfer : MonoBehaviour
     public int woodToTransfer = 5;         // ✅ Number of woods to move
     public float transferDelay = 1f;       // ✅ 1 second per wood
 
+    private bool isPlayerInside = false;   // ✅ Tracks if player is inside the trigger
     private bool isTransferring = false;
+    private int remaining;
     public GameObject brokenBridge, fixBridge;
+
+    private Coroutine transferCoroutine;
+
+    private void Start()
+    {
+        remaining = woodToTransfer;
+        UpdateBridgeText(remaining);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isTransferring)
+        if (other.CompareTag("Player"))
         {
+            isPlayerInside = true;
             Debug.Log("🪵 Player entered bridge zone. Starting wood transfer...");
-            StartCoroutine(TransferWoodRoutine());
+            if (!isTransferring)
+                transferCoroutine = StartCoroutine(TransferWoodRoutine());
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInside = false;
+            Debug.Log("🚶 Player left bridge zone. Pausing transfer...");
         }
     }
 
@@ -28,12 +49,12 @@ public class WoodTransfer : MonoBehaviour
     {
         isTransferring = true;
 
-        int remaining = woodToTransfer;
-        UpdateBridgeText(remaining);
-
         while (remaining > 0)
         {
-            // ✅ Wait before each transfer (1 sec delay)
+            // Wait until player is inside before continuing
+            yield return new WaitUntil(() => isPlayerInside);
+
+            // ✅ 1-second delay per transfer
             yield return new WaitForSeconds(transferDelay);
 
             // ✅ Only decrement if there’s wood left
@@ -42,6 +63,7 @@ public class WoodTransfer : MonoBehaviour
                 woodCounter.Decrement();
                 remaining--;
                 UpdateBridgeText(remaining);
+                Debug.Log($"🌲 Transferred 1 wood. Remaining: {remaining}");
             }
             else
             {
@@ -50,11 +72,13 @@ public class WoodTransfer : MonoBehaviour
             }
         }
 
+        // ✅ Done transferring
         if (remaining <= 0)
         {
-            Debug.Log("✅ Done transferring woods!");
+            Debug.Log("✅ Bridge fixed!");
             brokenBridge.SetActive(false);
             fixBridge.SetActive(true);
+            bridgeText.text = "Bridge fixed! 🎉";
         }
 
         isTransferring = false;
