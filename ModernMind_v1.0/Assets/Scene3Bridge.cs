@@ -6,6 +6,7 @@ public class Scene3Bridge : MonoBehaviour
     public GameObject Lesbian, LesbianWords, LesbianCircle;
     public GameObject Gay, GayWords, GayCircle;
     public GameObject Bisexual, BisexualWords, BisexualCircle;
+    public GameObject Transgender, TransgenderWords, TransgenderCircle;
 
     void Start()
     {
@@ -29,6 +30,9 @@ public class Scene3Bridge : MonoBehaviour
         Bisexual.SetActive(false);
         BisexualWords.SetActive(false);
         BisexualCircle.SetActive(false);
+        Transgender.SetActive(false);
+        TransgenderWords.SetActive(false);
+        TransgenderCircle.SetActive(false);
 
     }
 
@@ -108,6 +112,8 @@ public class Scene3Bridge : MonoBehaviour
     public void Transgender2CanvasClose()
     {
         Transgender2.SetActive(false);
+        TransgenderWords.SetActive(true);
+        TransgenderCircle.SetActive(true);
     }
 
     public void Queer1CanvasShow()
