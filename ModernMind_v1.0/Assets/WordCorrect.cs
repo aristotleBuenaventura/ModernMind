@@ -5,6 +5,7 @@ public class WordCorrect : MonoBehaviour
     public string letterValue;
     public GameObject Letter2D, ButtonUI, correct, wrong;
     public WordCounter counter;
+    public TimerDisplay timer;
     [HideInInspector] public WordPlacer placer;
     [HideInInspector] public int placedIndex = -1; // Track exact slot index
     public SetAllButtons allButtons;
@@ -40,6 +41,7 @@ public class WordCorrect : MonoBehaviour
         else
         {
             Letter2D.SetActive(false);
+            timer.DecreaseTime(30);
             if (placer != null && placedIndex >= 0)
             {
                 placer.RemoveItemAt(placedIndex);

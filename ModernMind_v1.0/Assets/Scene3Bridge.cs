@@ -8,6 +8,7 @@ public class Scene3Bridge : MonoBehaviour
     public GameObject Bisexual, BisexualWords, BisexualCircle;
     public GameObject Transgender, TransgenderWords, TransgenderCircle;
     public GameObject Queer, QueerWords, QueerCircle;
+    public TimerDisplay timer;
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class Scene3Bridge : MonoBehaviour
     {
         Loading.SetActive(false);
         Lesbian.SetActive(true);
+        timer.StartTimer();
     }
 
     public void Lesbian1CanvasShow()
