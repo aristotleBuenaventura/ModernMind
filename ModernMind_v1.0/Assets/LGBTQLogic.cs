@@ -26,7 +26,7 @@ public class LGBTQLogic : MonoBehaviour
     public CoinsValue coins;
     public TrackCoins newCoins;
     public TimerDisplay timer;
-    public ItemPlacer itemPlacer; // ✅ reference to ItemPlacer
+    public ItemPlacer itemPlacer; // ✅ Reference to ItemPlacer
 
     [Header("UI Text")]
     public TextMeshProUGUI commentsLGBTQ;
@@ -48,7 +48,7 @@ public class LGBTQLogic : MonoBehaviour
             if (!item.isDone) return;
         }
 
-        // All items done
+        // ✅ All items done
         timer.StartTimer();
         bag.UICanvasClose();
         Debug.Log("✅ All LGBTQ items completed!");
@@ -103,28 +103,52 @@ public class LGBTQLogic : MonoBehaviour
 
         if (correct)
         {
+            // ✅ Add score
             if (scoreRewards.TryGetValue(categoryKey, out int reward))
             {
                 coins.IncrementScore(reward);
                 newCoins.IncrementScore(reward);
             }
 
-            // ✅ Free up the slot from ItemPlacer
-            if (pressedGO != null)
+            // ✅ Free the slot and remove the item from ItemPlacer
+            if (pressedGO != null && itemPlacer != null)
             {
-                // Try to find slot index from LetterCorrect or RemoveLetter
                 int slotIndex = -1;
+                GameObject itemToRemove = pressedGO;
 
-                var lc = pressedGO.GetComponent<LetterCorrect>();
-                if (lc != null) slotIndex = lc.placedIndex;
+                // Try finding LetterCorrect or RemoveLetter on self or parent
+                var lc = pressedGO.GetComponentInParent<LetterCorrect>();
+                var rl = pressedGO.GetComponentInParent<RemoveLetter>();
 
-                var rl = pressedGO.GetComponent<RemoveLetter>();
-                if (slotIndex == -1 && rl != null) slotIndex = rl.placedIndex;
+                if (lc != null && lc.placedIndex >= 0)
+                {
+                    slotIndex = lc.placedIndex;
+                    itemToRemove = lc.gameObject;
+                    Debug.Log($"Found LetterCorrect index = {slotIndex} on {lc.name}");
+                }
+                else if (rl != null && rl.placedIndex >= 0)
+                {
+                    slotIndex = rl.placedIndex;
+                    itemToRemove = rl.gameObject;
+                    Debug.Log($"Found RemoveLetter index = {slotIndex} on {rl.name}");
+                }
 
-                if (itemPlacer != null && slotIndex >= 0)
+                // ✅ Remove item from slot properly
+                if (slotIndex >= 0)
                 {
                     itemPlacer.RemoveItemAt(slotIndex);
-                    Debug.Log($"🧩 Freed slot index {slotIndex} after correct answer.");
+                    Debug.Log($"🧩 Freed slot index {slotIndex} after correct answer '{categoryKey}'");
+
+                    // ✅ Actually destroy or hide the object from the scene
+                    if (itemToRemove != null)
+                    {
+                        Destroy(itemToRemove);
+                        Debug.Log($"🗑️ Destroyed {itemToRemove.name} from slot {slotIndex}");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"⚠️ Could not find valid placedIndex for {pressedGO.name}");
                 }
             }
 
