@@ -35,11 +35,17 @@ public class WordCorrect : MonoBehaviour
                 Debug.Log("All letters done!");
             }
 
-            allButtons.SetAllButtonsActive(false);
+            allButtons.SetAllButtonsActive(true);
         }
         else
         {
             Letter2D.SetActive(false);
+            if (placer != null && placedIndex >= 0)
+            {
+                placer.RemoveItemAt(placedIndex);
+                placedIndex = -1; // reset after removal
+            }
+            allButtons.SetAllButtonsActive(true);
             Debug.Log($"[LetterChecker] ❌ Wrong! Expected {letterValue}, got {savedLetter}");
             wrong.SetActive(true);
         }
