@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Scene3Bridge : MonoBehaviour
 {
+    public GameObject First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eight, Ninth, Tenth, Eleventh;
     public GameObject Loading, Lesbian1, Lesbian2, Gay1, Gay2, Bisexual1, Bisexual2, Transgender1, Transgender2, Queer1, Queer2;
     public GameObject Lesbian, LesbianWords, LesbianCircle;
     public GameObject Gay, GayWords, GayCircle;
@@ -13,6 +14,17 @@ public class Scene3Bridge : MonoBehaviour
     void Start()
     {
         LoadingCanvasShow();
+        First.SetActive(false);
+        Second.SetActive(false);
+        Third.SetActive(false);
+        Fourth.SetActive(false);
+        Fifth.SetActive(false);
+        Sixth.SetActive(false);
+        Seventh.SetActive(false);
+        Eight.SetActive(false);
+        Ninth.SetActive(false);
+        Tenth.SetActive(false);
+        Eleventh.SetActive(false);
         Lesbian1.SetActive(false);
         Lesbian2.SetActive(false);
         Gay1.SetActive(false);
@@ -46,9 +58,56 @@ public class Scene3Bridge : MonoBehaviour
         ShowDialogue(Loading);
     }
 
-    public void LoadingCanvasClose()
+    // public void LoadingCanvasClose()
+    // {
+    //     Loading.SetActive(false);
+    //     Lesbian.SetActive(true);
+    //     timer.StartTimer();
+    // }
+
+    public void FirstCanvasShow()
     {
-        Loading.SetActive(false);
+        ShowDialogue(First);
+    }
+
+    public void SecondCanvasShow()
+    {
+        ShowDialogue(Second);
+    }
+
+    public void ThirdCanvasShow()
+    {
+        ShowDialogue(Third);
+    }
+
+    public void FourthCanvasShow()
+    {
+        ShowDialogue(Fourth);
+    }
+
+    public void FifthCanvasShow()
+    {
+        ShowDialogue(Fifth);
+    }
+
+    public void SixthCanvasShow()
+    {
+        ShowDialogue(Sixth);
+    }
+
+    public void SeventhCanvasShow()
+    {
+        ShowDialogue(Seventh);
+    }
+
+    public void EightCanvasShow()
+    {
+        ShowDialogue(Eight);
+    }
+
+    public void EightCanvasClose()
+    {
+        Eight.SetActive(false);
         Lesbian.SetActive(true);
         timer.StartTimer();
     }
@@ -139,9 +198,35 @@ public class Scene3Bridge : MonoBehaviour
         QueerCircle.SetActive(true);
     }
 
+    public void NinthCanvasShow()
+    {
+        ShowDialogue(Ninth);
+    }
+
+    public void TenthCanvasShow()
+    {
+        ShowDialogue(Tenth);
+    }
+
+    public void EleventhCanvasShow()
+    {
+        ShowDialogue(Eleventh);
+    }
+
     private void ShowDialogue(GameObject dialogue)
     {
         Loading.SetActive(false);
+        First.SetActive(false);
+        Second.SetActive(false);
+        Third.SetActive(false);
+        Fourth.SetActive(false);
+        Fifth.SetActive(false);
+        Sixth.SetActive(false);
+        Seventh.SetActive(false);
+        Eight.SetActive(false);
+        Ninth.SetActive(false);
+        Tenth.SetActive(false);
+        Eleventh.SetActive(false);
         Lesbian1.SetActive(false);
         Lesbian2.SetActive(false);
         Gay1.SetActive(false);
