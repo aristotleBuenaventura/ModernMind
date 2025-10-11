@@ -9,6 +9,8 @@ public class WordCorrect : MonoBehaviour
     [HideInInspector] public WordPlacer placer;
     [HideInInspector] public int placedIndex = -1; // Track exact slot index
     public SetAllButtons allButtons;
+    public CoinsValue coins;
+    public TrackCoins coinsTrack;
 
     public void WordChecker()
     {
@@ -30,6 +32,8 @@ public class WordCorrect : MonoBehaviour
             if (counter.IsBelowWordCount)
             {
                 correct.SetActive(true);
+                coins.IncrementScore(10);
+                coinsTrack.IncrementScore(10);
             }
             else
             {

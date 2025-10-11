@@ -8,7 +8,7 @@ public class Scene3Bridge : MonoBehaviour
     public GameObject Gay, GayWords, GayCircle;
     public GameObject Bisexual, BisexualWords, BisexualCircle;
     public GameObject Transgender, TransgenderWords, TransgenderCircle;
-    public GameObject Queer, QueerWords, QueerCircle;
+    public GameObject Queer, QueerWords, QueerCircle, coach;
     public TimerDisplay timer;
 
     void Start()
@@ -201,11 +201,13 @@ public class Scene3Bridge : MonoBehaviour
     public void NinthCanvasShow()
     {
         ShowDialogue(Ninth);
+        coach.SetActive(false);
     }
 
     public void TenthCanvasShow()
     {
         ShowDialogue(Tenth);
+        coach.SetActive(false);
     }
 
     public void EleventhCanvasShow()
