@@ -43,6 +43,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Scene2_Maze");
     }
 
+    public void Scene3_Redlight()
+    {
+        SceneManager.LoadScene("Scene3_Redlight");
+    }
+
     public void Scene3_Hopscotch()
     {
         SceneManager.LoadScene("Scene3_Hopscotch");
