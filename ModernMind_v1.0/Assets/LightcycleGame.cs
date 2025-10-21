@@ -21,19 +21,47 @@ public class LightCycle : MonoBehaviour
     private bool isRedLight = false;
     private bool redDelayActive = false;
     private bool isFrozen = false;
+    private bool isCycleRunning = false;
     private Vector3 lastPlayerPosition;
+    private Coroutine lightCycleCoroutine;
 
     private void Start()
     {
-        if (player == null || startingPositionCube == null) { enabled = false; return; }
+        if (player == null || startingPositionCube == null)
+        {
+            enabled = false;
+            return;
+        }
+
         if (sceneLight == null)
         {
             sceneLight = GetComponent<Light>();
-            if (sceneLight == null) { enabled = false; return; }
+            if (sceneLight == null)
+            {
+                enabled = false;
+                return;
+            }
         }
 
         lastPlayerPosition = player.transform.position;
-        StartCoroutine(LightCycleRoutine());
+    }
+
+    public void StartLightCycle()
+    {
+        if (!isCycleRunning)
+        {
+            lightCycleCoroutine = StartCoroutine(LightCycleRoutine());
+            isCycleRunning = true;
+        }
+    }
+
+    public void StopLightCycle()
+    {
+        if (isCycleRunning && lightCycleCoroutine != null)
+        {
+            StopCoroutine(lightCycleCoroutine);
+            isCycleRunning = false;
+        }
     }
 
     private IEnumerator LightCycleRoutine()
@@ -61,6 +89,7 @@ public class LightCycle : MonoBehaviour
         Quaternion startRot = rotatingObject.transform.rotation;
         Quaternion endRot = Quaternion.Euler(0f, targetY, 0f);
         float t = 0f;
+
         while (t < 1f)
         {
             t += Time.deltaTime * rotationSpeed / 90f;
@@ -92,7 +121,6 @@ public class LightCycle : MonoBehaviour
     private IEnumerator PlayerCaught()
     {
         isFrozen = true;
-        Debug.Log("Player moved during RED LIGHT!");
         player.transform.position = startingPositionCube.transform.position;
         yield return new WaitForSeconds(freezeDuration);
         isFrozen = false;
