@@ -11,9 +11,7 @@ public class PickUpBias : MonoBehaviour
     public List<GameObject> biasImages;
 
     [Header("Other UI Objects")]
-    //public GameObject biasCircle;
-    //public GameObject check;
-    //public ShowUI taskCanvas;
+    public GameObject completeCanvas, checkTask;
 
     private Dictionary<string, GameObject> biasMap = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> imageMap = new Dictionary<string, GameObject>();
@@ -22,7 +20,7 @@ public class PickUpBias : MonoBehaviour
 
     private void Start()
     {
-        //biasCircle.SetActive(false);
+
 
         for (int i = 0; i < biasPlaceholders.Count; i++)
         {
@@ -58,9 +56,8 @@ public class PickUpBias : MonoBehaviour
             if (collectedBias.Count == biasMap.Count)
             {
                 Debug.Log("ALLDONE");
-                //taskCanvas.UICanvasShow();
-                //biasCircle.SetActive(true);
-                //check.SetActive(true);
+                completeCanvas.SetActive(true);
+                checkTask.SetActive(true);
             }
         }
     }

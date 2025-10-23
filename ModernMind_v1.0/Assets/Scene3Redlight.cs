@@ -3,6 +3,7 @@ using UnityEngine;
 public class Scene3Redlight : MonoBehaviour
 {
     public GameObject loading, First, Second, Third, loading2, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Eleventh, Twelveth;
+    public GameObject Thirteenth, Fourteenth, Fifteenth;
 
     void Start()
     {
@@ -19,6 +20,9 @@ public class Scene3Redlight : MonoBehaviour
         Ninth.SetActive(false);
         Eleventh.SetActive(false);
         Twelveth.SetActive(false);
+        Thirteenth.SetActive(false);
+        Fourteenth.SetActive(false);
+        Fifteenth.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -91,6 +95,27 @@ public class Scene3Redlight : MonoBehaviour
         ShowDialogue(loading2);
     }
 
+    public void ThirteenthCanvasShow()
+    {
+        ShowDialogue(Thirteenth);
+    }
+
+    public void FourteenthCanvasShow()
+    {
+        ShowDialogue(Fourteenth);
+    }
+
+    public void FifteenthCanvasShow()
+    {
+        ShowDialogue(Fifteenth);
+    }
+
+    public void FifteenthCanvasClose()
+    {
+        Fifteenth.SetActive(false);
+    }
+
+
     private void ShowDialogue(GameObject dialogue)
     {
         loading.SetActive(false);
@@ -106,6 +131,9 @@ public class Scene3Redlight : MonoBehaviour
         Ninth.SetActive(false);
         Eleventh.SetActive(false);
         Twelveth.SetActive(false);
+        Thirteenth.SetActive(false);
+        Fourteenth.SetActive(false);
+        Fifteenth.SetActive(false);
 
         dialogue.SetActive(true);
     }
