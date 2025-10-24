@@ -19,7 +19,8 @@ public class PickUpBias2 : MonoBehaviour
     private HashSet<string> collectedBias = new HashSet<string>();
     public CoinsValue coins;
     public TrackCoins coinTrack;
-    
+    public LightCycle light;
+
     private void Start()
     {
 
@@ -59,6 +60,7 @@ public class PickUpBias2 : MonoBehaviour
             if (collectedBias.Count == biasMap.Count)
             {
                 Debug.Log("ALLDONE");
+                light.StopLightCycle();
                 completeCanvas.SetActive(true);
                 checkTask.SetActive(true);
             }

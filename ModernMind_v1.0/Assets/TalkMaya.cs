@@ -9,7 +9,7 @@ public class TalkMaya : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canvas.FourteenthCanvasShow();
+            canvas.c20CanvasShow();
             circle.SetActive(false);
             Debug.Log("done");
         }
