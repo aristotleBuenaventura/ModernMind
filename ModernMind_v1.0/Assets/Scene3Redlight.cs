@@ -4,6 +4,9 @@ public class Scene3Redlight : MonoBehaviour
 {
     public GameObject loading, First, Second, Third, loading2, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Eleventh, Twelveth;
     public GameObject Thirteenth, Fourteenth, Fifteenth;
+    public GameObject loading3, Sixteenth, Seventeenth, Eighteenth, Ninteenth;
+
+
 
     void Start()
     {
@@ -23,6 +26,11 @@ public class Scene3Redlight : MonoBehaviour
         Thirteenth.SetActive(false);
         Fourteenth.SetActive(false);
         Fifteenth.SetActive(false);
+        loading3.SetActive(false);
+        Sixteenth.SetActive(false);
+        Seventeenth.SetActive(false);
+        Eighteenth.SetActive(false);
+        Ninteenth.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -115,6 +123,37 @@ public class Scene3Redlight : MonoBehaviour
         Fifteenth.SetActive(false);
     }
 
+    public void loading3CanvasShow()
+    {
+        ShowDialogue(loading3);
+    }
+
+    public void SixteenthCanvasShow()
+    {
+        ShowDialogue(Sixteenth);
+    }
+
+    public void SeventeenthCanvasShow()
+    {
+        ShowDialogue(Seventeenth);
+    }
+
+    public void EighteenthCanvasShow()
+    {
+        ShowDialogue(Eighteenth);
+    }
+
+    public void NinteenthCanvasShow()
+    {
+        ShowDialogue(Ninteenth);
+    }
+
+    public void NinteenthCanvasClose()
+    {
+        Ninteenth.SetActive(false);
+    }
+
+
 
     private void ShowDialogue(GameObject dialogue)
     {
@@ -134,6 +173,11 @@ public class Scene3Redlight : MonoBehaviour
         Thirteenth.SetActive(false);
         Fourteenth.SetActive(false);
         Fifteenth.SetActive(false);
+        loading3.SetActive(false);
+        Sixteenth.SetActive(false);
+        Seventeenth.SetActive(false);
+        Eighteenth.SetActive(false);
+        Ninteenth.SetActive(false);
 
         dialogue.SetActive(true);
     }

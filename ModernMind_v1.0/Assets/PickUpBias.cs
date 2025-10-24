@@ -17,6 +17,9 @@ public class PickUpBias : MonoBehaviour
     private Dictionary<string, GameObject> imageMap = new Dictionary<string, GameObject>();
 
     private HashSet<string> collectedBias = new HashSet<string>();
+    public CoinsValue coins;
+    public TrackCoins coinTrack;
+
 
     private void Start()
     {
@@ -38,6 +41,8 @@ public class PickUpBias : MonoBehaviour
     {
         if (biasMap.ContainsKey(other.tag) && !collectedBias.Contains(other.tag))
         {
+            coins.IncrementScore(5);
+            coinTrack.IncrementScore(5);
             Debug.Log(other.tag + " pick up");
             other.gameObject.SetActive(false);
             collectedBias.Add(other.tag);
