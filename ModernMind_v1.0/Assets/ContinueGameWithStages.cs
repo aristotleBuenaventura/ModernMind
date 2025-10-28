@@ -19,11 +19,11 @@ public class ContinueGameWithStages : MonoBehaviour
 
         { "level2_stage1", "Scene2" },
         { "level2_stage2", "Scene2_Hopscotch" },
-        { "level2_stage3", "Gabay" },
+        { "level2_stage3", "Scene2_Maze" },
 
-        { "level3_stage1", "Gabay" },
-        { "level3_stage2", "Gabay" },
-        { "level3_stage3", "Gabay" },
+        { "level3_stage1", "Scene3_Redlight" },
+        { "level3_stage2", "Scene3_Hopscotch" },
+        { "level3_stage3", "Scene3_Bridge" },
 
         { "level4_stage1", "Gabay" },
         { "level4_stage2", "Gabay" },
