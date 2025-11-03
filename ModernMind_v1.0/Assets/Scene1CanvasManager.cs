@@ -136,6 +136,7 @@ public class Scene1CanvasManager : MonoBehaviour
     public void SeventhCanvasShow()
     {
         ShowDialogue(SeventhCanvas);
+        timer.PauseTimer();
     }
 
     public void EighthCanvasShow()
@@ -152,6 +153,7 @@ public class Scene1CanvasManager : MonoBehaviour
     {
         NinthCanvas.SetActive(false);
         TrashCircles.SetActive(true);
+        timer.ResumeTimer();
     }
 
     public void TenthCanvasShow()
