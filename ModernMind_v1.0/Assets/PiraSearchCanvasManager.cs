@@ -76,6 +76,7 @@ public class PiraSearchCanvasManager : MonoBehaviour
         Letters2.SetActive(true);
         cameraTop.SetActive(false);
         Letter2UI.SetActive(true);
+        Letter1UI.SetActive(false);
     }
 
     public void PuzzlePart3Show()
@@ -99,6 +100,7 @@ public class PiraSearchCanvasManager : MonoBehaviour
         Letters3.SetActive(true);
         cameraTop.SetActive(false);
         Letter3UI.SetActive(true);
+        Letter2UI.SetActive(false);
     }
 
 
