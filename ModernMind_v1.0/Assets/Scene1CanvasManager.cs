@@ -117,7 +117,7 @@ public class Scene1CanvasManager : MonoBehaviour
         FirstCamera.SetActive(false);
         JoseCamera.SetActive(true);
         Controller.SetActive(true);
-        timer.StartTimer();
+        
     }
 
     public void FifthCanvasClose()
@@ -125,6 +125,7 @@ public class Scene1CanvasManager : MonoBehaviour
         FifthCanvas.SetActive(false);
         TaskButton.SetActive(true);
         TaskArrow.SetActive(true);
+        timer.StartTimer();
     }
 
     public void SixthCanvasShow()
