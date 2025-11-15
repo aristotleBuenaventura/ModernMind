@@ -5,12 +5,14 @@ public class NPCSquareWalk : MonoBehaviour
     public Animator animator;
     public float turnSpeed = 120f;
     public float moveSpeed = 2f;
-    public float[] walkTimes = { 16f, 16f, 16f, 16f }; // public, per side walk time
+    public float[] walkTimes = { 16f, 16f, 16f, 16f }; // per-side walk time
+    public string playerTag = "Player"; // tag for player
 
     private float timer = 0f;
     private int step = 0;
     private bool isTurning = false;
-    private readonly float[] angles = { -90f, -180f, -270f, 0f };
+    private bool isStopped = false;
+    private readonly float[] angles = { -90f, -180f, -270f, 0f }; // CW order
     private float targetY;
 
     void Start()
@@ -24,6 +26,9 @@ public class NPCSquareWalk : MonoBehaviour
 
     void Update()
     {
+        if (isStopped)
+            return;
+
         timer += Time.deltaTime;
 
         if (!isTurning)
@@ -53,6 +58,22 @@ public class NPCSquareWalk : MonoBehaviour
                 isTurning = false;
                 animator.SetTrigger("walk");
             }
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag(playerTag))
+        {
+            isStopped = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag(playerTag))
+        {
+            isStopped = false;
         }
     }
 }
