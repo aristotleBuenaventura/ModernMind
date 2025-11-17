@@ -12,7 +12,7 @@ public class PickUpItems : MonoBehaviour
 
     [Header("Other UI Objects")]
     public GameObject trashCircle;
-    public GameObject check;
+    public GameObject check, tumpak;
     public ShowUI taskCanvas;
 
     private Dictionary<string, GameObject> trashMap = new Dictionary<string, GameObject>();
@@ -49,6 +49,7 @@ public class PickUpItems : MonoBehaviour
             if (imageMap.ContainsKey(other.tag))
             {
                 imageMap[other.tag].SetActive(true);
+                tumpak.SetActive(true);
             }
 
             // Show & hide placeholder
