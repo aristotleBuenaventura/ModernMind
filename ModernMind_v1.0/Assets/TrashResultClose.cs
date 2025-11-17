@@ -10,6 +10,7 @@ public class TrashResultClose : MonoBehaviour
         Tumpak.SetActive(false);
         Mali.SetActive(false);
         bag.UICanvasShow();
+        Debug.Log("Bug");
     }
 
     public void TumpakShow()

@@ -37,7 +37,7 @@ public class TrashLogic : MonoBehaviour
     public TextMeshProUGUI commentsTrash;
     public TextMeshProUGUI commentsScore;
 
-    public GameObject Antas1Result, blueStore;
+    public GameObject Antas1Result, blueStore, boyArrow, playerArrow;
 
     private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
     {
@@ -59,6 +59,8 @@ public class TrashLogic : MonoBehaviour
         blueStore.SetActive(true);
         check.SetActive(true);
         circles.SetActive(false);
+        boyArrow.SetActive(true);
+        playerArrow.SetActive(true);
     }
 
     private void FinishItem(TrashItem item, bool correct)
