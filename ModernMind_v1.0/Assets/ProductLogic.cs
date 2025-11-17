@@ -32,6 +32,7 @@ public class ProductLogic : MonoBehaviour
     [Header("UI Text")]
     public TextMeshProUGUI commentsTrash;
     public TextMeshProUGUI commentsScore;
+    public GameObject boyArrow, playerArrow;
 
     private readonly Dictionary<string, int> scoreRewards = new Dictionary<string, int>()
     {
@@ -50,6 +51,8 @@ public class ProductLogic : MonoBehaviour
         timer.StartTimer();
         result.ResultClose();
         bag.UICanvasClose();
+        boyArrow.SetActive(false);
+        playerArrow.SetActive(false);
     }
 
     private void FinishItem(ProductItem item, bool correct)
