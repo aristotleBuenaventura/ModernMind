@@ -19,7 +19,7 @@ public class PickUpItems : MonoBehaviour
     private Dictionary<string, GameObject> imageMap = new Dictionary<string, GameObject>();
 
     private HashSet<string> collectedTrash = new HashSet<string>();
-
+    public Scene1CanvasManager canvas;
     private void Start()
     {
         trashCircle.SetActive(false);
@@ -49,8 +49,14 @@ public class PickUpItems : MonoBehaviour
             if (imageMap.ContainsKey(other.tag))
             {
                 imageMap[other.tag].SetActive(true);
-                tumpak.SetActive(true);
+
+                // Show tumpak ONLY if this is NOT the last item
+                if (collectedTrash.Count + 1 < trashMap.Count)
+                {
+                    tumpak.SetActive(true);
+                }
             }
+
 
             // Show & hide placeholder
             GameObject displayObject = trashMap[other.tag];
@@ -63,7 +69,8 @@ public class PickUpItems : MonoBehaviour
             if (collectedTrash.Count == trashMap.Count)
             {
                 Debug.Log("ALLDONE");
-                taskCanvas.UICanvasShow();
+                // taskCanvas.UICanvasShow();
+                canvas.Cut2Show();
                 trashCircle.SetActive(true);
                 check.SetActive(true);
             }

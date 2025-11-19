@@ -10,7 +10,7 @@ public class Scene1CanvasManager : MonoBehaviour
     public TeleportPosition teleport;
     public SceneLoader scene;
     public TimerDisplay timer;
-    public GameObject Cut1;
+    public GameObject Cut1, Cut2, Cut3, Cut4;
 
     void Start()
     {
@@ -51,11 +51,34 @@ public class Scene1CanvasManager : MonoBehaviour
         BoardCamera.SetActive(false);
         skip.SetActive(false);
         Cut1.SetActive(false);
+        Cut2.SetActive(false);
+        Cut3.SetActive(false);
+        Cut4.SetActive(false);
     }
     
     public void Cut1Show()
     {
         ShowDialogue(Cut1);
+    }
+
+    public void Cut2Show()
+    {
+        ShowDialogue(Cut2);
+    }
+
+    public void Cut3Show()
+    {
+        ShowDialogue(Cut3);
+    }
+
+    public void Cut4Show()
+    {
+        ShowDialogue(Cut4);
+    }
+
+    public void Cut4Close()
+    {
+        Cut4.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -263,6 +286,9 @@ public class Scene1CanvasManager : MonoBehaviour
         forth_8.SetActive(false);
         loading2.SetActive(false);
         Cut1.SetActive(false);
+        Cut2.SetActive(false);
+        Cut3.SetActive(false);
+        Cut4.SetActive(false);
         dialogue.SetActive(true);
     }
 }
