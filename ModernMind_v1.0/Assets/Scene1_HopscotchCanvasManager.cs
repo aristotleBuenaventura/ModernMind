@@ -9,6 +9,7 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
     public TimerHopscotch timer;
     public TeleportPosition tp;
     public GameObject Miles1, Miles2, MilesCircle, TaskCanvas, FourthMiles, FifthMiles, map;
+    public GameObject Cut1, Cut2;
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         ThirdMiles.SetActive(false);
         FourthMiles.SetActive(false);
         FifthMiles.SetActive(false);
+        Cut1.SetActive(false);
+        Cut2.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -91,9 +94,19 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         ShowDialogue(ThirdMiles);
     }
 
-    public void ThirdMilesClose()
+    public void Cut1Show()
     {
-        ThirdMiles.SetActive(false);
+        ShowDialogue(Cut1);
+    }
+
+    public void Cut2Show()
+    {
+        ShowDialogue(Cut2);
+    }
+
+    public void Cut2Close()
+    {
+        Cut2.SetActive(false);
         Miles1.SetActive(false);
         Miles2.SetActive(true);
         MilesCircle.SetActive(true);
@@ -131,6 +144,8 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         ThirdMiles.SetActive(false);
         FourthMiles.SetActive(false);
         FifthMiles.SetActive(false);
+        Cut1.SetActive(false);
+        Cut2.SetActive(false);
         dialogue.SetActive(true);
     }
 
