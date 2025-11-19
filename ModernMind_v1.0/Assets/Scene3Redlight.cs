@@ -6,7 +6,7 @@ public class Scene3Redlight : MonoBehaviour
     public GameObject Thirteenth, Fourteenth, Fifteenth;
     public GameObject loading3, Sixteenth, Seventeenth, Eighteenth, Ninteenth;
     public GameObject c20, c21, c22, c23, c24, c25, c26, c27, c28, c29;
-
+    public GameObject Cut1;
 
     void Start()
     {
@@ -41,6 +41,12 @@ public class Scene3Redlight : MonoBehaviour
         c27.SetActive(false);
         c28.SetActive(false);
         c29.SetActive(false);
+        Cut1.SetActive(false);
+    }
+
+    public void Cut1Show()
+    {
+        ShowDialogue(Cut1);
     }
 
     public void FirstCanvasShow()
@@ -253,7 +259,7 @@ public class Scene3Redlight : MonoBehaviour
         c27.SetActive(false);
         c28.SetActive(false);
         c29.SetActive(false);
-
+        Cut1.SetActive(false);
         dialogue.SetActive(true);
     }
 
