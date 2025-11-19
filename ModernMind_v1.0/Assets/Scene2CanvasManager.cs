@@ -8,6 +8,7 @@ public class Scene2CanvasManager : MonoBehaviour
     public TimerDisplay timer;
     public GameObject C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, atlasSelection, pasaporte, kalakalan, kultura, teknolohiya, migrasyon;
     public GameObject AtlasCamera, JoseCamera, JoseMainCamera;
+    public GameObject Cut1, Cut2, Cut3, Cut4, Cut5, Cut6;
 
 
     void Start()
@@ -45,6 +46,42 @@ public class Scene2CanvasManager : MonoBehaviour
         kultura.SetActive(false);
         teknolohiya.SetActive(false);
         migrasyon.SetActive(false);
+        Cut1.SetActive(false);
+        Cut2.SetActive(false);
+        Cut3.SetActive(false);
+        Cut4.SetActive(false);
+        Cut5.SetActive(false);
+        Cut6.SetActive(false);
+    }
+
+    public void Cut1Show()
+    {
+        ShowDialogue(Cut1);
+    }
+
+    public void Cut2Show()
+    {
+        ShowDialogue(Cut2);
+    }
+
+    public void Cut3Show()
+    {
+        ShowDialogue(Cut3);
+    }
+
+    public void Cut4Show()
+    {
+        ShowDialogue(Cut4);
+    }
+
+    public void Cut5Show()
+    {
+        ShowDialogue(Cut5);
+    }
+
+    public void Cut6Show()
+    {
+        ShowDialogue(Cut6);
     }
 
     public void FirstCanvasShow()
@@ -246,6 +283,12 @@ public class Scene2CanvasManager : MonoBehaviour
         kultura.SetActive(false);
         teknolohiya.SetActive(false);
         migrasyon.SetActive(false);
+        Cut1.SetActive(false);
+        Cut2.SetActive(false);
+        Cut3.SetActive(false);
+        Cut4.SetActive(false);
+        Cut5.SetActive(false);
+        Cut6.SetActive(false);
         dialogue.SetActive(true);
     }
 }
