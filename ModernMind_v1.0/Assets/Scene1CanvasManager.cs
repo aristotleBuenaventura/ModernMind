@@ -10,7 +10,7 @@ public class Scene1CanvasManager : MonoBehaviour
     public TeleportPosition teleport;
     public SceneLoader scene;
     public TimerDisplay timer;
-    public GameObject Cut1, Cut2, Cut3, Cut4;
+    public GameObject Cut1, Cut2, Cut3, Cut4, Cut5, Cut6, Cut7, Cut8;
 
     void Start()
     {
@@ -54,6 +54,10 @@ public class Scene1CanvasManager : MonoBehaviour
         Cut2.SetActive(false);
         Cut3.SetActive(false);
         Cut4.SetActive(false);
+        Cut5.SetActive(false);
+        Cut6.SetActive(false);
+        Cut7.SetActive(false);
+        Cut8.SetActive(false);
     }
     
     public void Cut1Show()
@@ -79,6 +83,31 @@ public class Scene1CanvasManager : MonoBehaviour
     public void Cut4Close()
     {
         Cut4.SetActive(false);
+    }
+
+    public void Cut5Show()
+    {
+        ShowDialogue(Cut5);
+    }
+
+    public void Cut6Show()
+    {
+        ShowDialogue(Cut6);
+    }
+
+    public void Cut7Show()
+    {
+        ShowDialogue(Cut7);
+    }
+
+    public void Cut8Show()
+    {
+        ShowDialogue(Cut8);
+    }
+
+    public void Cut8Close()
+    {
+        Cut8.SetActive(false);
     }
 
     public void FirstCanvasShow()
@@ -289,6 +318,10 @@ public class Scene1CanvasManager : MonoBehaviour
         Cut2.SetActive(false);
         Cut3.SetActive(false);
         Cut4.SetActive(false);
+        Cut5.SetActive(false);
+        Cut6.SetActive(false);
+        Cut7.SetActive(false);
+        Cut8.SetActive(false);
         dialogue.SetActive(true);
     }
 }
