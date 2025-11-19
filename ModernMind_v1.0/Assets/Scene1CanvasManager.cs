@@ -10,6 +10,7 @@ public class Scene1CanvasManager : MonoBehaviour
     public TeleportPosition teleport;
     public SceneLoader scene;
     public TimerDisplay timer;
+    public GameObject Cut1;
 
     void Start()
     {
@@ -49,6 +50,12 @@ public class Scene1CanvasManager : MonoBehaviour
         Usok.SetActive(false);
         BoardCamera.SetActive(false);
         skip.SetActive(false);
+        Cut1.SetActive(false);
+    }
+    
+    public void Cut1Show()
+    {
+        ShowDialogue(Cut1);
     }
 
     public void FirstCanvasShow()
@@ -255,6 +262,7 @@ public class Scene1CanvasManager : MonoBehaviour
         forth_7.SetActive(false);
         forth_8.SetActive(false);
         loading2.SetActive(false);
+        Cut1.SetActive(false);
         dialogue.SetActive(true);
     }
 }
