@@ -5,6 +5,7 @@ public class TalkMiles2 : MonoBehaviour
     public MilesAnimation miles;
     public Scene1CanvasManager canvas;
     public PlayerAnimator player;
+    public GameObject milesArrow, playerArrow;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,8 @@ public class TalkMiles2 : MonoBehaviour
             miles.PlayAnimation("talk");
             canvas.TenthCanvasShow();
             player.ForceIdle();
+            milesArrow.SetActive(false);
+            playerArrow.SetActive(false);
         }
     }
 }
