@@ -5,10 +5,11 @@ public class Scene2MazeCanvasManager : MonoBehaviour
     public GameObject Loading, Atlas1, Atlas2, Atlas3, Atlas4, First, Second, Third, Fourth, Fifth, Sixth, Atlas5;
     public GameObject Fence, Atlas6, Atlas7, Atlas8, Atlas9, Atlas10, Atlas11, Atlas12;
     public TimerHopscotch time;
+    public GameObject Cut1, Cut2, Cut3, Cut4, Cut5;
 
     void Start()
     {
-        LoadingCanvasShow();
+        Cut1Show();
         Atlas1.SetActive(false);
         Atlas2.SetActive(false);
         Atlas3.SetActive(false);
@@ -28,6 +29,35 @@ public class Scene2MazeCanvasManager : MonoBehaviour
         Atlas10.SetActive(false);
         Atlas11.SetActive(false);
         Atlas12.SetActive(false);
+        Cut2.SetActive(false);
+        Cut3.SetActive(false);
+        Cut4.SetActive(false);
+        Cut5.SetActive(false);
+    }
+
+    public void Cut1Show()
+    {
+        ShowDialogue(Cut1);
+    }
+
+    public void Cut2Show()
+    {
+        ShowDialogue(Cut2);
+    }
+
+    public void Cut3Show()
+    {
+        ShowDialogue(Cut3);
+    }
+
+    public void Cut4Show()
+    {
+        ShowDialogue(Cut4);
+    }
+
+    public void Cut5Show()
+    {
+        ShowDialogue(Cut5);
     }
 
     public void LoadingCanvasShow()
@@ -158,6 +188,11 @@ public class Scene2MazeCanvasManager : MonoBehaviour
         Atlas10.SetActive(false);
         Atlas11.SetActive(false);
         Atlas12.SetActive(false);
+        Cut1.SetActive(false);
+        Cut2.SetActive(false);
+        Cut3.SetActive(false);
+        Cut4.SetActive(false);
+        Cut5.SetActive(false);
         dialogue.SetActive(true);
     }
 
