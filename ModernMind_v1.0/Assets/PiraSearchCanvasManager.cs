@@ -9,6 +9,7 @@ public class PiraSearchCanvasManager : MonoBehaviour
     public TimerHopscotch timer;
     public GameObject set1MissingLetter, set2MissingLetter, Letters1, Letters2, cameraTop, Letter1UI, Letter2UI, Letters3, Letter3UI, set3MissingLetter;
     public GameObject dummyCamera, cameraReal, dummyCamera2;
+    public GameObject Cut1, Cut2;
 
     void Start()
     {
@@ -21,12 +22,18 @@ public class PiraSearchCanvasManager : MonoBehaviour
         SixthCanvas.SetActive(false);
         SeventhCanvas.SetActive(false);
         EighthCanvas.SetActive(false);
+        Cut1.SetActive(false);
+        Cut2.SetActive(false);
     }
 
     public void LoadingShow()
     {
         ShowDialogue(Loading);
     }
+
+    public void Cut1Show() => ShowDialogue(Cut1);
+    public void Cut2Show() => ShowDialogue(Cut2);
+
 
     public void FirstCanvasShow() => ShowDialogue(FirstCanvas);
     public void SecondCanvasShow() => ShowDialogue(SecondCanvas);
@@ -116,6 +123,8 @@ public class PiraSearchCanvasManager : MonoBehaviour
         SixthCanvas.SetActive(false);
         SeventhCanvas.SetActive(false);
         EighthCanvas.SetActive(false);
+        Cut1.SetActive(false);
+        Cut2.SetActive(false);
         dialogue.SetActive(true);
     }
 }
