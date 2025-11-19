@@ -71,9 +71,19 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         ShowDialogue(EighthCanvas);
     }
 
-    public void EighthCanvasClose()
+    public void Cut1Show()
     {
-        EighthCanvas.SetActive(false);
+        ShowDialogue(Cut1);
+    }
+
+    public void Cut2Show()
+    {
+        ShowDialogue(Cut2);
+    }
+
+    public void Cut2Close()
+    {
+        Cut2.SetActive(false);
         controls.SetActive(true);
         timer.StartTimer();
     }
@@ -94,19 +104,11 @@ public class Scene1_HopscotchCanvasManager : MonoBehaviour
         ShowDialogue(ThirdMiles);
     }
 
-    public void Cut1Show()
-    {
-        ShowDialogue(Cut1);
-    }
+    
 
-    public void Cut2Show()
+    public void ThirdMilesClose()
     {
-        ShowDialogue(Cut2);
-    }
-
-    public void Cut2Close()
-    {
-        Cut2.SetActive(false);
+        ThirdMiles.SetActive(false);
         Miles1.SetActive(false);
         Miles2.SetActive(true);
         MilesCircle.SetActive(true);
